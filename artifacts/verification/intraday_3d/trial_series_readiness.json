@@ -1,0 +1,29 @@
+{
+ "all_trials_have_series": true,
+ "benchmark": "aligned passive (entry open(start+1)), cost-free, fully invested",
+ "dataset": "SYNTHETIC fixture SYN_KR1 (plumbing only)",
+ "record_fields": [
+  "benchmark",
+  "benchmark_returns",
+  "dataset",
+  "fold",
+  "initial_equity",
+  "params",
+  "protocol_version",
+  "returns",
+  "schema",
+  "stage",
+  "status",
+  "strategy",
+  "timestamps",
+  "trial_id",
+  "window"
+ ],
+ "stage_counts": {
+  "oos_evaluation": 8,
+  "train_selection": 48
+ },
+ "storage": "canonical JSON + gzip(mtime=0), one file per trial id, idempotent put",
+ "trials": 56,
+ "winner_only_store_rejected": true
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>QAT 연구 콘솔</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <a class="skip" href="#view">본문으로 건너뛰기</a>
+  <header class="topbar">
+    <div class="brand" aria-label="QAT">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="8"/><path d="M9 21 L14 14 L18 18 L23 10"/></svg>
+      <span class="brand-name">QAT</span>
+      <span class="brand-sub">연구 · Paper 콘솔</span>
+    </div>
+    <div class="top-status" id="top-status" aria-live="polite"></div>
+  </header>
+  <div class="layout">
+    <nav class="nav" aria-label="주요 화면">
+      <a href="#/overview" data-route="overview" aria-label="개요"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg><span>개요</span></a>
+      <a href="#/portfolio" data-route="portfolio" aria-label="포트폴리오"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4h8v2"/></svg><span>포트폴리오</span></a>
+      <a href="#/research" data-route="research" aria-label="연구"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>연구</span></a>
+      <a href="#/orders" data-route="orders" aria-label="주문·체결"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg><span>주문·체결</span></a>
+      <a href="#/operations" data-route="operations" aria-label="운영"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg><span>운영</span></a>
+      <a href="#/risk" data-route="risk" aria-label="리스크"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span>리스크</span></a>
+      <a href="#/settings" data-route="settings" aria-label="설정·실험"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><span>설정·실험</span></a>
+    </nav>
+    <main id="view" tabindex="-1" aria-live="polite"></main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>

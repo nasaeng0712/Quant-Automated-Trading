@@ -1,0 +1,70 @@
+{
+ "dataset_coverage_known_at_design": {
+  "development_4h": [
+   "2018-01-01",
+   "2025-12-31"
+  ],
+  "holdout_2026": "file names/sizes/dates for 2026-01..2026-09 known; contents unknown",
+  "missing_4h_bars_observed": 16
+ },
+ "decisions": [
+  {
+   "decision": "interval 4h, BTCUSDT, Binance Spot only",
+   "id": "D1",
+   "performance_accessed_before_decision": "NO",
+   "reason": "user instruction; 1h not used as a main interval; KR/US daily not tuned further"
+  },
+  {
+   "decision": "fee baseline: Regular User, no BNB discount, current maker/taker 0.100% (VERIFIED_CURRENT)",
+   "id": "D2",
+   "performance_accessed_before_decision": "NO",
+   "reason": "user instruction; historical fee kept HISTORICAL_UNKNOWN"
+  },
+  {
+   "decision": "spread/slippage: scenarios S0..S3 = 0/0, 1/1, 2.5/2.5, 5/5 bps (SCENARIO ASSUMPTION)",
+   "id": "D3",
+   "performance_accessed_before_decision": "NO",
+   "reason": "round numbers fixed before any result; not tuned to performance"
+  },
+  {
+   "decision": "30-trade / 50% thresholds kept unchanged",
+   "id": "D4",
+   "performance_accessed_before_decision": "NO",
+   "reason": "not lowered after Batch #3B; judged only by a structural count analysis"
+  },
+  {
+   "decision": "missing 4h bar = FAIL (policy P0) recorded BEFORE the first acquisition",
+   "id": "D5",
+   "performance_accessed_before_decision": "NO (but made before seeing the 16 missing bars)",
+   "reason": "completeness is a precondition of a verified foundation"
+  },
+  {
+   "decision": "benchmark v2 enters at open(start+1) (earliest executable bar)",
+   "id": "D6",
+   "performance_accessed_before_decision": "NO",
+   "reason": "fixes the one-bar misalignment found in Batch #3C; v1 results untouched"
+  },
+  {
+   "decision": "per-trial series stored for EVERY evaluated configuration (winner-only forbidden)",
+   "id": "D7",
+   "performance_accessed_before_decision": "NO",
+   "reason": "needed by any data-snooping method; White RC is only a CANDIDATE"
+  },
+  {
+   "decision": "2026 data not fetched/parsed/read; archive metadata only",
+   "id": "D8",
+   "performance_accessed_before_decision": "NO",
+   "reason": "2026 is the candidate untouched temporal holdout; access needs a Protocol v2 freeze marker"
+  }
+ ],
+ "design_timestamp_utc": "2026-10-06T07:32:48+00:00",
+ "observation_after_design": "4h completeness: 16 missing bars / 18 shorter bars were found AFTER policy D5 was written; policy D5 was NOT relaxed",
+ "performance_data_accessed": {
+  "btcusdt_2026_values": "NO",
+  "btcusdt_4h_strategy_results": "NO",
+  "btcusdt_daily_development_via_batch_3B": "YES (observed development evidence; Lockbox tail untouched)",
+  "kr_us_daily_via_batch_3B": "YES (observed)"
+ },
+ "protocol_candidate_id": "wf-protocol-2-candidate-1",
+ "trial_registry": "extends results/trial_registry.json (Batch #3C); v2 trials will be registered by run_walkforward as before"
+}

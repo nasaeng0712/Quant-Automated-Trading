@@ -1,0 +1,19 @@
+a2 missing explicit path -> {}
+a3 settings stack fill price/commission 1000.0 0.0 router PAPER
+a4/a5 mode live in yaml -> router PAPER compliance PAPER
+   US disabled -> accepted? False risk:BLOCK:insufficient_cash:need=10.00:have=0.00
+b1 realized_pnl_total({}) = 10.0
+b2 equity({}) = 1010.0
+   equity_in w/o marks uses avg_cost: 1210.0
+c1 reserved 10201.0 actual 20402.0 avail 979598.0 breaches 0
+c2 partial overrun actual 6120.6 slice 4080.4 breaches 0
+d1 True d3 empty True
+d2 True
+e1/e2 mismatched symbol qty11 -> FillOutcome.APPLIED 11.0
+e3 fees after failed sell {<Currency.KRW: 'KRW'>: 1.0} {<Currency.KRW: 'KRW'>: 2.0}
+e4 reserved qty after ledger failure 0.0 (was 10)
+f1 NaN qty proposal constructed: nan
+f2 NaN fill: nan
+f3 NaN fx: nan
+f4 NaN ref accepted: True accepted
+f5 inf expected return accepted: True

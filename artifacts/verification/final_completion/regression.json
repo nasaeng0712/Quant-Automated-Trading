@@ -1,0 +1,41 @@
+{
+  "id": "QAT-V1-FINAL-REGRESSION",
+  "run_policy": "executed ONCE at the end, after all code/test/config changes were frozen (the only changes afterwards are docs and evidence files)",
+  "baseline_before_this_task": {"tests": 500, "mutations": 159},
+  "results": {
+    "pytest_python_3_11": {"result": "669 passed", "log": "pytest_py311.txt"},
+    "pytest_python_3_13": {"result": "669 passed", "log": "pytest_py313.txt"},
+    "compileall": {"result": "OK (exit 0)", "log": "compileall.txt"},
+    "pyflakes": {"result": "clean (0 findings) over src, tests, tools and the mutation script", "log": "pyflakes.txt"},
+    "secret_scan": {"result": "files scanned: 1399; credential leak found: NO", "log": "secret_scan.txt"},
+    "mutation_full_suite": {"result": "216/216 CAUGHT (159 original + 57 new critical-branch mutations); watched tree restored byte-exactly: YES; survivors/not-found: 0", "log": "mutation_full.txt"},
+    "e2e_paper_scenarios_restart_recovery": {"result": "executed inside the 669-test suite (see e2e_scenarios.json for the scenario -> test map)"},
+    "ui_api_smoke_real_server": {"result": "375px / 1280px / 625px: overflow 0, console errors 0, unlabeled controls 0; UI == API; Live BLOCKED shown; audit / recovery / health shown", "evidence": "ui_smoke.json"}
+  },
+  "test_counts": {"original": 500, "new": {"tests/test_brokerage.py": 21, "tests/test_ops_core.py": 68, "tests/test_ops_service.py": 80}, "total": 669},
+  "spec_change_assertions": [
+    "tests/test_ui.py::test_status_is_honest_about_unimplemented_and_live: strategy_health 'NOT_IMPLEMENTED' -> 'UNKNOWN' (Strategy Health is now implemented; nothing observed without a session)",
+    "tests/test_ui.py (risk view test): R-07..R-09 / MI-05 / MI-06 'implemented False' -> implemented True and configured False (NOT_CONFIGURED); strategy_health NOT_IMPLEMENTED -> status",
+    "tests/test_audit_batch2.py::test_ui_always_on_rules_are_not_reported_as_unconfigured: same spec change (no rule is unimplemented any more; unset thresholds are NOT_CONFIGURED)"
+  ],
+  "no_existing_test_deleted_or_weakened": true,
+  "constraints_verified": {
+    "results/lockbox_registry.json exists": false,
+    "holdout_evaluation_approval.json exists": false,
+    "evaluate_lockbox called": false,
+    "2026 holdout values read": false,
+    "config/settings.yaml modified": false,
+    "protocol v2 artifacts modified": false,
+    "serviceKey written anywhere in the repository": false,
+    "project state/ directory touched by smoke or tests": false
+  },
+  "defects_found_and_fixed_during_the_task": [
+    "recovery authorization could be forged with a callable validator -> replaced by a module-private token registry (tests + mutation)",
+    "orchestrator refuse() logging collided with the _log(stage) parameter (TypeError on a refused recovery order) -> payload key renamed",
+    "PaperStack.cancel_order / settle looked only at the Paper broker -> now resolve the broker holding the order (needed for the broker boundary)",
+    "the unconfirmed-cancel path could release a reservation through SettlementService.cancel -> boundary raises, reservation kept",
+    "ui/__main__.py ack-recovery command had a broken string literal from a tooling accident -> fixed before first use",
+    "nav links had no accessible name in the accessibility tree -> aria-labels added"
+  ],
+  "first_mutation_survivor": "graduation sessions/fills gate: a test case isolating G2 and G3 was added; the mutation is now CAUGHT"
+}

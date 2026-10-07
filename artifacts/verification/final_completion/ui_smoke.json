@@ -1,0 +1,31 @@
+{
+  "id": "QAT-V1-FINAL-UI-SMOKE",
+  "server": "python -m qat.ui serve --port 8777 (real HTTP server, real browser pane), QAT_STATE_DIR / QAT_RESULTS_DIR pointed at TEMP directories (destructive actions only on synthetic fixture data SYN_KR1_1d.csv and temp state; project state/ was never touched)",
+  "viewports": ["375x812 (mobile)", "1280x800 (desktop)", "625px pane width"],
+  "routes_checked": ["#/overview", "#/portfolio", "#/research", "#/orders", "#/operations", "#/operations/audit", "#/operations/recovery", "#/risk", "#/settings"],
+  "results": {
+    "375px": {"horizontal_overflow_px": 0, "console_errors": 0, "unlabeled_controls": 0, "routes_rendered": 9, "error_boxes": 0},
+    "1280px": {"horizontal_overflow_px": 0, "console_errors": 0, "unlabeled_controls": 0, "routes_rendered": 9, "error_boxes": 0},
+    "625px": {"horizontal_overflow_px": 0, "console_errors": 0, "unlabeled_controls": 0, "routes_rendered": 9, "error_boxes": 0},
+    "network": "all /api requests returned 200 (GET and POST) during the session; no 4xx/5xx"
+  },
+  "ui_matches_api": {
+    "operations overall status shown == /api/operations health.overall": true,
+    "recovery state shown == /api/recovery state (NORMAL -> FLATTENED)": true,
+    "audit total shown == /api/audit total": true,
+    "risk screen Kill Switch ON == /api/risk kill_switch": true,
+    "Live BLOCKED shown on Operations and Risk": true,
+    "audit hash-chain verification shown": true,
+    "R-07..R-09 / MI-05 / MI-06 shown as implemented + NOT_CONFIGURED; R-08 shown 'data not supported' when configured": true,
+    "no '미구현' for Strategy Health / R-07..R-09 / MI-05 / MI-06 on the Risk screen": true
+  },
+  "flows_exercised": [
+    "start Paper session on the synthetic fixture, submit a BUY, advance one bar (fill)",
+    "Recovery screen: wrong confirmation phrase is refused client-side (no order created, state unchanged)",
+    "Recovery screen: correct operator/reason/FLATTEN -> POST /api/recovery/flatten -> FLATTEN_SUBMITTED; advance -> SELL FILLED (10), position 0, state FLATTENED, kill switch unchanged (OFF), 4 recovery events in the durable audit, chain verified",
+    "Kill Switch engaged -> Operations overall BLOCKED, Risk shows ON",
+    "server killed (not a clean shutdown) and restarted on the same state dir: audit log 20 records verified, recovery state FLATTENED persisted, restart assessment MANUAL_INTERVENTION_REQUIRED (safety_latch_active:KILL_SWITCH, previous_run_kill_switch_engaged), acknowledged=false"
+  ],
+  "accessibility_fix_during_smoke": "nav links received explicit aria-labels (the accessibility tree showed them unnamed); recovery chip colour now distinguishes FLATTENED / FLATTEN_SUBMITTED / RECOVERY_REQUIRED",
+  "notes": ["status is shown with text AND colour; PnL keeps sign + label; numbers use tabular figures; the UI never sends price/approval/state fields"]
+}

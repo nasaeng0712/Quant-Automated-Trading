@@ -1,0 +1,1587 @@
+{
+ "crypto-binance": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "PASS",
+     "summary": "0 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "PASS",
+     "summary": "0 zero/negative price values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "PASS",
+     "summary": "0 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol BTC/USDT consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market CRYPTO <-> calendar 24X7 <-> raw provenance agree"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "PASS",
+     "summary": "timezone label UTC, exchange UTC, provider stamps consistent"
+    },
+    {
+     "calendar": {
+      "code": "24X7",
+      "first": "1970-01-01",
+      "generated_utc": "n/a",
+      "last": "2100-12-31",
+      "sessions": null,
+      "sha256": "f1eb3b3447fcc794a16745bc91f031231de0c5db11848e7009bcc9079e64fac5",
+      "source": "built-in 24/7 rule",
+      "version": "1"
+     },
+     "count": 0,
+     "examples": [],
+     "expected_sessions": 2922,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [],
+     "name": "trading_calendar",
+     "status": "PASS",
+     "summary": "2922 expected 24X7 sessions; 0 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "96 raw artifacts, provider binance-vision consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "UNADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "UNADJUSTED: spot trading pair: no corporate-action mechanism exists (structural)"
+    }
+   ],
+   "failed_checks": [],
+   "first_date": "2018-01-01",
+   "last_date": "2025-12-31",
+   "rows": 2922,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  },
+  "summary": {
+   "adjustment_semantics": "UNADJUSTED",
+   "data_version": "CRYPTO-BTC-USDT-1d-binance-vision-13fd3c7401fa-ae0c47",
+   "failed_checks": [],
+   "first_date": "2018-01-01",
+   "last_date": "2025-12-31",
+   "normalized_sha256": "13fd3c7401fab9ec5ef149309c9c8a6689965c4cf53f8ed0e5773fd92da451c7",
+   "raw_set_sha256": "ae0c479c5982b45b2add86240b1f1dc2195cc4019d7e5a14de36300067040de3",
+   "rows": 2922,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  }
+ },
+ "crypto-coinbase": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "PASS",
+     "summary": "0 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "PASS",
+     "summary": "0 zero/negative price values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "PASS",
+     "summary": "0 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol BTC/USDT consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market CRYPTO <-> calendar 24X7 <-> raw provenance agree"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "PASS",
+     "summary": "timezone label UTC, exchange UTC, provider stamps consistent"
+    },
+    {
+     "calendar": {
+      "code": "24X7",
+      "first": "1970-01-01",
+      "generated_utc": "n/a",
+      "last": "2100-12-31",
+      "sessions": null,
+      "sha256": "f1eb3b3447fcc794a16745bc91f031231de0c5db11848e7009bcc9079e64fac5",
+      "source": "built-in 24/7 rule",
+      "version": "1"
+     },
+     "count": 0,
+     "examples": [],
+     "expected_sessions": 1703,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [],
+     "name": "trading_calendar",
+     "status": "PASS",
+     "summary": "1703 expected 24X7 sessions; 0 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "10 raw artifacts, provider coinbase-exchange consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "UNADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "UNADJUSTED: spot trading pair: no corporate-action mechanism exists (structural)"
+    }
+   ],
+   "failed_checks": [],
+   "first_date": "2021-05-04",
+   "last_date": "2025-12-31",
+   "rows": 1703,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  },
+  "summary": {
+   "adjustment_semantics": "UNADJUSTED",
+   "data_version": "CRYPTO-BTC-USDT-1d-coinbase-exchange-b7481db18b40-c262cc",
+   "failed_checks": [],
+   "first_date": "2021-05-04",
+   "last_date": "2025-12-31",
+   "normalized_sha256": "b7481db18b40ff9475c32e58bef33c2356e3509dc61d6cd68251c7195ecc27e9",
+   "raw_set_sha256": "c262cccc8ff632a7ef58b77f30b4fbc6f0568c2d08000bc228680f70ce2d2b3e",
+   "rows": 1703,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  }
+ },
+ "kr-naver": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "PASS",
+     "summary": "0 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 9,
+     "examples": [
+      {
+       "date": "2018-04-30",
+       "field": "open",
+       "line": 82,
+       "value": 0.0
+      },
+      {
+       "date": "2018-04-30",
+       "field": "high",
+       "line": 82,
+       "value": 0.0
+      },
+      {
+       "date": "2018-04-30",
+       "field": "low",
+       "line": 82,
+       "value": 0.0
+      },
+      {
+       "date": "2018-05-02",
+       "field": "open",
+       "line": 83,
+       "value": 0.0
+      },
+      {
+       "date": "2018-05-02",
+       "field": "high",
+       "line": 83,
+       "value": 0.0
+      },
+      {
+       "date": "2018-05-02",
+       "field": "low",
+       "line": 83,
+       "value": 0.0
+      },
+      {
+       "date": "2018-05-03",
+       "field": "open",
+       "line": 84,
+       "value": 0.0
+      },
+      {
+       "date": "2018-05-03",
+       "field": "high",
+       "line": 84,
+       "value": 0.0
+      }
+     ],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "FAIL",
+     "summary": "9 zero/negative price values"
+    },
+    {
+     "count": 3,
+     "examples": [
+      {
+       "close": 53000.0,
+       "date": "2018-04-30",
+       "high": 0.0,
+       "line": 82,
+       "low": 0.0,
+       "open": 0.0
+      },
+      {
+       "close": 53000.0,
+       "date": "2018-05-02",
+       "high": 0.0,
+       "line": 83,
+       "low": 0.0,
+       "open": 0.0
+      },
+      {
+       "close": 53000.0,
+       "date": "2018-05-03",
+       "high": 0.0,
+       "line": 84,
+       "low": 0.0,
+       "open": 0.0
+      }
+     ],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "FAIL",
+     "summary": "3 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 3,
+     "examples": [
+      {
+       "date": "2018-04-30",
+       "line": 82
+      },
+      {
+       "date": "2018-05-02",
+       "line": 83
+      },
+      {
+       "date": "2018-05-03",
+       "line": 84
+      }
+     ],
+     "id": "V06b",
+     "name": "zero_volume",
+     "status": "WARN",
+     "summary": "3 sessions with zero volume (possible suspension / no trades)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol 005930 consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market KR <-> calendar XKRX <-> raw provenance agree"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "PASS",
+     "summary": "timezone label +09:00, exchange Asia/Seoul, provider stamps consistent"
+    },
+    {
+     "calendar": {
+      "code": "XKRX",
+      "first": "2017-01-01",
+      "generated_utc": "2026-10-06T02:15:16+00:00",
+      "last": "2026-12-31",
+      "sessions": 2452,
+      "sha256": "ba77198918902d4389f3666076358ac01d1808df01c0356fdc3304bb3b8fcb7b",
+      "source": "exchange_calendars==4.13.2",
+      "version": "4.13.2"
+     },
+     "count": 0,
+     "examples": [],
+     "expected_sessions": 1963,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [],
+     "name": "trading_calendar",
+     "status": "PASS",
+     "summary": "1963 expected XKRX sessions; 0 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "1 raw artifacts, provider naver-fchart consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "SPLIT_ADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "SPLIT_ADJUSTED: tested against the issuer's reference corporate action(s): 2018-05-04 (no provider documentation retrieved)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V17",
+     "name": "corporate_action_discontinuity",
+     "observed_events": [
+      {
+       "close_after": 51900.0,
+       "close_before": 53000.0,
+       "close_jump_ratio": 0.9792452830188679,
+       "date_after": "2018-05-04",
+       "date_before": "2018-05-03",
+       "ex_date": "2018-05-04",
+       "ratio_declared": 50.0,
+       "unadjusted_expected_ratio": 0.02,
+       "verdict": "ADJUSTED_AT_EVENT"
+      }
+     ],
+     "status": "PASS",
+     "summary": "no unadjusted corporate-action discontinuity inside the window"
+    }
+   ],
+   "failed_checks": [
+    "V04",
+    "V05"
+   ],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-30",
+   "rows": 1963,
+   "status": "FAIL",
+   "unknown_checks": [],
+   "warnings": [
+    "V06b"
+   ]
+  },
+  "summary": {
+   "adjustment_semantics": "SPLIT_ADJUSTED",
+   "data_version": "KR-005930-1d-naver-fchart-fe8fa8a3c74e-698bac",
+   "failed_checks": [
+    "V04",
+    "V05"
+   ],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-30",
+   "normalized_sha256": "fe8fa8a3c74ecb9c5733eb790ba6ba9af173d13bb712cbf100e1014052c1182e",
+   "raw_set_sha256": "698bac9344f99511454c763391765e028c945a3209757fea39d02537254d6cc5",
+   "rows": 1963,
+   "status": "FAIL",
+   "unknown_checks": [],
+   "warnings": [
+    "V06b"
+   ]
+  }
+ },
+ "kr-official": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "PASS",
+     "summary": "0 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "PASS",
+     "summary": "0 zero/negative price values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "PASS",
+     "summary": "0 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol 005930 consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market KR <-> calendar XKRX <-> raw provenance agree"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "PASS",
+     "summary": "timezone label +09:00, exchange Asia/Seoul, provider stamps consistent"
+    },
+    {
+     "calendar": {
+      "code": "XKRX",
+      "first": "2017-01-01",
+      "generated_utc": "2026-10-06T02:15:16+00:00",
+      "last": "2026-12-31",
+      "sessions": 2452,
+      "sha256": "ba77198918902d4389f3666076358ac01d1808df01c0356fdc3304bb3b8fcb7b",
+      "source": "exchange_calendars==4.13.2",
+      "version": "4.13.2"
+     },
+     "count": 0,
+     "examples": [],
+     "expected_sessions": 1473,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [],
+     "name": "trading_calendar",
+     "status": "PASS",
+     "summary": "1473 expected XKRX sessions; 0 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "2 raw artifacts, provider data.go.kr consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "UNADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "UNADJUSTED: official field definitions describe as-traded values (the guide contains NO explicit adjustment statement); official base-price (vs) consistency: 1472 rows checked, 0 mismatches"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V17",
+     "name": "corporate_action_discontinuity",
+     "observed_events": [
+      {
+       "detail": "series does not contain rows on both sides of the ex-date",
+       "ex_date": "2018-05-04",
+       "ratio_declared": 50.0,
+       "verdict": "NOT_IN_RANGE"
+      }
+     ],
+     "status": "PASS",
+     "summary": "no unadjusted corporate-action discontinuity inside the window"
+    },
+    {
+     "count": 490,
+     "covered_start": "2020-01-02",
+     "evidence": {
+      "explains_shortfall": true,
+      "note": "each probe is a raw API response with totalCount 0; endBasDt is exclusive so the last window ends the day before the covered start",
+      "windows": [
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-19900101-20200102-p001.json",
+        "requested": {
+         "end": "2020-01-01",
+         "note": "endBasDt=20200102 is exclusive per the official guide",
+         "start": "1990-01-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20180101-20180401-p001.json",
+        "requested": {
+         "end": "2018-03-31",
+         "note": "endBasDt=20180401 is exclusive per the official guide",
+         "start": "2018-01-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20180401-20180701-p001.json",
+        "requested": {
+         "end": "2018-06-30",
+         "note": "endBasDt=20180701 is exclusive per the official guide",
+         "start": "2018-04-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20180701-20181001-p001.json",
+        "requested": {
+         "end": "2018-09-30",
+         "note": "endBasDt=20181001 is exclusive per the official guide",
+         "start": "2018-07-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20181001-20190101-p001.json",
+        "requested": {
+         "end": "2018-12-31",
+         "note": "endBasDt=20190101 is exclusive per the official guide",
+         "start": "2018-10-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20190101-20190401-p001.json",
+        "requested": {
+         "end": "2019-03-31",
+         "note": "endBasDt=20190401 is exclusive per the official guide",
+         "start": "2019-01-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20190401-20190701-p001.json",
+        "requested": {
+         "end": "2019-06-30",
+         "note": "endBasDt=20190701 is exclusive per the official guide",
+         "start": "2019-04-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20190701-20191001-p001.json",
+        "requested": {
+         "end": "2019-09-30",
+         "note": "endBasDt=20191001 is exclusive per the official guide",
+         "start": "2019-07-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       },
+       {
+        "artifact": "005930-coverage-probe-getStockPriceInfo_V2-20191001-20200102-p001.json",
+        "requested": {
+         "end": "2020-01-01",
+         "note": "endBasDt=20200102 is exclusive per the official guide",
+         "start": "2019-10-01"
+        },
+        "sha256": "c89983e07052a497f720e92d43711f5361dba2cc6cc4196b139eb71e47497c0e",
+        "total_count": 0
+       }
+      ]
+     },
+     "examples": [],
+     "id": "V18",
+     "name": "requested_period_coverage",
+     "requested_start": "2018-01-01",
+     "shortfall_sessions": 490,
+     "status": "WARN",
+     "summary": "provider cannot supply 2018-01-01..2020-01-02: 490 expected sessions are NOT in this dataset; explained by preserved probe responses that all returned 0 rows"
+    }
+   ],
+   "failed_checks": [],
+   "first_date": "2020-01-02",
+   "last_date": "2025-12-30",
+   "rows": 1473,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": [
+    "V18"
+   ]
+  },
+  "summary": {
+   "adjustment_semantics": "UNADJUSTED",
+   "data_version": "KR-005930-1d-data-go-kr-92e7ddb723e8-83c757",
+   "failed_checks": [],
+   "first_date": "2020-01-02",
+   "last_date": "2025-12-30",
+   "normalized_sha256": "92e7ddb723e804373cadb66e3645ad386ca9da81a32548a76345a112838bd7ae",
+   "raw_set_sha256": "83c7575a41599f625b5fea6adfbaa4c0b5d341e2f1def1dd109a50be4b8ffb93",
+   "rows": 1473,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": [
+    "V18"
+   ]
+  }
+ },
+ "kr-yahoo": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 5,
+     "examples": [
+      {
+       "field": "open",
+       "line": 1895
+      },
+      {
+       "field": "high",
+       "line": 1895
+      },
+      {
+       "field": "low",
+       "line": 1895
+      },
+      {
+       "field": "close",
+       "line": 1895
+      },
+      {
+       "field": "volume",
+       "line": 1895
+      }
+     ],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "FAIL",
+     "summary": "5 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "PASS",
+     "summary": "0 zero/negative price values"
+    },
+    {
+     "count": 1,
+     "examples": [
+      {
+       "close": 59300.0,
+       "date": "2024-10-14",
+       "high": 61200.0,
+       "line": 1665,
+       "low": 59400.0,
+       "open": 59500.0
+      }
+     ],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "FAIL",
+     "summary": "1 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 16,
+     "examples": [
+      {
+       "date": "2018-04-30",
+       "line": 82
+      },
+      {
+       "date": "2018-05-02",
+       "line": 83
+      },
+      {
+       "date": "2018-05-03",
+       "line": 84
+      },
+      {
+       "date": "2020-03-09",
+       "line": 536
+      },
+      {
+       "date": "2020-03-12",
+       "line": 539
+      },
+      {
+       "date": "2022-01-26",
+       "line": 1003
+      },
+      {
+       "date": "2022-02-08",
+       "line": 1009
+      },
+      {
+       "date": "2022-02-09",
+       "line": 1010
+      }
+     ],
+     "id": "V06b",
+     "name": "zero_volume",
+     "status": "WARN",
+     "summary": "16 sessions with zero volume (possible suspension / no trades)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol 005930 consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market KR <-> calendar XKRX <-> raw provenance agree"
+    },
+    {
+     "count": 1,
+     "examples": [
+      "provider timestamps at unexpected UTC time-of-day ['01:00'] (expected ['00:00'])"
+     ],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "FAIL",
+     "summary": "provider timestamps at unexpected UTC time-of-day ['01:00'] (expected ['00:00'])"
+    },
+    {
+     "calendar": {
+      "code": "XKRX",
+      "first": "2017-01-01",
+      "generated_utc": "2026-10-06T02:15:16+00:00",
+      "last": "2026-12-31",
+      "sessions": 2452,
+      "sha256": "ba77198918902d4389f3666076358ac01d1808df01c0356fdc3304bb3b8fcb7b",
+      "source": "exchange_calendars==4.13.2",
+      "version": "4.13.2"
+     },
+     "count": 2,
+     "examples": [
+      "2022-01-03",
+      "2022-05-09"
+     ],
+     "expected_sessions": 1963,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [
+      "2022-01-03",
+      "2022-05-09"
+     ],
+     "name": "trading_calendar",
+     "status": "FAIL",
+     "summary": "1963 expected XKRX sessions; 2 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "1 raw artifacts, provider yahoo-chart consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "SPLIT_ADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "SPLIT_ADJUSTED: tested against the issuer's reference corporate action(s): 2018-05-04 (no provider documentation retrieved)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V17",
+     "name": "corporate_action_discontinuity",
+     "observed_events": [
+      {
+       "close_after": 51900.0,
+       "close_before": 53000.0,
+       "close_jump_ratio": 0.9792452830188679,
+       "date_after": "2018-05-04",
+       "date_before": "2018-05-03",
+       "ex_date": "2018-05-04",
+       "ratio_declared": 50.0,
+       "unadjusted_expected_ratio": 0.02,
+       "verdict": "ADJUSTED_AT_EVENT"
+      }
+     ],
+     "status": "PASS",
+     "summary": "no unadjusted corporate-action discontinuity inside the window"
+    }
+   ],
+   "failed_checks": [
+    "V02",
+    "V05",
+    "V12",
+    "V13"
+   ],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-30",
+   "rows": 1961,
+   "status": "FAIL",
+   "unknown_checks": [],
+   "warnings": [
+    "V06b"
+   ]
+  },
+  "summary": {
+   "adjustment_semantics": "SPLIT_ADJUSTED",
+   "data_version": "KR-005930-1d-yahoo-chart-dd573a0c9e00-86bd22",
+   "failed_checks": [
+    "V02",
+    "V05",
+    "V12",
+    "V13"
+   ],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-30",
+   "normalized_sha256": "dd573a0c9e00bbd6381de25972956209e03fa943b126728561204397cdfd76d6",
+   "raw_set_sha256": "86bd220772c874bf9c355001526b0ad32dbcf3a004d025c2c555b71c55ab2aad",
+   "rows": 1961,
+   "status": "FAIL",
+   "unknown_checks": [],
+   "warnings": [
+    "V06b"
+   ]
+  }
+ },
+ "us-nasdaq": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "PASS",
+     "summary": "0 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "PASS",
+     "summary": "0 zero/negative price values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "PASS",
+     "summary": "0 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol AAPL consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market US <-> calendar XNYS <-> raw provenance agree"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "PASS",
+     "summary": "timezone label UTC, exchange America/New_York, provider stamps consistent"
+    },
+    {
+     "calendar": {
+      "code": "XNYS",
+      "first": "2017-01-01",
+      "generated_utc": "2026-10-06T02:15:16+00:00",
+      "last": "2026-12-31",
+      "sessions": 2513,
+      "sha256": "77851988081724147226f7392867bc925765cb243fdb73d9ce6049e6bc5df01e",
+      "source": "exchange_calendars==4.13.2",
+      "version": "4.13.2"
+     },
+     "count": 0,
+     "examples": [],
+     "expected_sessions": 2011,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [],
+     "name": "trading_calendar",
+     "status": "PASS",
+     "summary": "2011 expected XNYS sessions; 0 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "1 raw artifacts, provider nasdaq-historical consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "SPLIT_ADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "SPLIT_ADJUSTED: tested against the issuer's reference corporate action(s): 2020-08-31 (no provider documentation retrieved)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V17",
+     "name": "corporate_action_discontinuity",
+     "observed_events": [
+      {
+       "close_after": 129.04,
+       "close_before": 124.8075,
+       "close_jump_ratio": 1.0339122248262322,
+       "date_after": "2020-08-31",
+       "date_before": "2020-08-28",
+       "ex_date": "2020-08-31",
+       "ratio_declared": 4.0,
+       "unadjusted_expected_ratio": 0.25,
+       "verdict": "ADJUSTED_AT_EVENT"
+      }
+     ],
+     "status": "PASS",
+     "summary": "no unadjusted corporate-action discontinuity inside the window"
+    }
+   ],
+   "failed_checks": [],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-31",
+   "rows": 2011,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  },
+  "summary": {
+   "adjustment_semantics": "SPLIT_ADJUSTED",
+   "data_version": "US-AAPL-1d-nasdaq-historical-f05d76fa77d3-14a0df",
+   "failed_checks": [],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-31",
+   "normalized_sha256": "f05d76fa77d3ccec09e1ba260c26bc93feed69bef4661fb693a42e111d7a8566",
+   "raw_set_sha256": "14a0df0ff3432844c828ff71e02439c642f0861eea2c453b7a2b5f5a816e8b52",
+   "rows": 2011,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  }
+ },
+ "us-yahoo": {
+  "report": {
+   "checks": [
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V01",
+     "name": "schema_header",
+     "status": "PASS",
+     "summary": "header matches canonical schema"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V02",
+     "name": "required_fields",
+     "status": "PASS",
+     "summary": "0 missing values, 0 unparseable/non-midnight timestamps, 0 short rows"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V03",
+     "name": "numeric_validity",
+     "status": "PASS",
+     "summary": "0 NaN/inf/invalid numeric values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V04",
+     "name": "positive_prices",
+     "status": "PASS",
+     "summary": "0 zero/negative price values"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V05",
+     "name": "ohlc_invariants",
+     "status": "PASS",
+     "summary": "0 rows violate low<=open<=high / low<=close<=high"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V06",
+     "name": "negative_volume",
+     "status": "PASS",
+     "summary": "0 negative volumes"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V07",
+     "name": "duplicate_timestamps",
+     "status": "PASS",
+     "summary": "0 duplicate timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V08",
+     "name": "timestamp_order",
+     "status": "PASS",
+     "summary": "0 out-of-order timestamps"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V09",
+     "name": "overlapping_bars",
+     "status": "PASS",
+     "summary": "daily session bars cannot overlap unless timestamps repeat or run backwards (see V07/V08)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V10",
+     "name": "symbol_consistency",
+     "status": "PASS",
+     "summary": "symbol AAPL consistent across metadata, provenance and provider fields"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V11",
+     "name": "market_consistency",
+     "status": "PASS",
+     "summary": "market US <-> calendar XNYS <-> raw provenance agree"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V12",
+     "name": "timezone_consistency",
+     "status": "PASS",
+     "summary": "timezone label UTC, exchange America/New_York, provider stamps consistent"
+    },
+    {
+     "calendar": {
+      "code": "XNYS",
+      "first": "2017-01-01",
+      "generated_utc": "2026-10-06T02:15:16+00:00",
+      "last": "2026-12-31",
+      "sessions": 2513,
+      "sha256": "77851988081724147226f7392867bc925765cb243fdb73d9ce6049e6bc5df01e",
+      "source": "exchange_calendars==4.13.2",
+      "version": "4.13.2"
+     },
+     "count": 0,
+     "examples": [],
+     "expected_sessions": 2011,
+     "extra_dates": [],
+     "id": "V13",
+     "missing_sessions": [],
+     "name": "trading_calendar",
+     "status": "PASS",
+     "summary": "2011 expected XNYS sessions; 0 missing; 0 rows on non-session dates"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V14",
+     "name": "source_metadata",
+     "status": "PASS",
+     "summary": "1 raw artifacts, provider yahoo-chart consistent"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V15",
+     "name": "synthetic_source",
+     "status": "PASS",
+     "summary": "synthetic=false verified on dataset and every raw artifact"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "final": "SPLIT_ADJUSTED",
+     "id": "V16",
+     "name": "adjustment_semantics",
+     "status": "PASS",
+     "summary": "SPLIT_ADJUSTED: tested against the issuer's reference corporate action(s): 2020-08-31 (no provider documentation retrieved)"
+    },
+    {
+     "count": 0,
+     "examples": [],
+     "id": "V17",
+     "name": "corporate_action_discontinuity",
+     "observed_events": [
+      {
+       "close_after": 129.0399932861328,
+       "close_before": 124.80750274658203,
+       "close_jump_ratio": 1.033912148279617,
+       "date_after": "2020-08-31",
+       "date_before": "2020-08-28",
+       "ex_date": "2020-08-31",
+       "ratio_declared": 4.0,
+       "unadjusted_expected_ratio": 0.25,
+       "verdict": "ADJUSTED_AT_EVENT"
+      }
+     ],
+     "status": "PASS",
+     "summary": "no unadjusted corporate-action discontinuity inside the window"
+    }
+   ],
+   "failed_checks": [],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-31",
+   "rows": 2011,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  },
+  "summary": {
+   "adjustment_semantics": "SPLIT_ADJUSTED",
+   "data_version": "US-AAPL-1d-yahoo-chart-d05c06a21d60-3fdded",
+   "failed_checks": [],
+   "first_date": "2018-01-02",
+   "last_date": "2025-12-31",
+   "normalized_sha256": "d05c06a21d6057f4b3d019bbef3a66260ffdeed1dd9a09f3f0e09d1907f893ad",
+   "raw_set_sha256": "3fddedbb7d283b2429f2971cdfa177ff4abc3eca56af071b0eb34d22806f1a1b",
+   "rows": 2011,
+   "status": "PASS",
+   "unknown_checks": [],
+   "warnings": []
+  }
+ }
+}

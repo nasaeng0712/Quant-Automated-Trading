@@ -1,0 +1,49 @@
+{
+ "code_matches_frozen_protocol": true,
+ "protocol_json_file_sha256": "1878547b8d0fe1c4e37c71f5ce2a4e0cac89b277e2b09f9fc96415e9bb61e913",
+ "protocol_sha256": "40a7b682bf1b77355f598d52a0e63de1bf4f429c318964a25ad06a6431e2d94d",
+ "protocol_version": "wf-protocol-1",
+ "search_space": {
+  "breakout": {
+   "entry_lookback": [
+    20,
+    40
+   ],
+   "exit_lookback": [
+    10,
+    20
+   ]
+  },
+  "ma_trend": {
+   "fast": [
+    5,
+    10,
+    20
+   ],
+   "slow": [
+    30,
+    50
+   ]
+  },
+  "mean_reversion": {
+   "entry_z": [
+    1.5,
+    2.0
+   ],
+   "window": [
+    20,
+    40
+   ]
+  }
+ },
+ "status": "historical research evidence; observed development evidence (NOT untouched); only the Lockbox tail is untouched",
+ "summary_json_file_sha256": "1128f7449b850c68732fdff68962e5eaf93a91835f584a53715060692fb949fb",
+ "thresholds": {
+  "lockbox_requires": "PASS and stitched OOS net return > passive buy-and-hold return over the same OOS windows",
+  "min_active_fold_fraction": 0.5,
+  "min_folds": 3,
+  "min_total_oos_trades": 30,
+  "pass_requires_cost_stress_multiplier": 2.0,
+  "positive_fold_fraction_must_exceed": 0.5
+ }
+}

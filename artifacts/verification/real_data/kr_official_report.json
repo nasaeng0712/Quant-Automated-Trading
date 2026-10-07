@@ -1,0 +1,232 @@
+{
+ "adjustment": {
+  "all_overnight_discontinuities": [],
+  "assurance": "UNADJUSTED_EVIDENCE_SUPPORTED",
+  "declared": {
+   "basis": "guide field definitions: clpr = last price formed until the end of the regular session, mkp = first price formed after the regular session opens, trqu = cumulative traded quantity (as-traded values). The guide contains no adjustment / split / rights statement.",
+   "document": {
+    "retrieved_as": "raw artifact 005930-docs/guide.docx",
+    "sha256": "0ac42d46b5292ccf802770fe8c849bf1f8d43ca45ff1bfb1ba16fd34ba1246e4",
+    "title": "금융위원회_주식시세정보_활용자가이드.docx",
+    "url": "https://www.data.go.kr/data/15094808/openapi.do"
+   },
+   "explicit_adjustment_statement": false,
+   "kind": "official_field_definitions",
+   "state": "UNADJUSTED"
+  },
+  "dividend": {
+   "detail": "no dividend-adjusted counterpart observed",
+   "status": "UNKNOWN"
+  },
+  "final": "UNADJUSTED",
+  "final_reason": "official field definitions describe as-traded values (the guide contains NO explicit adjustment statement); official base-price (vs) consistency: 1472 rows checked, 0 mismatches",
+  "observed": {
+   "base_price_consistency": {
+    "mismatch_count": 0,
+    "mismatches": [],
+    "rows_checked": 1472
+   },
+   "events": [
+    {
+     "detail": "series does not contain rows on both sides of the ex-date",
+     "ex_date": "2018-05-04",
+     "ratio_declared": 50.0,
+     "verdict": "NOT_IN_RANGE"
+    }
+   ],
+   "state": "UNKNOWN"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ },
+ "api_contract": {
+  "adjustment_statement_in_guide": "NONE (no 수정/조정/액면분할/권리 wording found in the guide)",
+  "api_name": "GetStockSecuritiesInfoService_V2",
+  "auth": "serviceKey query parameter (portal-issued; activation by 활용신청, auto-approved)",
+  "base_url": "https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2",
+  "call_url_pattern": "https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2?serviceKey=<REDACTED>&numOfRows=..&pageNo=..",
+  "date_params": {
+   "basDt": "equals",
+   "beginBasDt": "basDt >= value (inclusive)",
+   "endBasDt": "basDt < value (EXCLUSIVE)",
+   "likeBasDt": "contains"
+  },
+  "default_format": "xml (resultType=json used)",
+  "documents": {
+   "guide": {
+    "artifact": "data/raw/data.go.kr/KR/005930-docs/guide.docx",
+    "sha256": "0ac42d46b5292ccf802770fe8c849bf1f8d43ca45ff1bfb1ba16fd34ba1246e4"
+   },
+   "service_page": {
+    "artifact": "data/raw/data.go.kr/KR/005930-docs/openapi_service_page.html",
+    "sha256": "dff7066402a35786507b0f829824e0d877f4fd98d83a0bfb1c2250f5e54511ef"
+   }
+  },
+  "formats": [
+   "xml",
+   "json"
+  ],
+  "http_method": "GET (REST), TLS",
+  "instrument_params": {
+   "isinCd": "ISIN equals (Samsung Electronics KR7005930003)",
+   "itmsNm": "name equals",
+   "likeSrtnCd": "short code contains",
+   "mrktCls": "KOSPI | KONEX | KOSDAQ"
+  },
+  "license": "공공누리 제4유형: 출처표시 + 상업적 이용금지 + 변경금지; third-party redistribution prohibited -> raw data stays local (data/raw is git-ignored)",
+  "operation": "getStockPriceInfo_V2",
+  "pagination": {
+   "numOfRows": "page size, default 10; values above 10,000 are capped to 10,000",
+   "pageNo": "1-based, default 1",
+   "totalCount": "returned in body"
+  },
+  "portal": "data.go.kr (공공데이터포털), dataset 15094808",
+  "provider_agency": "금융위원회 (Financial Services Commission)",
+  "response_fields": {
+   "basDt": "기준일자 YYYYMMDD",
+   "clpr": "종가 = last price formed until the end of the regular session",
+   "fltRt": "등락률",
+   "hipr": "고가",
+   "isinCd": "ISIN",
+   "itmsNm": "종목명",
+   "lopr": "저가",
+   "lstgStCnt": "상장주식수",
+   "mkp": "시가 = first price formed after the regular session opens",
+   "mrktCtg": "시장구분",
+   "mrktTotAmt": "시가총액 = clpr * lstgStCnt",
+   "srtnCd": "단축코드 (6 digits)",
+   "trPrc": "거래대금",
+   "trqu": "거래량 = cumulative traded quantity",
+   "vs": "대비 = change vs previous day"
+  },
+  "service_title": "금융위원회_주식시세정보",
+  "superseded_endpoint_note": "the legacy path /1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo answered code 30 (SERVICE_KEY_IS_NOT_REGISTERED_ERROR) for this key; the documented V2 service authenticated (resultCode 00)",
+  "unknown": [
+   "whether KRX adjusts historical rows retroactively after a corporate action (the guide is silent)",
+   "why the service starts at 2020-01-02 (guide lists service start 2021-11-16; backfill range is not documented)"
+  ],
+  "update_policy": "daily load; data published after 13:00 of the next business day (not real time)"
+ },
+ "identity": {
+  "adjustment": {
+   "assurance": "UNADJUSTED_EVIDENCE_SUPPORTED",
+   "declared": {
+    "basis": "guide field definitions: clpr = last price formed until the end of the regular session, mkp = first price formed after the regular session opens, trqu = cumulative traded quantity (as-traded values). The guide contains no adjustment / split / rights statement.",
+    "document": {
+     "retrieved_as": "raw artifact 005930-docs/guide.docx",
+     "sha256": "0ac42d46b5292ccf802770fe8c849bf1f8d43ca45ff1bfb1ba16fd34ba1246e4",
+     "title": "금융위원회_주식시세정보_활용자가이드.docx",
+     "url": "https://www.data.go.kr/data/15094808/openapi.do"
+    },
+    "explicit_adjustment_statement": false,
+    "kind": "official_field_definitions",
+    "state": "UNADJUSTED"
+   },
+   "dividend": {
+    "detail": "no dividend-adjusted counterpart observed",
+    "status": "UNKNOWN"
+   },
+   "final": "UNADJUSTED",
+   "final_reason": "official field definitions describe as-traded values (the guide contains NO explicit adjustment statement); official base-price (vs) consistency: 1472 rows checked, 0 mismatches",
+   "observed_state": "UNKNOWN",
+   "provider_explicit_statement": "UNAVAILABLE"
+  },
+  "adjustment_semantics": "UNADJUSTED",
+  "calendar": {
+   "code": "XKRX",
+   "first": "2017-01-01",
+   "generated_utc": "2026-10-06T02:15:16+00:00",
+   "last": "2026-12-31",
+   "sessions": 2452,
+   "sha256": "ba77198918902d4389f3666076358ac01d1808df01c0356fdc3304bb3b8fcb7b",
+   "source": "exchange_calendars==4.13.2",
+   "version": "4.13.2"
+  },
+  "data_version": "KR-005930-1d-data-go-kr-92e7ddb723e8-83c757",
+  "date_range": {
+   "first": "2020-01-02",
+   "last": "2025-12-30",
+   "requested": [
+    "2020-01-02",
+    "2025-12-31"
+   ]
+  },
+  "exchange_timezone": "Asia/Seoul",
+  "market": "KR",
+  "normalized_sha256": "92e7ddb723e804373cadb66e3645ad386ca9da81a32548a76345a112838bd7ae",
+  "provider": "data.go.kr",
+  "raw": [
+   {
+    "name": "005930-getStockPriceInfo_V2-20180101-20260101-p001.json",
+    "sha256": "f66277e130b87c467084ffac73ef3f5cad789e545624da94b4eebe1a822d98bc",
+    "size_bytes": 288257
+   },
+   {
+    "name": "005930-getStockPriceInfo_V2-20180101-20260101-p002.json",
+    "sha256": "668d1f97649f993d91a6dc84edf71acc71731820fb922a0a8a35a8932832495c",
+    "size_bytes": 136379
+   }
+  ],
+  "raw_set_sha256": "83c7575a41599f625b5fea6adfbaa4c0b5d341e2f1def1dd109a50be4b8ffb93",
+  "rows": 1473,
+  "schema": 1,
+  "spec": {
+   "calendar_code": "XKRX",
+   "declared_adjustment": {
+    "basis": "guide field definitions: clpr = last price formed until the end of the regular session, mkp = first price formed after the regular session opens, trqu = cumulative traded quantity (as-traded values). The guide contains no adjustment / split / rights statement.",
+    "document": {
+     "retrieved_as": "raw artifact 005930-docs/guide.docx",
+     "sha256": "0ac42d46b5292ccf802770fe8c849bf1f8d43ca45ff1bfb1ba16fd34ba1246e4",
+     "title": "금융위원회_주식시세정보_활용자가이드.docx",
+     "url": "https://www.data.go.kr/data/15094808/openapi.do"
+    },
+    "explicit_adjustment_statement": false,
+    "kind": "official_field_definitions",
+    "state": "UNADJUSTED"
+   },
+   "exchange_timezone": "Asia/Seoul",
+   "expected_reported_symbols": [],
+   "expected_utc_times": [],
+   "key": "kr-official",
+   "market": "KR",
+   "paging": "descending_list",
+   "parser": "datagokr",
+   "parser_kwargs": {},
+   "provider": "data.go.kr",
+   "provider_symbol": "005930",
+   "raw_files": [
+    "data/raw/data.go.kr/KR/005930/005930-getStockPriceInfo_V2-20180101-20260101-p001.json",
+    "data/raw/data.go.kr/KR/005930/005930-getStockPriceInfo_V2-20180101-20260101-p002.json"
+   ],
+   "requested_start": "2018-01-01",
+   "symbol": "005930",
+   "timezone_label": "+09:00",
+   "window_end": "2025-12-31",
+   "window_start": "2020-01-02"
+  },
+  "symbol": "005930",
+  "synthetic": false,
+  "timeframe": "1d",
+  "timezone": "+09:00",
+  "transformation_manifest_sha256": "105e67ec9e95de7046ec06650e56dc16b467869b60d15201a4b765757d92d9e9",
+  "validation_failed_checks": [],
+  "validation_status": "PASS",
+  "validation_unknown_checks": []
+ },
+ "summary": {
+  "adjustment_semantics": "UNADJUSTED",
+  "data_version": "KR-005930-1d-data-go-kr-92e7ddb723e8-83c757",
+  "failed_checks": [],
+  "first_date": "2020-01-02",
+  "last_date": "2025-12-30",
+  "normalized_sha256": "92e7ddb723e804373cadb66e3645ad386ca9da81a32548a76345a112838bd7ae",
+  "raw_set_sha256": "83c7575a41599f625b5fea6adfbaa4c0b5d341e2f1def1dd109a50be4b8ffb93",
+  "rows": 1473,
+  "status": "PASS",
+  "unknown_checks": [],
+  "warnings": [
+   "V18"
+  ]
+ }
+}

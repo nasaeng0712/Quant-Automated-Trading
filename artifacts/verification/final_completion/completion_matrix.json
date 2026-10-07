@@ -1,0 +1,55 @@
+{
+  "id": "QAT-V1-FINAL-COMPLETION-MATRIX",
+  "definition": "QAT_V1_COMPLETE = software / Paper / research-infrastructure completion ONLY. It is not Live readiness, not profitability, not alpha, not a statistical claim.",
+  "separated_statuses": {
+    "software_paper_research_infrastructure": "COMPLETE (every implementable gap handled and tested; see rows below)",
+    "live_trading": "BLOCKED (by design; Live readiness evaluator is structurally always BLOCKED; no UI/config path)",
+    "real_broker_adapter": "NOT_CONFIGURED / BLOCKED (external: broker choice, credentials, approved Live design)",
+    "profitability": "UNKNOWN",
+    "alpha": "NOT PROVEN",
+    "protocol_v2": "CLOSED / NOT_HOLDOUT_ELIGIBLE (development result only; holdout approval path disabled)",
+    "holdout_2026": "UNTOUCHED (values never read; approval marker never created)",
+    "daily_lockbox": "UNTOUCHED (results/lockbox_registry.json does not exist; evaluate_lockbox never called)",
+    "paper_graduation": "NOT_READY (evaluator implemented; Protocol v2 NOT_HOLDOUT_ELIGIBLE honestly applied; criteria are provisional engineering numbers)"
+  },
+  "matrix": [
+    {"requirement": "Gap inventory stored in final evidence", "status": "COMPLETE", "evidence": "gap_inventory.json (21 implementable items + 6 external + 2 unknown)"},
+    {"requirement": "Stale snapshot policy", "status": "COMPLETE", "evidence": "ops/snapshot.py, risk/gate.py, tests/test_ops_core.py, tests/test_brokerage.py"},
+    {"requirement": "Persistent audit log (append, deterministic, restart-readable, malformed/truncated detection, idempotency, read-only UI/API, hash chain, no secrets, no new DB)", "status": "COMPLETE", "evidence": "ops/audit_store.py, /api/audit, tests"},
+    {"requirement": "Strategy Health (operational only, no-trade != failure, never changes a strategy)", "status": "COMPLETE", "evidence": "ops/strategy_health.py, tests"},
+    {"requirement": "R-07 / R-09 / MI-05 / MI-06", "status": "COMPLETE", "evidence": "ops/market_rules.py, risk/gate.py, integrity/engine.py, tests"},
+    {"requirement": "R-08 abnormal spread", "status": "COMPLETE (rule) / UNKNOWN (data)", "evidence": "implemented; OHLCV has no quotes -> UNKNOWN while configured; external data dependency recorded"},
+    {"requirement": "Emergency flatten (explicit operator, exposure-reducing only, no flip, server-authoritative, idempotent, auditable, RECOVERY_REQUIRED when untrusted, Kill Switch != auto liquidation)", "status": "COMPLETE", "evidence": "ops/recovery.py, core/orchestrator.py::submit_recovery_order, core/recovery.py, tests"},
+    {"requirement": "Recovery state machine / restart assessment / no silent reset", "status": "COMPLETE", "evidence": "ops/recovery.py, ui/service.py, tests"},
+    {"requirement": "Broker adapter boundary (interface + fake/contract adapter, no SDK)", "status": "COMPLETE", "evidence": "brokerage/*, tests/test_brokerage.py"},
+    {"requirement": "Broker failure semantics (UNKNOWN never terminal, idempotent retries, duplicate/inconsistent fills, stale snapshot, reconnect)", "status": "COMPLETE", "evidence": "brokerage/boundary.py, tests"},
+    {"requirement": "Paper graduation evaluator (GRADUATED/NOT_READY/BLOCKED/UNKNOWN; honest Protocol v2)", "status": "COMPLETE (evaluator) / NOT_READY (result)", "evidence": "ops/graduation.py, tests"},
+    {"requirement": "Live readiness evaluator; Live BLOCKED; no UI path", "status": "COMPLETE", "evidence": "ops/graduation.py, tests incl. test_no_http_route_can_enable_live"},
+    {"requirement": "Operational health summary (12 components, 5 statuses)", "status": "COMPLETE", "evidence": "ops/health.py, /api/operations, tests"},
+    {"requirement": "UI finalization (Operations / Audit / Recovery; critical first; not colour-only; 375px + desktop)", "status": "COMPLETE", "evidence": "ui_smoke.json"},
+    {"requirement": "Startup self-check (fatal -> startup BLOCK)", "status": "COMPLETE", "evidence": "ops/startup.py, tests"},
+    {"requirement": "Config validation (ops.yaml; settings.yaml unchanged; production fail-closed)", "status": "COMPLETE", "evidence": "ops/config.py, tests"},
+    {"requirement": "State/results storage audit (atomic write, corrupt detection, multi-process documented as unsupported)", "status": "COMPLETE", "evidence": "ops/atomic.py, research/store.py, ui/service.py, runbook 1"},
+    {"requirement": "E2E Paper scenarios", "status": "COMPLETE", "evidence": "e2e_scenarios.json"},
+    {"requirement": "Failure injection", "status": "COMPLETE", "evidence": "e2e_scenarios.json"},
+    {"requirement": "Security pass on new routes", "status": "COMPLETE", "evidence": "e2e_scenarios.json (security)"},
+    {"requirement": "Research freeze (no new alpha research; Protocol v2 CLOSED; research UI shows historical development result only)", "status": "COMPLETE", "evidence": "no research code path was added or run; closure verification passes in the startup check"},
+    {"requirement": "Existing tests not deleted/weakened", "status": "COMPLETE", "evidence": "500 existing tests retained; 3 assertions changed as a documented spec change (Strategy Health / R-07..R-09 / MI-05 / MI-06 are now implemented) - see verification history 23"},
+    {"requirement": "Mutation: keep 159, add only for new critical safety branches", "status": "COMPLETE", "evidence": "mutation_full.txt"},
+    {"requirement": "Final regression once (3.11 + 3.13, compileall, pyflakes, secret scan, mutation, E2E, restart/recovery, UI smoke)", "status": "COMPLETE", "evidence": "regression.json"},
+    {"requirement": "Final docs (README, design/operations, verification history, runbook, completion matrix)", "status": "COMPLETE", "evidence": "README.md, docs/*.md"}
+  ],
+  "external_or_blocked": [
+    "Real Broker/Exchange adapter, SDK, credentials (EXT-01)",
+    "Live trading and Live cancel/fill-race reconciliation (EXT-02)",
+    "Quote/order-book data, real-time Market Recorder, realistic Paper Broker L2/L3 (EXT-03) -> R-08 UNKNOWN while configured",
+    "Shadow system (EXT-04)",
+    "Exchange holiday calendar (EXT-06)"
+  ],
+  "unknown": [
+    "Owner decisions: first Broker, live Data Vendor, real Risk limits, Capital allocation, Universe, ML, Initial Live capital, Paper graduation criteria",
+    "Real sustainable Net Alpha / profitability / statistical power",
+    "Calibrated costs (all cost / tax / FX numbers are PLACEHOLDER)"
+  ],
+  "final_status": "QAT_V1_COMPLETE"
+}

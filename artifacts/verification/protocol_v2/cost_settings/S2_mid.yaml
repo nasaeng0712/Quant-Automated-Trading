@@ -1,0 +1,52 @@
+# Protocol v2 cost scenario (SCENARIO ASSUMPTION; commission = current Binance taker 0.100% taken as ASSUMED_FOR_RESEARCH). Derived from config/settings.yaml.
+base_currency: KRW
+costs:
+  CRYPTO:
+    commission_rate: 0.001
+    fx_cost_bps: 0.0
+    half_spread_bps: 2.5
+    slippage_bps: 2.5
+    tax_rate_sell: 0.0
+  KR:
+    commission_rate: 0.00015
+    fx_cost_bps: 0
+    half_spread_bps: 5
+    slippage_bps: 2
+    tax_rate_sell: 0.0018
+  US:
+    commission_rate: 0.0005
+    fx_cost_bps: 25
+    half_spread_bps: 3
+    slippage_bps: 2
+    tax_rate_sell: 0.0
+execution:
+  deterministic_paper_mode: true
+  live_enabled: false
+fx:
+  rates:
+  - from: USD
+    rate: 1350.0
+    to: KRW
+  - from: USDT
+    rate: 1350.0
+    to: KRW
+markets:
+  CRYPTO: true
+  KR: true
+  US: true
+net_alpha:
+  min_net_alpha_bps: 0
+paper_universe:
+- SYNKR1
+- SYNUS1
+- SYNBTC/KRW
+project:
+  mode: paper
+  name: QAT
+risk:
+  daily_loss_limit: null
+  max_drawdown: null
+  max_market_exposure: null
+  max_order_notional: null
+  max_symbol_exposure: null
+  max_total_exposure: null

@@ -1,0 +1,340 @@
+{
+ "checks": [
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I01",
+   "name": "numeric_finite",
+   "status": "PASS",
+   "summary": "0 rows with NaN/inf/missing/invalid numbers"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I02",
+   "name": "positive_prices",
+   "status": "PASS",
+   "summary": "0 rows with price <= 0"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I03",
+   "name": "ohlc_invariants",
+   "status": "PASS",
+   "summary": "0 rows violate low<=open/close<=high"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I04",
+   "name": "negative_volume",
+   "status": "PASS",
+   "summary": "0 negative; 0 zero-volume bars"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I05",
+   "name": "duplicate_timestamps",
+   "status": "PASS",
+   "summary": "0 duplicate open times"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I06",
+   "name": "timestamp_order",
+   "status": "PASS",
+   "summary": "0 out-of-order bars"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I07",
+   "name": "overlap",
+   "status": "PASS",
+   "summary": "0 bars start less than 4h after the previous bar"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I08",
+   "name": "alignment",
+   "status": "PASS",
+   "summary": "0 open times not on a 4h UTC boundary"
+  },
+  {
+   "count": 18,
+   "examples": [
+    "2018-01-04T00:00:00+00:00",
+    "2018-06-26T00:00:00+00:00",
+    "2018-07-04T00:00:00+00:00",
+    "2018-10-19T04:00:00+00:00",
+    "2018-11-14T00:00:00+00:00"
+   ],
+   "id": "I09",
+   "name": "interval",
+   "status": "FAIL",
+   "summary": "18 bars whose close-open is not 4h-1ms (+-1ms)"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I10",
+   "name": "timestamp_unit",
+   "status": "PASS",
+   "summary": "units seen ['ms', 'us']; 0 files contradict the expected unit (ms before 2025-01-01, us from it); each row is converted by its own unit",
+   "units": [
+    "ms",
+    "us"
+   ]
+  },
+  {
+   "count": 16,
+   "examples": [
+    "2018-02-08T04:00",
+    "2018-02-08T08:00",
+    "2018-02-08T12:00",
+    "2018-02-08T16:00",
+    "2018-02-08T20:00"
+   ],
+   "id": "I11",
+   "missing_bars": [
+    "2018-02-08T04:00",
+    "2018-02-08T08:00",
+    "2018-02-08T12:00",
+    "2018-02-08T16:00",
+    "2018-02-08T20:00",
+    "2018-02-09T00:00",
+    "2018-02-09T04:00",
+    "2018-06-26T04:00",
+    "2018-06-26T08:00",
+    "2018-07-04T04:00",
+    "2018-11-14T04:00",
+    "2019-03-12T04:00",
+    "2019-05-15T04:00",
+    "2019-05-15T08:00",
+    "2019-08-15T04:00",
+    "2020-02-19T12:00"
+   ],
+   "name": "continuity_24x7",
+   "status": "FAIL",
+   "summary": "16 expected 4h bars missing (no calendar; 24/7)"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I12",
+   "name": "coverage",
+   "status": "PASS",
+   "summary": "first 2018-01-01T00:00, last 2025-12-31T20:00"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I13",
+   "name": "symbol_consistency",
+   "status": "PASS",
+   "summary": "0 artifacts / 0 archive members name a different symbol or interval"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I14",
+   "name": "source_metadata",
+   "status": "PASS",
+   "summary": "0 artifacts contradict provider/interval"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I15",
+   "name": "synthetic_false",
+   "status": "PASS",
+   "summary": "0 artifacts not declared synthetic=false"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I16",
+   "name": "official_checksum",
+   "status": "PASS",
+   "summary": "0 archives whose SHA-256 differs from the published checksum"
+  },
+  {
+   "count": 0,
+   "examples": [],
+   "id": "I17",
+   "name": "holdout_boundary",
+   "status": "PASS",
+   "summary": "0 bars on/after 2026-01-01 (untouched holdout)"
+  }
+ ],
+ "completeness": {
+  "all_shorter_than_4h": true,
+  "expected_bars": 17532,
+  "interpretation": "enumerated, never filled; consistent with trading interruptions but NOT explained by an official source retrieved here (UNKNOWN cause)",
+  "missing_bars": 16,
+  "missing_episodes": [
+   {
+    "bars": 7,
+    "first_missing": "2018-02-08T04:00"
+   },
+   {
+    "bars": 2,
+    "first_missing": "2018-06-26T04:00"
+   },
+   {
+    "bars": 1,
+    "first_missing": "2018-07-04T04:00"
+   },
+   {
+    "bars": 1,
+    "first_missing": "2018-11-14T04:00"
+   },
+   {
+    "bars": 1,
+    "first_missing": "2019-03-12T04:00"
+   },
+   {
+    "bars": 2,
+    "first_missing": "2019-05-15T04:00"
+   },
+   {
+    "bars": 1,
+    "first_missing": "2019-08-15T04:00"
+   },
+   {
+    "bars": 1,
+    "first_missing": "2020-02-19T12:00"
+   }
+  ],
+  "missing_share": 0.0009126169290440338,
+  "rows": 17516,
+  "wrong_length_bars": 18,
+  "wrong_length_examples": [
+   {
+    "close_minus_open_ms": 10814838,
+    "open": "2018-01-04T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2018-06-26T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 1345551,
+    "open": "2018-07-04T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2018-10-19T04:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2018-11-14T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2019-03-12T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 10799999,
+    "open": "2019-05-15T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2019-08-15T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2019-11-13T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 12932286,
+    "open": "2020-02-19T08:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2020-04-25T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2020-06-28T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 6440521,
+    "open": "2020-12-21T12:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 13254773,
+    "open": "2021-02-11T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199999,
+    "open": "2021-04-20T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 58146,
+    "open": "2021-04-25T04:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 7199000,
+    "open": "2021-08-13T00:00",
+    "unit": "ms"
+   },
+   {
+    "close_minus_open_ms": 10799999,
+    "open": "2021-09-29T04:00",
+    "unit": "ms"
+   }
+  ]
+ },
+ "failed_checks": [
+  "I09",
+  "I11"
+ ],
+ "integrity_checks": [
+  "I01",
+  "I02",
+  "I03",
+  "I04",
+  "I05",
+  "I06",
+  "I07",
+  "I08",
+  "I10",
+  "I12",
+  "I13",
+  "I14",
+  "I15",
+  "I16",
+  "I17"
+ ],
+ "integrity_checks_status": "PASS",
+ "performance_data_accessed": "NO (validation reads bar values only for integrity; no return or strategy result is computed)",
+ "strict_status_policy_P0": "FAIL",
+ "timestamp_units": {
+  "check": "units seen ['ms', 'us']; 0 files contradict the expected unit (ms before 2025-01-01, us from it); each row is converted by its own unit",
+  "rows_by_unit": {
+   "ms": 15326,
+   "us": 2190
+  }
+ }
+}

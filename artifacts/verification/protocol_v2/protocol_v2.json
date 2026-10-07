@@ -1,0 +1,132 @@
+{
+ "benchmark": "aligned passive: entry open(start+1), exit close of the last window bar, cost-free, fully invested (qat.research.trial_series)",
+ "candidate_id": "wf-protocol-2-candidate-1",
+ "change_policy": "any change to this specification is a NEW protocol version; silent modification is detected by the hash",
+ "components": {
+  "cost_contract.json": "501b95124a90cb42e3169d1d8710c44a5ece64fbfd955743558e7f5dc2f848b8",
+  "dataset_scope.json": "b2c672c3570f70c7a282e7ab190762e2a2ddabd0779eb0d02532cde4b43573ca",
+  "design_registry.json": "495546167b01c1059d1b77f4f5204e0670f3d96ecccf2397b0f801f0479e288d",
+  "holdout_boundary.json": "4e6a9a33b222ca6955444af4f4f118473f0fc4deb7ec8846d6d0d685c28f36f4"
+ },
+ "forbidden_in_this_protocol_batch": [
+  "strategy profitability runs",
+  "parameter ranking results",
+  "OOS returns",
+  "Sharpe",
+  "candidate status",
+  "Walk-Forward on real 4h data",
+  "reading 2026 values"
+ ],
+ "holdout": {
+  "development_end": "2025-12-31",
+  "end": "2026-12-31",
+  "start": "2026-01-01",
+  "values_read_in_freeze": "NO"
+ },
+ "multiple_testing": {
+  "deflated_sharpe_ratio": "not selected",
+  "probability_of_backtest_overfitting": "not selected",
+  "role_of_holdout": "the untouched 2026 temporal holdout is the independent evaluation of the whole selection procedure",
+  "white_reality_check": "CANDIDATE_METHOD - APPLICABILITY UNVERIFIED"
+ },
+ "parameter_semantics": {
+  "decision": "Option A: the existing grids are used UNCHANGED as bar counts; on 4h bars they denote a NEW INTRADAY HORIZON (e.g. slow=50 is 50 four-hour bars = 200h)",
+  "grid_expansion_after_results": "forbidden",
+  "grids": {
+   "breakout": {
+    "entry_lookback": [
+     20,
+     40
+    ],
+    "exit_lookback": [
+     10,
+     20
+    ]
+   },
+   "ma_trend": {
+    "fast": [
+     5,
+     10,
+     20
+    ],
+    "slow": [
+     30,
+     50
+    ]
+   },
+   "mean_reversion": {
+    "entry_z": [
+     1.5,
+     2.0
+    ],
+    "window": [
+     20,
+     40
+    ]
+   }
+  },
+  "new_strategies": "forbidden",
+  "reason": "no strategy parameter carries a calendar meaning in the repository (all are bar counts); rescaling to daily-calendar horizons would add a new search space",
+  "rescaling_to_daily_calendar_horizons": "NOT used (Option B was not tried)",
+  "strategy_versions": {
+   "breakout": "0.1.0",
+   "ma_trend": "0.1.0",
+   "mean_reversion": "0.1.0"
+  }
+ },
+ "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+ "scenarios": {
+  "diagnostic_only": [
+   "S0_commission_only"
+  ],
+  "selection": [
+   "S1_low",
+   "S2_mid",
+   "S3_high"
+  ]
+ },
+ "scope": "BTCUSDT / Binance Spot / 4h only",
+ "selection_procedure": [
+  "dataset: continuous research view (ADMITTED_CONTINUOUS_SUBPERIOD), development end 2025-12-31",
+  "folds: rolling train=4380 OOS=1095 step=1095 bars, no OOS overlap",
+  "parameter configurations: every combination of the existing grid, in grid order",
+  "train evaluation: each configuration under S1, S2, S3 (S0 diagnostic only)",
+  "ranking: worst train score across S1/S2/S3; ties -> earlier grid order",
+  "selected parameters per fold (never changed after OOS is seen)",
+  "OOS evaluation: selected parameters under S1, S2, S3 (S0 diagnostic only)",
+  "per-scenario status: UNKNOWN > INSUFFICIENT_ACTIVITY > FAIL > UNSTABLE > PASS (frozen thresholds)",
+  "candidate status: least favourable across S1/S2/S3; holdout eligibility needs PASS and beating the aligned passive benchmark in every scenario"
+ ],
+ "status_order_least_to_most_favourable": [
+  "UNKNOWN",
+  "INSUFFICIENT_ACTIVITY",
+  "FAIL",
+  "UNSTABLE",
+  "PASS"
+ ],
+ "thresholds": {
+  "classification": "INTERNAL_PRE_REGISTERED_HEURISTIC",
+  "min_active_fold_fraction": 0.5,
+  "min_folds": 3,
+  "min_total_oos_closed_trades": 30,
+  "note": "no literature basis is claimed; unchanged from Batch #3B and not lowered after seeing its results",
+  "positive_fold_fraction_must_exceed": 0.5
+ },
+ "trial_series": {
+  "fields": [
+   "trial_id",
+   "strategy",
+   "parameters",
+   "cost_scenario",
+   "fold",
+   "stage",
+   "timestamps",
+   "returns",
+   "benchmark_returns",
+   "dataset identity"
+  ],
+  "identical_rerun": "does not increase the statistical trial count (same trial_id)",
+  "required_for": "every evaluated configuration (all train candidates in every scenario, failed ones, every OOS evaluation); winner-only storage forbidden"
+ },
+ "version": "wf-protocol-2"
+}

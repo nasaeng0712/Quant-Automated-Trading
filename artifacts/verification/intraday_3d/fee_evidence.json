@@ -1,0 +1,164 @@
+{
+ "contract": {
+  "bid_ask_spread_historical": {
+   "scope": "historical",
+   "sources": [],
+   "status": "HISTORICAL_UNKNOWN",
+   "value": null,
+   "why": "no historical quote data was acquired; klines/aggTrades/trades do not contain bid or ask (FACT: unavailable)"
+  },
+  "commission_historical_2018_2025": {
+   "research_assumption": "ASSUMED_FOR_RESEARCH: the current 0.100% is applied to every historical bar and labelled as an assumption, never as a verified historical fee",
+   "scope": "historical",
+   "sources": [],
+   "status": "HISTORICAL_UNKNOWN",
+   "value": null,
+   "why": "no official fee history was retrieved; the current 0.100% does not prove what was charged in 2018-2025"
+  },
+  "commission_maker_current": {
+   "scope": "current",
+   "sources": [
+    {
+     "fact": "Regular User spot maker 0.100% / taker 0.100%; 0.075% / 0.075% when paying with BNB (not applied here); the page shows no fee history or effective dates",
+     "kind": "primary",
+     "retrieved": "2026-10-06",
+     "url": "https://www.binance.com/en/fee/schedule"
+    }
+   ],
+   "status": "VERIFIED_CURRENT",
+   "value": 0.001,
+   "why": "Binance fee schedule, Regular User"
+  },
+  "commission_taker_current": {
+   "scope": "current",
+   "sources": [
+    {
+     "fact": "Regular User spot maker 0.100% / taker 0.100%; 0.075% / 0.075% when paying with BNB (not applied here); the page shows no fee history or effective dates",
+     "kind": "primary",
+     "retrieved": "2026-10-06",
+     "url": "https://www.binance.com/en/fee/schedule"
+    }
+   ],
+   "status": "VERIFIED_CURRENT",
+   "value": 0.001,
+   "why": "Binance fee schedule, Regular User"
+  },
+  "fee_tier": "Regular User, no BNB discount",
+  "fx_cost": {
+   "scope": "structural",
+   "sources": [],
+   "status": "PLACEHOLDER",
+   "value": 0.0,
+   "why": "v2 is evaluated in USDT (single currency): no conversion is modelled; this is a structural zero, not evidence"
+  },
+  "interval": "4h",
+  "slippage_market_impact_historical": {
+   "scope": "historical",
+   "sources": [],
+   "status": "HISTORICAL_UNKNOWN",
+   "value": null,
+   "why": "cannot be observed from klines or trade prints (FACT: unavailable)"
+  },
+  "tax_on_sale": {
+   "scope": "structural",
+   "sources": [],
+   "status": "PLACEHOLDER",
+   "value": 0.0,
+   "why": "not a venue trading cost; jurisdiction dependent; not modelled"
+  },
+  "venue": "Binance Spot BTCUSDT"
+ },
+ "frozen_3c_untouched": true,
+ "manifest_block": {
+  "current_verified_fee": {
+   "maker": 0.001,
+   "retrieved": "2026-10-06",
+   "status": "VERIFIED_CURRENT",
+   "taker": 0.001,
+   "tier": "Regular User, no BNB discount",
+   "venue": "Binance Spot BTCUSDT"
+  },
+  "historical_fee_assumption": {
+   "research_assumption": "ASSUMED_FOR_RESEARCH: the current 0.100% is applied to every historical bar and labelled as an assumption, never as a verified historical fee",
+   "scope": "historical",
+   "sources": [],
+   "status": "HISTORICAL_UNKNOWN",
+   "value": null,
+   "why": "no official fee history was retrieved; the current 0.100% does not prove what was charged in 2018-2025"
+  },
+  "scenarios": "see scenarios (SCENARIO ASSUMPTION)",
+  "slippage": {
+   "scope": "historical",
+   "sources": [],
+   "status": "HISTORICAL_UNKNOWN",
+   "value": null,
+   "why": "cannot be observed from klines or trade prints (FACT: unavailable)"
+  },
+  "spread": {
+   "scope": "historical",
+   "sources": [],
+   "status": "HISTORICAL_UNKNOWN",
+   "value": null,
+   "why": "no historical quote data was acquired; klines/aggTrades/trades do not contain bid or ask (FACT: unavailable)"
+  }
+ },
+ "not_applied": "no scenario or fee was used to run any strategy in Batch #3D",
+ "scenarios": {
+  "S0_commission_only": {
+   "commission_rate": 0.001,
+   "fx_cost_bps": 0.0,
+   "half_spread_bps": 0.0,
+   "label": "SCENARIO ASSUMPTION - not an observed cost; round numbers fixed before any Protocol v2 result, not derived from data or performance",
+   "result_label": "scenario result, NOT actual-cost performance",
+   "slippage_bps": 0.0,
+   "status": {
+    "commission_rate": "VERIFIED_CURRENT",
+    "half_spread_bps": "SCENARIO",
+    "slippage_bps": "SCENARIO"
+   },
+   "tax_rate_sell": 0.0
+  },
+  "S1_low": {
+   "commission_rate": 0.001,
+   "fx_cost_bps": 0.0,
+   "half_spread_bps": 1.0,
+   "label": "SCENARIO ASSUMPTION - not an observed cost; round numbers fixed before any Protocol v2 result, not derived from data or performance",
+   "result_label": "scenario result, NOT actual-cost performance",
+   "slippage_bps": 1.0,
+   "status": {
+    "commission_rate": "VERIFIED_CURRENT",
+    "half_spread_bps": "SCENARIO",
+    "slippage_bps": "SCENARIO"
+   },
+   "tax_rate_sell": 0.0
+  },
+  "S2_mid": {
+   "commission_rate": 0.001,
+   "fx_cost_bps": 0.0,
+   "half_spread_bps": 2.5,
+   "label": "SCENARIO ASSUMPTION - not an observed cost; round numbers fixed before any Protocol v2 result, not derived from data or performance",
+   "result_label": "scenario result, NOT actual-cost performance",
+   "slippage_bps": 2.5,
+   "status": {
+    "commission_rate": "VERIFIED_CURRENT",
+    "half_spread_bps": "SCENARIO",
+    "slippage_bps": "SCENARIO"
+   },
+   "tax_rate_sell": 0.0
+  },
+  "S3_high": {
+   "commission_rate": 0.001,
+   "fx_cost_bps": 0.0,
+   "half_spread_bps": 5.0,
+   "label": "SCENARIO ASSUMPTION - not an observed cost; round numbers fixed before any Protocol v2 result, not derived from data or performance",
+   "result_label": "scenario result, NOT actual-cost performance",
+   "slippage_bps": 5.0,
+   "status": {
+    "commission_rate": "VERIFIED_CURRENT",
+    "half_spread_bps": "SCENARIO",
+    "slippage_bps": "SCENARIO"
+   },
+   "tax_rate_sell": 0.0
+  }
+ }
+}

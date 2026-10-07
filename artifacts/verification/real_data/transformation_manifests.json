@@ -1,0 +1,464 @@
+{
+ "crypto-binance": {
+  "dataset": "crypto-binance",
+  "manifest_sha256": "e1828282d2dd28fa352fb2862cdfff7d7627e551faa59cc3f236b618680255f8",
+  "market": "CRYPTO",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "binance-vision",
+  "provider_symbol": "BTCUSDT",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 96,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "UTC calendar date of kline open_time",
+    "field_map": "kline columns [open_time, open, high, low, close, volume(base asset), ...] -> timestamp/open/high/low/close/volume",
+    "rows_parsed": 2922,
+    "step": "parse_binance"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 0,
+     "invalid": 0,
+     "missing": 0,
+     "number": 14610
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 2922,
+    "rows_outside_window_not_carried": 0,
+    "step": "window_selection",
+    "window": [
+     "2018-01-01",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 0,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 188555,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 2922,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "BTC/USDT"
+ },
+ "crypto-coinbase": {
+  "dataset": "crypto-coinbase",
+  "manifest_sha256": "ff56fbb4307b7c2377999f01d13ea7a9b0be216243d1d8906905dafaf4365e55",
+  "market": "CRYPTO",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "coinbase-exchange",
+  "provider_symbol": "BTCUSDT",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 10,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "UTC date of candle bucket start (86400s granularity)",
+    "field_map": "candle [time, low, high, open, close, volume] -> open/high/low/close/volume",
+    "rows_parsed": 1703,
+    "step": "parse_coinbase"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 0,
+     "invalid": 0,
+     "missing": 0,
+     "number": 8515
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 1703,
+    "rows_outside_window_not_carried": 0,
+    "step": "window_selection",
+    "window": [
+     "2021-05-04",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 6,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 117015,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 1703,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "BTC/USDT"
+ },
+ "kr-naver": {
+  "dataset": "kr-naver",
+  "manifest_sha256": "77e64cf888336d488399a1862117e1597c941ada7e6805734f821f7b34b07e5e",
+  "market": "KR",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "naver-fchart",
+  "provider_symbol": "005930",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 1,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "YYYYMMDD KST session date",
+    "field_map": "item data 'YYYYMMDD|open|high|low|close|volume'",
+    "rows_parsed": 3000,
+    "step": "parse_naver"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 0,
+     "invalid": 0,
+     "missing": 0,
+     "number": 15000
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 1963,
+    "rows_outside_window_not_carried": 1037,
+    "step": "window_selection",
+    "window": [
+     "2018-01-01",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 0,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 103689,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 1963,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "005930"
+ },
+ "kr-official": {
+  "dataset": "kr-official",
+  "manifest_sha256": "105e67ec9e95de7046ec06650e56dc16b467869b60d15201a4b765757d92d9e9",
+  "market": "KR",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "data.go.kr",
+  "provider_symbol": "005930",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 2,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "basDt YYYYMMDD KST session date",
+    "field_map": "item.{basDt->date, mkp->open, hipr->high, lopr->low, clpr->close, trqu->volume}; vs/fltRt/trPrc/... kept as auxiliary evidence",
+    "rows_parsed": 1473,
+    "step": "parse_datagokr"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 0,
+     "invalid": 0,
+     "missing": 0,
+     "number": 7365
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 1473,
+    "rows_outside_window_not_carried": 0,
+    "step": "window_selection",
+    "window": [
+     "2020-01-02",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 1,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 78136,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 1473,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "005930"
+ },
+ "kr-yahoo": {
+  "dataset": "kr-yahoo",
+  "manifest_sha256": "d2b21f9ffcb52c6f3cc92af83f26fc389d08de1604949ec78c3c4070d9d268f5",
+  "market": "KR",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "yahoo-chart",
+  "provider_symbol": "005930",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 1,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "UTC date of session-open timestamp shifted by 32400s",
+    "field_map": "chart.result[0].timestamp + indicators.quote[0].{open,high,low,close,volume} (adjclose kept as auxiliary evidence only)",
+    "rows_parsed": 1961,
+    "step": "parse_yahoo"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 0,
+     "invalid": 0,
+     "missing": 5,
+     "number": 9800
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 1961,
+    "rows_outside_window_not_carried": 0,
+    "step": "window_selection",
+    "window": [
+     "2018-01-01",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 0,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 103578,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 1961,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "005930"
+ },
+ "us-nasdaq": {
+  "dataset": "us-nasdaq",
+  "manifest_sha256": "e42f0f5da3d100be29f88ff49e33a921abcfa9b1c96fc684ec24f3aca754df1b",
+  "market": "US",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "nasdaq-historical",
+  "provider_symbol": "AAPL",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 1,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "MM/DD/YYYY exchange session date",
+    "field_map": "tradesTable.rows[].{date,open,high,low,close,volume} (text values '$x', 'n,nnn')",
+    "rows_parsed": 2011,
+    "step": "parse_nasdaq"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 10055,
+     "invalid": 0,
+     "missing": 0,
+     "number": 0
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 2011,
+    "rows_outside_window_not_carried": 0,
+    "step": "window_selection",
+    "window": [
+     "2018-01-01",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 1,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 115653,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 2011,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "AAPL"
+ },
+ "us-yahoo": {
+  "dataset": "us-yahoo",
+  "manifest_sha256": "c6dd16718aff35a10038af24d16f56575fe06d7030ede27b1808e687a8f76529",
+  "market": "US",
+  "not_performed": [
+   "interpolation",
+   "forward/backward fill",
+   "row deletion for quality",
+   "duplicate removal",
+   "missing-row insertion",
+   "OHLC correction",
+   "zero-price correction",
+   "split/dividend adjustment"
+  ],
+  "provider": "yahoo-chart",
+  "provider_symbol": "AAPL",
+  "schema": 1,
+  "steps": [
+   {
+    "artifacts": 1,
+    "result": "all SHA-256 and sidecars verified",
+    "step": "verify_raw_hashes"
+   },
+   {
+    "date_rule": "UTC date of session-open timestamp shifted by 0s",
+    "field_map": "chart.result[0].timestamp + indicators.quote[0].{open,high,low,close,volume} (adjclose kept as auxiliary evidence only)",
+    "rows_parsed": 2011,
+    "step": "parse_yahoo"
+   },
+   {
+    "note": "'converted' = '$'/',' stripped from text; 'missing' written as empty; 'invalid' written as nan - NOT repaired",
+    "step": "numeric_conversion",
+    "values": {
+     "converted": 0,
+     "invalid": 0,
+     "missing": 0,
+     "number": 10055
+    }
+   },
+   {
+    "note": "selection of the requested range only; no quality-based removal",
+    "rows_out": 2011,
+    "rows_outside_window_not_carried": 0,
+    "step": "window_selection",
+    "window": [
+     "2018-01-01",
+     "2025-12-31"
+    ]
+   },
+   {
+    "artifacts_reversed": 0,
+    "rule": "an artifact whose rows are strictly descending is reversed; every other order is kept so validation can see it",
+    "step": "ordering"
+   },
+   {
+    "bytes": 200868,
+    "header": "timestamp,open,high,low,close,volume",
+    "line_endings": "LF",
+    "number_format": "integral -> integer text, else shortest round-trip repr; missing '', non-finite nan/inf",
+    "rows": 2011,
+    "step": "serialize_csv",
+    "timestamp_format": "YYYY-MM-DDT00:00:00 (session date; zone declared in metadata)"
+   }
+  ],
+  "symbol": "AAPL"
+ }
+}

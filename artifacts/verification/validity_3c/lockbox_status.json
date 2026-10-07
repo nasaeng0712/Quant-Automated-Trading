@@ -1,0 +1,6 @@
+{
+ "benchmark_audit_reads_only": "bars[:development_end] (asserted)",
+ "evaluate_lockbox_imported_by_this_module": false,
+ "lockbox_registry_exists": false,
+ "opened": false
+}

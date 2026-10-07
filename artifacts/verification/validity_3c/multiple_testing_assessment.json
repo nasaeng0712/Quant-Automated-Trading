@@ -1,0 +1,41 @@
+{
+ "chosen": {
+  "fact": "White (2000) proposes the Reality Check, which evaluates the predictive superiority of the best model found in a specification search / under data snooping against a benchmark; the assumptions needed to apply it to QAT were not sufficiently verified against the primary text",
+  "method": "White Reality Check (per market, explicit universe)",
+  "primary_text_verified_by_this_audit": false,
+  "status": "CANDIDATE_METHOD - APPLICABILITY UNVERIFIED (not implemented; corrected in Batch #3D from 'provisional choice')",
+  "why": "nonparametric (stationary bootstrap) and needs no estimate of an 'effective number of independent trials': the universe is the explicit, registered set of candidate procedures evaluated on one market's common OOS time axis. Prerequisites are unmet today (see below)."
+ },
+ "deflated_sharpe_ratio": {
+  "assumptions": [
+   "trials of one strategy class share a mean/variance of Sharpe",
+   "N counts independent trials (dependent trials need an effective-N argument)",
+   "returns are serially independent (non-normality via skew/kurtosis only)"
+  ],
+  "decision": "not applied; a possible secondary check for v2 if per-trial return series are stored",
+  "fits_current_structure": "no: the 9 candidates sit in 3 different return processes (markets); an effective N is not defined; one selected return series per fold-stitched candidate has fold-reset capital and long flat stretches",
+  "sample_activity_check": "FAILS today (activity); T of daily observations overstates information when trades are 0-22",
+  "source": "D. Bailey, M. Lopez de Prado, 'The Deflated Sharpe Ratio', J. Portfolio Management (2014)",
+  "source_check": "PDF retrieved and its text extracted locally. Confirmed in the text: DSR is a PSR whose rejection threshold reflects the expected maximum Sharpe ratio of N INDEPENDENT trials (Euler-Mascheroni constant, standard-normal quantiles); inputs are N, the variance of the trial Sharpe estimates, sample length T, skewness and kurtosis of the selected strategy; Sharpe is non-annualized; Appendix 3 treats non-independent trials. The equations themselves were not machine-readable, so the closed form was not re-checked."
+ },
+ "probability_of_backtest_overfitting": {
+  "decision": "not computable from saved results; v2 candidate only if all-configuration series are stored",
+  "fits_current_structure": "no: Walk-Forward stores only the chosen configuration's OOS series; PBO needs every configuration's full-period series (14 per market)",
+  "sample_activity_check": "cannot be evaluated from saved results; computing it needs new backtests of all configurations (not done in this batch)",
+  "source": "Bailey, Borwein, Lopez de Prado, Zhu, 'The Probability of Backtest Overfitting'",
+  "source_check": "PDF retrieved and text extracted. Confirmed: input is a T x N performance matrix of ALL N configurations on the same time axis, split into S sub-matrices; all C(S,S/2) train/test combinations (CSCV); logit of the out-of-sample relative rank of the in-sample best; PBO is the frequency of non-positive logits."
+ },
+ "v2_storage_requirement": "store, for every registered trial/candidate, the OOS (and for PBO the full-period) per-bar return series on a common time axis so a method can be applied later",
+ "white_reality_check": {
+  "assumptions_to_verify": [
+   "stationary, weakly dependent (mixing) performance differentials",
+   "benchmark fixed ex ante",
+   "all M models searched are included and evaluated on the same sample"
+  ],
+  "decision": "not applied to Batch #3B",
+  "fits_current_structure": "partly: the 3 strategy procedures of one market have OOS equity series on a common axis (M=3 per market); the inner parameter grid is selected per fold and has no OOS series of its own",
+  "sample_activity_check": "FAILS today: all 9 candidates are INSUFFICIENT_ACTIVITY (0-22 OOS trades; stitched series are mostly flat or fold-reset), stationarity across regimes is untested",
+  "source": "H. White, 'A Reality Check for Data Snooping', Econometrica 68(5), 1097-1126 (2000)",
+  "source_check": "PDF retrieved but not machine-readable in this environment; only the publisher abstract-level description was confirmed: tests the null that the best model found in a specification search has no predictive superiority over a benchmark, using the stationary bootstrap. Assumptions below are NOT verified against the text."
+ }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "QAT-V1-FINAL-E2E-AND-FAILURE-INJECTION",
+  "note": "Every scenario runs the real pipeline (Gateway -> gates -> settlement -> Paper broker) through the real QATService / HTTP server with an isolated temp state directory. Names refer to automated tests (re-run in the final regression).",
+  "paper_scenarios": [
+    {"scenario": "normal order flow + fill + durable audit + clean restart", "tests": ["tests/test_ops_service.py::test_e2e_normal_flow_rejection_and_restart_persistence"]},
+    {"scenario": "gate rejection (oversized order) recorded in the durable audit", "tests": ["tests/test_ops_service.py::test_e2e_normal_flow_rejection_and_restart_persistence"]},
+    {"scenario": "risk limit breach with the frozen exit hierarchy (increase blocked, reducing SELL allowed, Kill Switch beats everything)", "tests": ["tests/test_ops_service.py::test_e2e_risk_exit_hierarchy_holds_through_the_service", "tests/test_ops_core.py::test_kill_switch_still_blocks_everything_under_broker_connected"]},
+    {"scenario": "Kill Switch engaged: normal pipeline blocked, no automatic liquidation, latch persists across restart", "tests": ["tests/test_ops_service.py::test_emergency_flatten_end_to_end_reduces_to_zero_keeps_kill_switch_and_is_audited", "tests/test_ops_service.py::test_kill_switch_latch_persists_across_restart_and_new_sessions_run_latched"]},
+    {"scenario": "reconciliation mismatch -> flatten refused, RECOVERY_REQUIRED, nothing liquidated", "tests": ["tests/test_ops_service.py::test_flatten_refuses_on_reconciliation_mismatch"]},
+    {"scenario": "restart persistence (audit chain, recovery state, safety state, restart assessment)", "tests": ["tests/test_ops_service.py::test_service_audit_is_durable_paginated_and_survives_restart", "tests/test_ops_service.py::test_first_start_then_safe_recovery_after_a_clean_shutdown", "tests/test_ops_service.py::test_restart_after_crash_with_pending_order_requires_manual_intervention"]},
+    {"scenario": "emergency recovery end to end (request -> cancel pending -> reduce-only SELL -> fills -> FLATTENED; idempotent retry)", "tests": ["tests/test_ops_service.py::test_emergency_flatten_end_to_end_reduces_to_zero_keeps_kill_switch_and_is_audited", "tests/test_ops_service.py::test_flatten_is_idempotent_a_retry_creates_no_second_set_of_orders", "tests/test_ops_service.py::test_flatten_cancels_pending_orders_first_and_releases_their_reservation"]},
+    {"scenario": "stale snapshot fail-closed (broker_connected policy)", "tests": ["tests/test_ops_core.py::test_broker_connected_stale_snapshot_blocks_new_risk", "tests/test_ops_core.py::test_broker_connected_without_any_snapshot_is_unknown_for_new_risk", "tests/test_ops_core.py::test_stale_snapshot_blocks_even_a_reducing_exit_when_accounting_is_untrusted"]},
+    {"scenario": "real HTTP server: session -> proposal -> advance -> audit -> recovery -> flatten -> operations", "tests": ["tests/test_ops_service.py::test_http_new_routes_end_to_end"]}
+  ],
+  "failure_injection": [
+    {"fault": "malformed / truncated / tampered / reordered / duplicated audit record", "tests": ["tests/test_ops_core.py::test_audit_store_detects_corruption", "tests/test_ops_service.py::test_malformed_audit_record_blocks_startup_and_withholds_events"]},
+    {"fault": "state file corruption (latches, recovery state, safety state, research registry)", "tests": ["tests/test_ops_service.py::test_corrupt_latch_file_is_quarantined_not_reset", "tests/test_ops_service.py::test_startup_blocks_on_corrupt_persisted_state", "tests/test_ops_core.py::test_research_registry_is_atomic_and_a_corrupt_registry_is_never_read_as_empty"]},
+    {"fault": "settlement failure / accounting integrity issue", "tests": ["tests/test_ops_service.py::test_flatten_refuses_and_requires_recovery_when_accounting_is_untrusted", "tests/test_ops_service.py::test_recovery_order_path_refuses_untrusted_books"]},
+    {"fault": "stale / unknown-age / future snapshot", "tests": ["tests/test_ops_core.py::test_freshness_unknown_is_never_fresh", "tests/test_brokerage.py::test_stale_snapshot_never_attests", "tests/test_brokerage.py::test_unknown_age_snapshot_never_attests"]},
+    {"fault": "duplicate broker callback", "tests": ["tests/test_brokerage.py::test_duplicate_fill_callback_applied_once"]},
+    {"fault": "unknown order state (timeout / connection lost / UNKNOWN status)", "tests": ["tests/test_brokerage.py::test_timeout_leaves_order_unknown_not_terminal_and_keeps_reservation", "tests/test_brokerage.py::test_unknown_status_stays_unknown_until_definitive_answer", "tests/test_brokerage.py::test_connection_lost_during_submit_is_unknown"]},
+    {"fault": "restart in the middle of a recovery", "tests": ["tests/test_ops_service.py::test_recovery_flatten_in_flight_blocks_new_risk_and_restart_requires_ack"]},
+    {"fault": "recovery retry", "tests": ["tests/test_ops_service.py::test_flatten_is_idempotent_a_retry_creates_no_second_set_of_orders"]},
+    {"fault": "audit write failure (disk full) / state write failure", "tests": ["tests/test_ops_core.py::test_audit_store_write_failure_enters_fault_and_refuses", "tests/test_ops_core.py::test_atomic_write_failure_keeps_the_previous_file", "tests/test_ops_service.py::test_e2e_state_persistence_failure_fails_closed", "tests/test_ops_service.py::test_kill_switch_works_even_when_the_audit_log_is_faulted"]},
+    {"fault": "broker rejection / inconsistent fill / overfill / wrong side / fill after cancel / cancel timeout / reconnect", "tests": ["tests/test_brokerage.py"]}
+  ],
+  "security": [
+    {"check": "Host / Origin / X-QAT-Client / Content-Type enforced on the new routes", "tests": ["tests/test_ops_service.py::test_http_new_routes_enforce_the_same_trust_boundary"]},
+    {"check": "client-owned fields rejected (flatten accepts only operator/reason/confirm; forged state ignored)", "tests": ["tests/test_ops_service.py::test_flatten_rejects_client_supplied_decisions", "tests/test_ops_service.py::test_http_forged_client_state_is_ignored_or_rejected"]},
+    {"check": "no arbitrary filesystem path parameters; whitelisted audit filters; repeated parameters rejected", "tests": ["tests/test_ops_service.py::test_audit_view_rejects_unsafe_or_unknown_parameters", "tests/test_ops_service.py::test_http_audit_rejects_path_like_and_repeated_parameters"]},
+    {"check": "audit endpoint never returns secrets or filesystem paths", "tests": ["tests/test_ops_service.py::test_audit_view_never_exposes_secrets_or_paths", "tests/test_ops_core.py::test_audit_scrubs_secrets_and_never_stores_them"]},
+    {"check": "no route can enable Live; Live readiness always BLOCKED", "tests": ["tests/test_ops_service.py::test_no_http_route_can_enable_live", "tests/test_ops_service.py::test_live_readiness_is_always_blocked_whatever_the_inputs"]},
+    {"check": "recovery authority cannot be forged (token registry), cannot increase exposure or flip", "tests": ["tests/test_ops_service.py::test_recovery_order_path_rejects_forged_authorization_and_buys"]},
+    {"check": "no secret material in the new modules", "tests": ["tests/test_ops_service.py::test_new_modules_and_routes_contain_no_secret_material", "tools secret scan (final regression)"]}
+  ]
+}

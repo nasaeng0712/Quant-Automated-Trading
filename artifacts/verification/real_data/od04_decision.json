@@ -1,0 +1,89 @@
+{
+ "criteria": [
+  {
+   "criterion": "official_source_identified",
+   "evidence": "금융위원회_주식시세정보 GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2",
+   "met": true
+  },
+  {
+   "criterion": "authentication_succeeded",
+   "evidence": "every page: HTTP 200, resultCode 00",
+   "met": true
+  },
+  {
+   "criterion": "raw_preserved",
+   "evidence": "2 pages re-verified byte-for-byte",
+   "met": true
+  },
+  {
+   "criterion": "sha256_recorded",
+   "evidence": "per-artifact SHA-256 + raw-set SHA-256 in identity",
+   "met": true
+  },
+  {
+   "criterion": "requested_period_covered_or_shortfall_explained",
+   "evidence": "provider cannot supply 2018-01-01..2020-01-02: 490 expected sessions are NOT in this dataset; explained by preserved probe responses that all returned 0 rows",
+   "met": true
+  },
+  {
+   "criterion": "normalization_deterministic",
+   "evidence": "two independent re-normalizations: identical hash, data_version, identity, manifest",
+   "met": true
+  },
+  {
+   "criterion": "timezone_session_resolved",
+   "evidence": "V12 timezone + V13 XKRX calendar PASS",
+   "met": true
+  },
+  {
+   "criterion": "adjustment_semantics_usable",
+   "evidence": "UNADJUSTED (UNADJUSTED_EVIDENCE_SUPPORTED; provider explicit statement UNAVAILABLE): official field definitions describe as-traded values (the guide contains NO explicit adjustment statement); official base-price (vs) consistency: 1472 rows chec",
+   "met": true
+  },
+  {
+   "criterion": "validation_pass",
+   "evidence": "status PASS; failed []; unknown []",
+   "met": true
+  },
+  {
+   "criterion": "no_unexpected_trading_day_gaps",
+   "evidence": "1473 expected XKRX sessions; 0 missing; 0 rows on non-session dates",
+   "met": true
+  },
+  {
+   "criterion": "synthetic_false_verified",
+   "evidence": "dataset and every raw artifact declare synthetic=false",
+   "met": true
+  },
+  {
+   "criterion": "provenance_reproducible",
+   "evidence": "admission re-verification from raw bytes reproduced hash/version/validation",
+   "met": true
+  },
+  {
+   "criterion": "dataset_identity_reproducible",
+   "evidence": "KR-005930-1d-data-go-kr-92e7ddb723e8-83c757",
+   "met": true
+  }
+ ],
+ "decision": "CLOSED WITH SCOPE",
+ "judgment_notes": [
+  "'requested period' criterion interpreted as 'complete requested range OR shortfall explained' (the instruction's own wording): the official service holds no rows before 2020-01-02 (9 preserved probe responses incl. 1990-01-01..2020-01-02 -> totalCount 0), so 490 expected XKRX sessions (2018-01-02..2019-12-30) are NOT covered",
+  "adjustment semantics rest on the official field definitions (as-traded) and the official base-price consistency of every row; the guide has no explicit adjustment statement; the covered window contains no corporate action",
+  "if research requires pre-2020 KR history there is no official source for it; Yahoo/Naver pre-2020 rows remain FAIL/unverifiable"
+ ],
+ "scope": {
+  "adjustment": "UNADJUSTED_EVIDENCE_SUPPORTED; provider explicit adjustment statement UNAVAILABLE",
+  "out_of_range_requests": "rejected explicitly (requested period exceeds verified dataset coverage)",
+  "pre_2020": "UNKNOWN (no official data; never interpolated, backfilled or stitched from Yahoo/Naver)",
+  "unofficial_fallback": "none: Yahoo/Naver are not an official fallback",
+  "verified_coverage": [
+   "2020-01-02",
+   "2025-12-30"
+  ]
+ },
+ "scope_restrictions": [
+  "no Walk-Forward, tuning, ranking, profitability claim or Lockbox use was performed"
+ ],
+ "statement": "OD-04 CLOSED WITH SCOPE — official KR research dataset source established via data.go.kr (금융위원회_주식시세정보 V2), verified coverage 2020-01-02..2025-12-30 only; 2018-01-01..2019-12-31 is not available from the official service and stays UNKNOWN"
+}

@@ -1,0 +1,1054 @@
+{
+ "comparisons": {
+  "crypto_binance_vs_coinbase": {
+   "a": "binance",
+   "b": "coinbase",
+   "conflict_examples": [],
+   "explained_by": {
+    "different venues, within 5.00%": 4374,
+    "venue-specific volume (not comparable across venues)": 1703
+   },
+   "explained_examples": [
+    {
+     "binance": 57169.39,
+     "cause": "different venues, within 5.00%",
+     "coinbase": 55608.4,
+     "date": "2021-05-04",
+     "field": "open"
+    },
+    {
+     "binance": 57200.0,
+     "cause": "different venues, within 5.00%",
+     "coinbase": 56617.7,
+     "date": "2021-05-04",
+     "field": "high"
+    },
+    {
+     "binance": 53046.69,
+     "cause": "different venues, within 5.00%",
+     "coinbase": 53053.87,
+     "date": "2021-05-04",
+     "field": "low"
+    },
+    {
+     "binance": 53200.01,
+     "cause": "different venues, within 5.00%",
+     "coinbase": 53053.87,
+     "date": "2021-05-04",
+     "field": "close"
+    },
+    {
+     "binance": 53205.05,
+     "cause": "different venues, within 5.00%",
+     "coinbase": 53042.22,
+     "date": "2021-05-05",
+     "field": "open"
+    },
+    {
+     "binance": 58069.82,
+     "cause": "different venues, within 5.00%",
+     "coinbase": 57933.11,
+     "date": "2021-05-05",
+     "field": "high"
+    }
+   ],
+   "max_unexplained_rel_diff": {},
+   "note": "different venues: price differences within 5% are explained by venue-specific books; volume is venue-specific and not compared; Coinbase BTC-USDT exists from 2021-05-04",
+   "only_in_a": [],
+   "only_in_b": [],
+   "overlap_rows": 1703,
+   "per_field": {
+    "close": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 1037,
+     "MATCH": 666,
+     "UNKNOWN": 0
+    },
+    "high": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 1048,
+     "MATCH": 655,
+     "UNKNOWN": 0
+    },
+    "low": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 1136,
+     "MATCH": 567,
+     "UNKNOWN": 0
+    },
+    "open": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 1153,
+     "MATCH": 550,
+     "UNKNOWN": 0
+    },
+    "volume": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 1703,
+     "MATCH": 0,
+     "UNKNOWN": 0
+    }
+   },
+   "price_tolerance": 0.0001,
+   "rows_a": 1703,
+   "rows_b": 1703,
+   "totals": {
+    "CONFLICT": 0,
+    "EXPLAINED_DIFFERENCE": 6077,
+    "MATCH": 2438,
+    "UNKNOWN": 0
+   },
+   "unknown_examples": [],
+   "venue_tolerance": 0.05,
+   "verdict": "EXPLAINED_DIFFERENCE"
+  },
+  "kr_official_vs_naver": {
+   "a": "official",
+   "b": "naver",
+   "conflict_examples": [],
+   "explained_by": {},
+   "explained_examples": [],
+   "max_unexplained_rel_diff": {},
+   "only_in_a": [],
+   "only_in_b": [],
+   "overlap_rows": 1473,
+   "per_field": {
+    "close": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1473,
+     "UNKNOWN": 0
+    },
+    "high": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1473,
+     "UNKNOWN": 0
+    },
+    "low": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1473,
+     "UNKNOWN": 0
+    },
+    "open": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1473,
+     "UNKNOWN": 0
+    },
+    "volume": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1473,
+     "UNKNOWN": 0
+    }
+   },
+   "price_tolerance": 0.0001,
+   "rows_a": 1473,
+   "rows_b": 1473,
+   "totals": {
+    "CONFLICT": 0,
+    "EXPLAINED_DIFFERENCE": 0,
+    "MATCH": 7365,
+    "UNKNOWN": 0
+   },
+   "unknown_examples": [],
+   "venue_tolerance": null,
+   "verdict": "MATCH",
+   "window": [
+    "2020-01-02",
+    "2025-12-30"
+   ]
+  },
+  "kr_official_vs_yahoo": {
+   "a": "official",
+   "b": "yahoo",
+   "conflict_examples": [
+    {
+     "date": "2020-03-09",
+     "field": "open",
+     "official": 54700.0,
+     "rel_diff": 0.03185840707964602,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "high",
+     "official": 55000.0,
+     "rel_diff": 0.02654867256637168,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "low",
+     "official": 53600.0,
+     "rel_diff": 0.05132743362831858,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "close",
+     "official": 54200.0,
+     "rel_diff": 0.04070796460176991,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "volume",
+     "official": 30261485.0,
+     "rel_diff": 1.0,
+     "yahoo": 0.0
+    },
+    {
+     "date": "2020-03-12",
+     "field": "open",
+     "official": 51000.0,
+     "rel_diff": 0.02111324376199616,
+     "yahoo": 52100.0
+    },
+    {
+     "date": "2020-03-12",
+     "field": "high",
+     "official": 51900.0,
+     "rel_diff": 0.003838771593090211,
+     "yahoo": 52100.0
+    },
+    {
+     "date": "2020-03-12",
+     "field": "low",
+     "official": 49300.0,
+     "rel_diff": 0.053742802303262956,
+     "yahoo": 52100.0
+    },
+    {
+     "date": "2020-03-12",
+     "field": "close",
+     "official": 50800.0,
+     "rel_diff": 0.02495201535508637,
+     "yahoo": 52100.0
+    },
+    {
+     "date": "2020-03-12",
+     "field": "volume",
+     "official": 48149999.0,
+     "rel_diff": 1.0,
+     "yahoo": 0.0
+    },
+    {
+     "date": "2022-01-26",
+     "field": "open",
+     "official": 73900.0,
+     "rel_diff": 0.0013513513513513514,
+     "yahoo": 74000.0
+    },
+    {
+     "date": "2022-01-26",
+     "field": "high",
+     "official": 74400.0,
+     "rel_diff": 0.005376344086021506,
+     "yahoo": 74000.0
+    },
+    {
+     "date": "2022-01-26",
+     "field": "low",
+     "official": 73100.0,
+     "rel_diff": 0.012162162162162163,
+     "yahoo": 74000.0
+    },
+    {
+     "date": "2022-01-26",
+     "field": "close",
+     "official": 73300.0,
+     "rel_diff": 0.00945945945945946,
+     "yahoo": 74000.0
+    },
+    {
+     "date": "2022-01-26",
+     "field": "volume",
+     "official": 12976730.0,
+     "rel_diff": 1.0,
+     "yahoo": 0.0
+    }
+   ],
+   "explained_by": {},
+   "explained_examples": [],
+   "max_unexplained_rel_diff": {},
+   "only_in_a": [
+    "2022-01-03",
+    "2022-05-09"
+   ],
+   "only_in_b": [],
+   "overlap_rows": 1471,
+   "per_field": {
+    "close": {
+     "CONFLICT": 26,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1444,
+     "UNKNOWN": 1
+    },
+    "high": {
+     "CONFLICT": 12,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1458,
+     "UNKNOWN": 1
+    },
+    "low": {
+     "CONFLICT": 12,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1458,
+     "UNKNOWN": 1
+    },
+    "open": {
+     "CONFLICT": 13,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1457,
+     "UNKNOWN": 1
+    },
+    "volume": {
+     "CONFLICT": 37,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1433,
+     "UNKNOWN": 1
+    }
+   },
+   "price_tolerance": 0.0001,
+   "rows_a": 1473,
+   "rows_b": 1471,
+   "totals": {
+    "CONFLICT": 100,
+    "EXPLAINED_DIFFERENCE": 0,
+    "MATCH": 7250,
+    "UNKNOWN": 5
+   },
+   "unknown_examples": [
+    {
+     "date": "2025-09-19",
+     "field": "open",
+     "official": 81100.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "high",
+     "official": 81200.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "low",
+     "official": 79600.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "close",
+     "official": 79700.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "volume",
+     "official": 20898386.0,
+     "yahoo": null
+    }
+   ],
+   "venue_tolerance": null,
+   "verdict": "CONFLICT",
+   "window": [
+    "2020-01-02",
+    "2025-12-30"
+   ]
+  },
+  "kr_yahoo_vs_naver_full_range": {
+   "a": "yahoo",
+   "b": "naver",
+   "conflict_examples": [
+    {
+     "date": "2018-04-30",
+     "field": "open",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-04-30",
+     "field": "high",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-04-30",
+     "field": "low",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-05-02",
+     "field": "open",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-05-02",
+     "field": "high",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-05-02",
+     "field": "low",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-05-03",
+     "field": "open",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-05-03",
+     "field": "high",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2018-05-03",
+     "field": "low",
+     "naver": 0.0,
+     "rel_diff": 1.0,
+     "yahoo": 53000.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "open",
+     "naver": 54700.0,
+     "rel_diff": 0.03185840707964602,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "high",
+     "naver": 55000.0,
+     "rel_diff": 0.02654867256637168,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "low",
+     "naver": 53600.0,
+     "rel_diff": 0.05132743362831858,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "close",
+     "naver": 54200.0,
+     "rel_diff": 0.04070796460176991,
+     "yahoo": 56500.0
+    },
+    {
+     "date": "2020-03-09",
+     "field": "volume",
+     "naver": 30261485.0,
+     "rel_diff": 1.0,
+     "yahoo": 0.0
+    },
+    {
+     "date": "2020-03-12",
+     "field": "open",
+     "naver": 51000.0,
+     "rel_diff": 0.02111324376199616,
+     "yahoo": 52100.0
+    }
+   ],
+   "explained_by": {
+    "yahoo on split-adjusted basis vs naver as-traded": 81
+   },
+   "explained_examples": [
+    {
+     "cause": "yahoo on split-adjusted basis vs naver as-traded",
+     "date": "2018-01-02",
+     "field": "volume",
+     "naver": 169485.0,
+     "yahoo": 8474250.0
+    },
+    {
+     "cause": "yahoo on split-adjusted basis vs naver as-traded",
+     "date": "2018-01-03",
+     "field": "volume",
+     "naver": 200270.0,
+     "yahoo": 10013500.0
+    },
+    {
+     "cause": "yahoo on split-adjusted basis vs naver as-traded",
+     "date": "2018-01-04",
+     "field": "volume",
+     "naver": 233909.0,
+     "yahoo": 11695450.0
+    },
+    {
+     "cause": "yahoo on split-adjusted basis vs naver as-traded",
+     "date": "2018-01-05",
+     "field": "volume",
+     "naver": 189623.0,
+     "yahoo": 9481150.0
+    },
+    {
+     "cause": "yahoo on split-adjusted basis vs naver as-traded",
+     "date": "2018-01-08",
+     "field": "volume",
+     "naver": 167673.0,
+     "yahoo": 8383650.0
+    },
+    {
+     "cause": "yahoo on split-adjusted basis vs naver as-traded",
+     "date": "2018-01-09",
+     "field": "volume",
+     "naver": 360272.0,
+     "yahoo": 18013600.0
+    }
+   ],
+   "max_unexplained_rel_diff": {},
+   "only_in_a": [],
+   "only_in_b": [
+    "2022-01-03",
+    "2022-05-09"
+   ],
+   "overlap_rows": 1961,
+   "per_field": {
+    "close": {
+     "CONFLICT": 26,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1934,
+     "UNKNOWN": 1
+    },
+    "high": {
+     "CONFLICT": 15,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1945,
+     "UNKNOWN": 1
+    },
+    "low": {
+     "CONFLICT": 15,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1945,
+     "UNKNOWN": 1
+    },
+    "open": {
+     "CONFLICT": 16,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1944,
+     "UNKNOWN": 1
+    },
+    "volume": {
+     "CONFLICT": 37,
+     "EXPLAINED_DIFFERENCE": 81,
+     "MATCH": 1842,
+     "UNKNOWN": 1
+    }
+   },
+   "price_tolerance": 0.0001,
+   "rows_a": 1961,
+   "rows_b": 1963,
+   "totals": {
+    "CONFLICT": 109,
+    "EXPLAINED_DIFFERENCE": 81,
+    "MATCH": 9610,
+    "UNKNOWN": 5
+   },
+   "unknown_examples": [
+    {
+     "date": "2025-09-19",
+     "field": "open",
+     "naver": 81100.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "high",
+     "naver": 81200.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "low",
+     "naver": 79600.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "close",
+     "naver": 79700.0,
+     "yahoo": null
+    },
+    {
+     "date": "2025-09-19",
+     "field": "volume",
+     "naver": 20898386.0,
+     "yahoo": null
+    }
+   ],
+   "venue_tolerance": null,
+   "verdict": "CONFLICT"
+  },
+  "us_yahoo_vs_nasdaq": {
+   "a": "yahoo",
+   "b": "nasdaq",
+   "conflict_examples": [
+    {
+     "date": "2018-01-19",
+     "field": "volume",
+     "nasdaq": 125225560.0,
+     "rel_diff": 0.03450135851547104,
+     "yahoo": 129700400.0
+    },
+    {
+     "date": "2018-02-01",
+     "field": "volume",
+     "nasdaq": 177812920.0,
+     "rel_diff": 0.05880844703032767,
+     "yahoo": 188923200.0
+    },
+    {
+     "date": "2018-02-26",
+     "field": "volume",
+     "nasdaq": 149414680.0,
+     "rel_diff": 0.021186671627945977,
+     "yahoo": 152648800.0
+    },
+    {
+     "date": "2018-03-05",
+     "field": "volume",
+     "nasdaq": 111300560.0,
+     "rel_diff": 0.02028984486680234,
+     "yahoo": 113605600.0
+    },
+    {
+     "date": "2018-03-06",
+     "field": "volume",
+     "nasdaq": 93092640.0,
+     "rel_diff": 0.021663408789961536,
+     "yahoo": 95154000.0
+    },
+    {
+     "date": "2018-03-08",
+     "field": "volume",
+     "nasdaq": 98075400.0,
+     "rel_diff": 0.03037458934656397,
+     "yahoo": 95096400.0
+    },
+    {
+     "date": "2018-03-16",
+     "field": "volume",
+     "nasdaq": 153253320.0,
+     "rel_diff": 0.02769644230256797,
+     "yahoo": 157618800.0
+    },
+    {
+     "date": "2018-03-26",
+     "field": "volume",
+     "nasdaq": 147114240.0,
+     "rel_diff": 0.020314747530712923,
+     "yahoo": 150164800.0
+    },
+    {
+     "date": "2018-03-27",
+     "field": "volume",
+     "nasdaq": 159296800.0,
+     "rel_diff": 0.02684091431140739,
+     "yahoo": 163690400.0
+    },
+    {
+     "date": "2018-04-02",
+     "field": "open",
+     "nasdaq": 41.97,
+     "rel_diff": 0.007386231893921598,
+     "yahoo": 41.65999984741211
+    },
+    {
+     "date": "2018-04-19",
+     "field": "open",
+     "nasdaq": 43.7375,
+     "rel_diff": 0.006801974810883402,
+     "yahoo": 43.439998626708984
+    },
+    {
+     "date": "2018-05-01",
+     "field": "volume",
+     "nasdaq": 208915640.0,
+     "rel_diff": 0.025023427553790036,
+     "yahoo": 214277600.0
+    },
+    {
+     "date": "2018-07-31",
+     "field": "volume",
+     "nasdaq": 151389040.0,
+     "rel_diff": 0.03875092068168542,
+     "yahoo": 157492000.0
+    },
+    {
+     "date": "2018-08-09",
+     "field": "open",
+     "nasdaq": 51.82,
+     "rel_diff": 0.010738313331767129,
+     "yahoo": 52.38249969482422
+    },
+    {
+     "date": "2018-08-13",
+     "field": "open",
+     "nasdaq": 51.925,
+     "rel_diff": 0.007691928610065854,
+     "yahoo": 52.32749938964844
+    }
+   ],
+   "explained_by": {},
+   "explained_examples": [],
+   "max_unexplained_rel_diff": {
+    "volume": 0.01998707846127775
+   },
+   "only_in_a": [],
+   "only_in_b": [],
+   "overlap_rows": 2011,
+   "per_field": {
+    "close": {
+     "CONFLICT": 1,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 2010,
+     "UNKNOWN": 0
+    },
+    "high": {
+     "CONFLICT": 0,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 2011,
+     "UNKNOWN": 0
+    },
+    "low": {
+     "CONFLICT": 2,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 2009,
+     "UNKNOWN": 0
+    },
+    "open": {
+     "CONFLICT": 4,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 2007,
+     "UNKNOWN": 0
+    },
+    "volume": {
+     "CONFLICT": 52,
+     "EXPLAINED_DIFFERENCE": 0,
+     "MATCH": 1382,
+     "UNKNOWN": 577
+    }
+   },
+   "price_tolerance": 0.0001,
+   "rows_a": 2011,
+   "rows_b": 2011,
+   "totals": {
+    "CONFLICT": 59,
+    "EXPLAINED_DIFFERENCE": 0,
+    "MATCH": 9419,
+    "UNKNOWN": 577
+   },
+   "unknown_examples": [
+    {
+     "date": "2018-01-02",
+     "field": "volume",
+     "nasdaq": 101602160.0,
+     "note": "differs by 0.608%; cause not established",
+     "yahoo": 102223600.0
+    },
+    {
+     "date": "2018-01-03",
+     "field": "volume",
+     "nasdaq": 117844160.0,
+     "note": "differs by 0.193%; cause not established",
+     "yahoo": 118071600.0
+    },
+    {
+     "date": "2018-01-04",
+     "field": "volume",
+     "nasdaq": 89370600.0,
+     "note": "differs by 0.410%; cause not established",
+     "yahoo": 89738400.0
+    },
+    {
+     "date": "2018-01-05",
+     "field": "volume",
+     "nasdaq": 94359720.0,
+     "note": "differs by 0.296%; cause not established",
+     "yahoo": 94640000.0
+    },
+    {
+     "date": "2018-01-08",
+     "field": "volume",
+     "nasdaq": 82095480.0,
+     "note": "differs by 0.214%; cause not established",
+     "yahoo": 82271200.0
+    },
+    {
+     "date": "2018-01-09",
+     "field": "volume",
+     "nasdaq": 86128800.0,
+     "note": "differs by 0.240%; cause not established",
+     "yahoo": 86336000.0
+    },
+    {
+     "date": "2018-01-10",
+     "field": "volume",
+     "nasdaq": 95006760.0,
+     "note": "differs by 0.869%; cause not established",
+     "yahoo": 95839600.0
+    },
+    {
+     "date": "2018-01-11",
+     "field": "volume",
+     "nasdaq": 74613520.0,
+     "note": "differs by 0.077%; cause not established",
+     "yahoo": 74670800.0
+    },
+    {
+     "date": "2018-01-12",
+     "field": "volume",
+     "nasdaq": 101208800.0,
+     "note": "differs by 0.456%; cause not established",
+     "yahoo": 101672400.0
+    },
+    {
+     "date": "2018-01-16",
+     "field": "volume",
+     "nasdaq": 118049640.0,
+     "note": "differs by 0.181%; cause not established",
+     "yahoo": 118263600.0
+    },
+    {
+     "date": "2018-01-17",
+     "field": "volume",
+     "nasdaq": 137040920.0,
+     "note": "differs by 0.368%; cause not established",
+     "yahoo": 137547200.0
+    },
+    {
+     "date": "2018-01-18",
+     "field": "volume",
+     "nasdaq": 124349320.0,
+     "note": "differs by 0.340%; cause not established",
+     "yahoo": 124773600.0
+    }
+   ],
+   "venue_tolerance": null,
+   "verdict": "CONFLICT"
+  }
+ },
+ "historical_hypotheses": [
+  {
+   "evidence": "2022-01-03 absent in the current Yahoo raw; XKRX snapshot calls it a session (community calendar - see official comparison)",
+   "hypothesis": "Yahoo is missing 2022-01-03",
+   "id": "yahoo-missing-2022-01-03",
+   "official_check": "CONFIRMED by official data: the date is a trading session present in the official dataset",
+   "source": "yahoo-chart",
+   "verdict": "REPRODUCED"
+  },
+  {
+   "evidence": "2022-05-09 absent in the current Yahoo raw; XKRX snapshot calls it a session (community calendar - see official comparison)",
+   "hypothesis": "Yahoo is missing 2022-05-09",
+   "id": "yahoo-missing-2022-05-09",
+   "official_check": "CONFIRMED by official data: the date is a trading session present in the official dataset",
+   "source": "yahoo-chart",
+   "verdict": "REPRODUCED"
+  },
+  {
+   "evidence": "5 missing values, 0 unparseable/non-midnight timestamps, 0 short rows",
+   "examples": [
+    {
+     "field": "open",
+     "line": 1895
+    },
+    {
+     "field": "high",
+     "line": 1895
+    },
+    {
+     "field": "low",
+     "line": 1895
+    }
+   ],
+   "hypothesis": "Yahoo contains null rows",
+   "id": "yahoo-null-row",
+   "source": "yahoo-chart",
+   "verdict": "REPRODUCED"
+  },
+  {
+   "evidence": "1 rows violate low<=open<=high / low<=close<=high",
+   "examples": [
+    {
+     "close": 59300.0,
+     "date": "2024-10-14",
+     "high": 61200.0,
+     "line": 1665,
+     "low": 59400.0,
+     "open": 59500.0
+    }
+   ],
+   "hypothesis": "Yahoo has OHLC anomalies",
+   "id": "yahoo-ohlc-anomaly",
+   "source": "yahoo-chart",
+   "verdict": "REPRODUCED"
+  },
+  {
+   "evidence": "16 sessions with zero volume (possible suspension / no trades)",
+   "examples": [
+    {
+     "date": "2018-04-30",
+     "line": 82
+    },
+    {
+     "date": "2018-05-02",
+     "line": 83
+    },
+    {
+     "date": "2018-05-03",
+     "line": 84
+    },
+    {
+     "date": "2020-03-09",
+     "line": 536
+    },
+    {
+     "date": "2020-03-12",
+     "line": 539
+    }
+   ],
+   "hypothesis": "Yahoo has stale / zero-volume anomalies",
+   "id": "yahoo-stale-volume",
+   "source": "yahoo-chart",
+   "verdict": "REPRODUCED"
+  },
+  {
+   "evidence": "9 zero/negative price values",
+   "examples": [
+    {
+     "date": "2018-04-30",
+     "field": "open",
+     "line": 82,
+     "value": 0.0
+    },
+    {
+     "date": "2018-04-30",
+     "field": "high",
+     "line": 82,
+     "value": 0.0
+    },
+    {
+     "date": "2018-04-30",
+     "field": "low",
+     "line": 82,
+     "value": 0.0
+    },
+    {
+     "date": "2018-05-02",
+     "field": "open",
+     "line": 83,
+     "value": 0.0
+    }
+   ],
+   "hypothesis": "Naver has zero-price rows on suspension days",
+   "id": "naver-zero-price",
+   "source": "naver-fchart",
+   "verdict": "REPRODUCED"
+  },
+  {
+   "evidence": "inside the official window (2020-01-02..2025-12-30) Naver equals the official data on every field (verdict MATCH, totals {'MATCH': 7365, 'EXPLAINED_DIFFERENCE': 0, 'CONFLICT': 0, 'UNKNOWN': 0}); the Samsung 50:1 split (2018-05-04) is OUTSIDE official coverage, so the adjustment-basis claim cannot be checked against official data. Yahoo-vs-Naver full-range differences show 81 field values on a split-adjusted vs as-traded basis (EXPLAINED against the issuer reference action), not official-confirmed.",
+   "hypothesis": "Naver prices/volume are on a different (split-adjusted) basis than as-traded data",
+   "id": "naver-adjustment-basis",
+   "source": "naver-fchart",
+   "verdict": "UNKNOWN"
+  }
+ ],
+ "kr_yahoo_conflict_classification": {
+  "missing_in_yahoo": {
+   "count": 2,
+   "dates": [
+    "2022-01-03",
+    "2022-05-09"
+   ]
+  },
+  "yahoo_close_differs_ohlv_equal": {
+   "count": 5,
+   "dates": [
+    "2024-02-15",
+    "2024-10-14",
+    "2024-11-07",
+    "2025-09-18",
+    "2025-10-02"
+   ]
+  },
+  "yahoo_null_row": {
+   "count": 1,
+   "dates": [
+    "2025-09-19"
+   ]
+  },
+  "yahoo_other_difference": {
+   "count": 1,
+   "dates": [
+    "2024-01-15"
+   ]
+  },
+  "yahoo_partial_volume_below_5pct_of_official": {
+   "count": 23,
+   "dates": [
+    "2023-01-25",
+    "2023-01-26",
+    "2023-01-27",
+    "2023-01-30",
+    "2023-01-31",
+    "2023-02-01",
+    "2023-02-02",
+    "2023-02-03",
+    "2023-02-06",
+    "2023-02-07",
+    "2023-02-08",
+    "2023-02-09",
+    "2023-02-10",
+    "2023-02-13",
+    "2023-02-14",
+    "2023-02-15",
+    "2023-02-16",
+    "2023-02-17",
+    "2023-02-20",
+    "2023-02-21",
+    "2023-02-22",
+    "2023-02-23",
+    "2023-02-24"
+   ]
+  },
+  "yahoo_zero_volume_stale_row": {
+   "count": 13,
+   "dates": [
+    "2020-03-09",
+    "2020-03-12",
+    "2022-01-26",
+    "2022-02-08",
+    "2022-02-09",
+    "2022-02-21",
+    "2022-02-22",
+    "2022-02-23",
+    "2022-02-28",
+    "2022-03-04",
+    "2022-03-10",
+    "2022-03-15",
+    "2022-03-17"
+   ]
+  }
+ }
+}

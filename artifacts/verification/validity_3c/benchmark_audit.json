@@ -1,0 +1,51 @@
+{
+ "conclusion": "one-bar entry misalignment and exposure/cost asymmetry found. The v1 'beats passive' flag would change for the candidates listed in flag_would_change_for, but no Batch #3B status or Lockbox decision depends on it (all 9 are INSUFFICIENT_ACTIVITY); v1 is left unchanged and no 'beats benchmark' claim is made",
+ "flag_would_change_for": [
+  "KR/ma_trend"
+ ],
+ "markets": {
+  "CRYPTO": {
+   "aligned_passive_stitched": 6.292106680586604,
+   "candidates_whose_beats_passive_flag_would_change": [],
+   "development_bars": [
+    0,
+    2557
+   ],
+   "difference": -0.6367971699296016,
+   "folds": 9,
+   "v1_passive_stitched": 6.928903850516206
+  },
+  "KR": {
+   "aligned_passive_stitched": -0.09584792410526521,
+   "candidates_whose_beats_passive_flag_would_change": [
+    "ma_trend"
+   ],
+   "development_bars": [
+    0,
+    1221
+   ],
+   "difference": 0.012135902346293359,
+   "folds": 5,
+   "v1_passive_stitched": -0.10798382645155857
+  },
+  "US": {
+   "aligned_passive_stitched": 1.8893608353756486,
+   "candidates_whose_beats_passive_flag_would_change": [],
+   "development_bars": [
+    0,
+    1759
+   ],
+   "difference": -0.06938977704629012,
+   "folds": 9,
+   "v1_passive_stitched": 1.9587506124219387
+  }
+ },
+ "notes": {
+  "action": "Protocol v1 is frozen: code and definition are NOT changed (changing the definition changes the protocol hash). v2 must use the aligned definition.",
+  "adjustment_semantics": "same: benchmark and engine read the same persisted dataset bars (KR UNADJUSTED_EVIDENCE_SUPPORTED, US split-adjusted closes not dividend-adjusted, BTC unadjusted)",
+  "entry_finding": "MISALIGNED by one bar: the engine can fill the earliest order at open(test_start+1) (signal at close(test_start), fill next open), the v1 benchmark buys at open(test_start)",
+  "exit": "same: close of the last OOS bar (the engine marks equity at that close)",
+  "exposure_finding": "benchmark is 100% invested and cost-free; the engine uses position_fraction 0.95, reservation buffer, spread/slippage/fees",
+  "stitching_contract": "same: both are compounded fold by fold with capital reset at each fold"
+ }
+}

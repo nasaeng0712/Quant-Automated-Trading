@@ -1,0 +1,84 @@
+{
+ "approval": {
+  "created_by": "only a separate, user-approved one-shot Batch",
+  "marker": "artifacts/verification/protocol_v2/holdout_evaluation_approval.json",
+  "required_fields": [
+   "approved_by == user",
+   "approved_utc",
+   "candidate_sha256",
+   "protocol_sha256",
+   "development_addendum_sha256",
+   "holdout_addendum_sha256",
+   "full_2026_year_confirmed == true",
+   "acknowledged_not_holdout_eligible (required true when the candidate is not holdout-eligible by the frozen rule)"
+  ]
+ },
+ "candidate_sha256": "d038da459ad78a4a9895ea5cf1f6237c9802aa6a155d286ffb9f798d10fb9d9e",
+ "created_utc": "2026-10-07T01:23:00+00:00",
+ "data_requirements": {
+  "checks": "official checksums, immutable raw (separate holdout raw root), strict 4h validation (continuity, interval, units, symbol, source, synthetic), contiguity with the view end",
+  "data_not_verified": "if the 2026 data fails verification AFTER values were read, the single result is HOLDOUT_DATA_NOT_VERIFIED and the attempt stays consumed",
+  "expected_bars": 2190,
+  "first_bar": "2026-01-01T00:00:00",
+  "last_bar": "2026-12-31T20:00:00",
+  "months": [
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09",
+   "2026-10",
+   "2026-11",
+   "2026-12"
+  ],
+  "partial_year": "forbidden: any missing monthly archive or missing/short bar prevents (or, after values were read, invalidates) the evaluation"
+ },
+ "development_addendum_sha256": "0f73787de09722bbf84a59ef7ba0bc3f15881749d40baf908a28aaa2af567797",
+ "evaluation_design": {
+  "benchmark": "aligned passive (entry open(start+1)), cost-free, fully invested",
+  "evaluation_block": "the COMPLETE year 2026-01-01T00:00 .. 2026-12-31T20:00 as ONE out-of-sample block; parameters are not changed inside 2026; earlier bars are warm-up history only",
+  "final_selection_window": "the last 4380 bars of the continuous research view (ending 2025-12-31T20:00)",
+  "language": "holdout evidence (one-shot); no proof of alpha, robustness or profitability is claimed; statistical power UNKNOWN",
+  "min_folds_override": "1, only because a single holdout block cannot contain 3 folds; no other threshold is changed",
+  "scenarios": {
+   "decision": [
+    "S1_low",
+    "S2_mid",
+    "S3_high"
+   ],
+   "diagnostic_only": [
+    "S0_commission_only"
+   ]
+  },
+  "selection": "every grid configuration x S1/S2/S3 on that window; rank by the WORST train score across S1/S2/S3; ties -> grid order",
+  "status_rule": "frozen thresholds via classify_candidate(min_folds=1): the single 2026 block is one fold; closed trades >= 30, active fold, profitable after costs, positive-fold majority (1/1); candidate status = least favourable of S1/S2/S3; 'holdout_eligible_like' additionally needs beating the aligned passive benchmark in every scenario",
+  "unit": "the whole frozen selection procedure for the selected strategy, evaluated exactly once"
+ },
+ "exactly_once": {
+  "after_failure": "no retry (failure.json is stored)",
+  "after_result": "no retry",
+  "attempt_file": "created exclusively before any value is read, never removed",
+  "result": "immutable (exclusive create) with its hash"
+ },
+ "forbidden": [
+  "partial-year evaluation",
+  "re-evaluation after a result",
+  "changing parameters after seeing 2026",
+  "using the existing daily Lockbox"
+ ],
+ "holdout_addendum_sha256": "c1ad955d8cb714e5b5f20c12b7971d58751b950716f150c823ca8cdde8c803e3",
+ "id": "holdout_evaluation_addendum_v1",
+ "known_risk_disclosed_before_evaluation": {
+  "development_oos_closed_trades_worst_case": 38,
+  "development_oos_years": 2.0,
+  "implied_closed_trades_per_year": 19.0,
+  "note": "a one-year block at the development trade rate gives fewer than the frozen 30 closed trades, so INSUFFICIENT_ACTIVITY is a likely outcome of the frozen heuristic (counts only; UNKNOWN)"
+ },
+ "nature": "PRE-EVALUATION immutable addendum: written before any 2026 value is read; the frozen Protocol v2 hash is not modified",
+ "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+ "strategy": "breakout"
+}

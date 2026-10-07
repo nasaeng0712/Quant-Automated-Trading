@@ -1,0 +1,39 @@
+{
+  "market": "KR",
+  "symbol": "SYNKR1",
+  "timeframe": "1d",
+  "timezone": "+09:00",
+  "timestamp_label": "open",
+  "source": "SYNTHETIC",
+  "synthetic": true,
+  "description": "Deterministic synthetic fixture for pipeline verification - NOT market data",
+  "extra": {
+    "generator": "qat.data.synthetic",
+    "seed": 11,
+    "bars": 750,
+    "regimes": [
+      [
+        120,
+        0.0025,
+        0.012
+      ],
+      [
+        80,
+        0.0,
+        0.01
+      ],
+      [
+        100,
+        -0.0022,
+        0.013
+      ],
+      [
+        80,
+        0.0,
+        0.009
+      ]
+    ],
+    "generated_utc_start": "2022-01-03T00:00:00",
+    "created": "2026-01-01T00:00:00+00:00"
+  }
+}

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qat"
+version = "0.0.1"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["fail_closed_universe: keep the production fail-closed Compliance universe default (OD-02)"]
+
+[tool.setuptools.package-data]
+qat = ["ui/static/*"]

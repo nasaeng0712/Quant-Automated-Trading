@@ -1,0 +1,67 @@
+{
+ "assumption": "the 6x factor assumes entry/exit signal frequency scales with the number of bars when the existing grids are kept in BAR units; it is an assumption, not a measurement. With calendar-equivalent grids (lookbacks x6) no gain in trade count is expected.",
+ "candidate_windows": {
+  "A_development_to_2024-12-31": {
+   "bars": 15326,
+   "folds": 9,
+   "meets_30_if_bar_unit_grids": true,
+   "meets_30_if_calendar_equivalent_grids": false,
+   "note": "keeps the 2025 daily Lockbox period out of v2 development",
+   "oos_bars": 9855,
+   "oos_years": 4.5,
+   "per_candidate_expected_trades": {
+    "CRYPTO/breakout": {
+     "bar_unit_grid_expected_trades_if_signal_rate_scales_6x": 83.7,
+     "calendar_equivalent_grid_expected_trades": 14.0,
+     "trades_per_year_daily_observed": 3.1
+    },
+    "CRYPTO/ma_trend": {
+     "bar_unit_grid_expected_trades_if_signal_rate_scales_6x": 131.8,
+     "calendar_equivalent_grid_expected_trades": 22.0,
+     "trades_per_year_daily_observed": 4.88
+    },
+    "CRYPTO/mean_reversion": {
+     "bar_unit_grid_expected_trades_if_signal_rate_scales_6x": 41.9,
+     "calendar_equivalent_grid_expected_trades": 7.0,
+     "trades_per_year_daily_observed": 1.55
+    }
+   },
+   "test_bars": 1095,
+   "train_bars": 4380
+  },
+  "B_development_to_2025-12-31": {
+   "bars": 17516,
+   "folds": 11,
+   "meets_30_if_bar_unit_grids": true,
+   "meets_30_if_calendar_equivalent_grids": false,
+   "note": "uses 2025 for development: the existing daily Lockbox year would no longer be untouched",
+   "oos_bars": 12045,
+   "oos_years": 5.5,
+   "per_candidate_expected_trades": {
+    "CRYPTO/breakout": {
+     "bar_unit_grid_expected_trades_if_signal_rate_scales_6x": 102.3,
+     "calendar_equivalent_grid_expected_trades": 17.1,
+     "trades_per_year_daily_observed": 3.1
+    },
+    "CRYPTO/ma_trend": {
+     "bar_unit_grid_expected_trades_if_signal_rate_scales_6x": 161.0,
+     "calendar_equivalent_grid_expected_trades": 26.8,
+     "trades_per_year_daily_observed": 4.88
+    },
+    "CRYPTO/mean_reversion": {
+     "bar_unit_grid_expected_trades_if_signal_rate_scales_6x": 51.2,
+     "calendar_equivalent_grid_expected_trades": 8.5,
+     "trades_per_year_daily_observed": 1.55
+    }
+   },
+   "test_bars": 1095,
+   "train_bars": 4380
+  }
+ },
+ "inputs": "trade COUNTS per OOS year from the frozen Batch #3B summary (no returns)",
+ "verdict": {
+  "conditional_on": "Protocol v2 keeping the existing grids in bar units and the 6x scaling assumption holding (UNKNOWN until the freeze/run)",
+  "not_assessed": "whether the 30-trade heuristic is itself adequate for the claim being tested (internal heuristic)",
+  "structurally_viable": true
+ }
+}

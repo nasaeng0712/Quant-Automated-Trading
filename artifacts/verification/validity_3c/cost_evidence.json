@@ -1,0 +1,206 @@
+{
+ "markets": {
+  "CRYPTO": {
+   "commission_rate": {
+    "configured": 0.0005,
+    "dependency": "user decision: venue and fee tier (VIP level, BNB discount)",
+    "matches_primary_source": false,
+    "schedule_evidence": "EVIDENCE_SUPPORTED for the current Binance VIP0 schedule only",
+    "sources": [
+     {
+      "fact": "Binance spot, regular user (VIP 0): maker 0.100% / taker 0.100%; 0.075% / 0.075% with the BNB discount. This is the CURRENT schedule only; the 2018-2025 history and the user's real tier/discount are not verified",
+      "kind": "primary",
+      "retrieved": "2026-10-06",
+      "url": "https://www.binance.com/en/fee/schedule"
+     }
+    ],
+    "status": "PLACEHOLDER",
+    "why": "configured 0.05% is LOWER than the venue's current standard fee (0.10%, 0.075% with BNB): it understates cost if the user's tier is the standard one"
+   },
+   "fx_cost_bps": {
+    "configured": 0.0,
+    "dependency": "user decision: how USDT is converted",
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "USDT->KRW base conversion uses a placeholder rate; configured 0 is not evidence"
+   },
+   "half_spread_bps": {
+    "configured": 8.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [
+     {
+      "fact": "public spot archive lists klines (1s..1mo), aggTrades and trades for BTCUSDT; no quote / order-book (bid-ask) data type for spot",
+      "kind": "primary",
+      "retrieved": "2026-10-06",
+      "url": "https://data.binance.vision/"
+     }
+    ],
+    "status": "PLACEHOLDER",
+    "why": "the public spot archive has no bid-ask quote data; FACT: unavailable"
+   },
+   "slippage_bps": {
+    "configured": 5.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [
+     {
+      "fact": "public spot archive lists klines (1s..1mo), aggTrades and trades for BTCUSDT; no quote / order-book (bid-ask) data type for spot",
+      "kind": "primary",
+      "retrieved": "2026-10-06",
+      "url": "https://data.binance.vision/"
+     }
+    ],
+    "status": "PLACEHOLDER",
+    "why": "not measurable from klines; trade-level data exists (aggTrades/trades) but order sizes/impact are unknown; FACT: unavailable"
+   },
+   "tax_rate_sell": {
+    "configured": 0.0,
+    "dependency": "user decision: tax jurisdiction",
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "UNKNOWN",
+    "why": "no venue transaction tax on sales is known; tax treatment of crypto gains is jurisdiction/user dependent and is not a trading cost here"
+   }
+  },
+  "KR": {
+   "commission_rate": {
+    "configured": 0.00015,
+    "dependency": "user decision: broker, account, fee tier",
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "broker/account specific; no broker is chosen"
+   },
+   "fx_cost_bps": {
+    "configured": 0.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "EVIDENCE_SUPPORTED",
+    "why": "KRW-denominated asset in a KRW base currency: no currency conversion is involved (structural)"
+   },
+   "half_spread_bps": {
+    "configured": 5.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "bid-ask spread is not in daily OHLCV and no quote data was acquired; FACT: unavailable"
+   },
+   "slippage_bps": {
+    "configured": 2.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "market impact / slippage cannot be measured from daily bars; FACT: unavailable"
+   },
+   "tax_rate_sell": {
+    "configured": 0.0018,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": "EVIDENCE_SUPPORTED (secondary sources only; law text not retrieved)",
+    "sources": [
+     {
+      "fact": "news report of the 2025 tax revision: from 2026-01-01 KOSPI securities transaction tax 0.05% (+0.15% rural-development special tax kept = 0.20% total), KOSDAQ 0.15% -> 0.20%; the law text (증권거래세법 시행령) was not retrievable here",
+      "kind": "secondary",
+      "retrieved": "2026-10-06",
+      "url": "https://www.taxtimes.co.kr/mobile/article.html?no=272624"
+     },
+     {
+      "fact": "search results report KOSPI tax 0.05% (2023), 0.03% (2024), 0% (2025) plus the 0.15% special tax, KOSDAQ 0.20% / 0.18% / 0.15%; 2020-2022 rates were not confirmed from a primary source",
+      "kind": "secondary",
+      "retrieved": "2026-10-06",
+      "url": "https://newstomato.com/ReadNews.aspx?no=980180"
+     }
+    ],
+    "status": "PLACEHOLDER",
+    "why": "a single constant (0.18%) is applied to 2020-2025 although the official rate changes by year; the constant equals the reported 2024 total only"
+   }
+  },
+  "US": {
+   "commission_rate": {
+    "configured": 0.0005,
+    "dependency": "user decision: broker, account",
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "broker specific; many brokers charge no commission; none chosen"
+   },
+   "fx_cost_bps": {
+    "configured": 25.0,
+    "dependency": "user decision: broker FX terms",
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "USD->KRW conversion cost is broker specific (and the FX rate itself is a placeholder)"
+   },
+   "half_spread_bps": {
+    "configured": 3.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "no quote data acquired; FACT: unavailable"
+   },
+   "slippage_bps": {
+    "configured": 2.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": null,
+    "sources": [],
+    "status": "PLACEHOLDER",
+    "why": "not measurable from daily bars; FACT: unavailable"
+   },
+   "tax_rate_sell": {
+    "configured": 0.0,
+    "dependency": null,
+    "matches_primary_source": false,
+    "schedule_evidence": "EVIDENCE_SUPPORTED (SEC primary for FY2026 only; TAF secondary)",
+    "sources": [
+     {
+      "fact": "SEC Section 31 fee: $0.00 per million for covered sales through 2026-04-03, $20.60 per million from 2026-04-04 (FY2026); the rate changes by fiscal year; earlier fiscal-year rates were not retrieved",
+      "kind": "primary",
+      "retrieved": "2026-10-06",
+      "url": "https://www.sec.gov/rules-regulations/fee-rate-advisories/2026-2"
+     },
+     {
+      "fact": "FINRA notice confirms the Section 31 rate change ($0.00 -> $20.60 per million on 2026-04-04); it does not state the TAF",
+      "kind": "primary",
+      "retrieved": "2026-10-06",
+      "url": "https://www.finra.org/rules-guidance/notices/information-notice-20260317"
+     },
+     {
+      "fact": "a broker help page quotes the FINRA TAF for stock sales from 2026-01-01 as $0.000195/share, min $0.01, max $9.79 per trade; the FINRA rule text was not retrieved",
+      "kind": "secondary",
+      "retrieved": "2026-10-06",
+      "url": "https://help.revolut.com/en-IT/help/wealth/order-execution-fees-and-limits/trading-regulatory-fees"
+     }
+    ],
+    "status": "PLACEHOLDER",
+    "why": "configured 0.0, but an SEC Section 31 sell-side fee (rate varies by fiscal year) and a FINRA TAF exist; both are small per trade and were not modelled; only the FY2026 rates were retrieved"
+   }
+  }
+ },
+ "note": "Batch #3B used these numbers unchanged; none is VERIFIED. Costs are NOT tuned. A new cost model is for a future protocol version only.",
+ "retrieved": "2026-10-06",
+ "status_counts": {
+  "EVIDENCE_SUPPORTED": 1,
+  "PLACEHOLDER": 13,
+  "UNKNOWN": 1,
+  "VERIFIED": 0
+ }
+}

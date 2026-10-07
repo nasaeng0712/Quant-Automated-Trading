@@ -1,0 +1,8 @@
+{
+ "frozen_utc": "2026-10-07T00:45:42+00:00",
+ "holdout_evaluation_approved": false,
+ "note": "the freeze marker is not approval to read or evaluate 2026 data",
+ "permission": "TECHNICAL ONLY",
+ "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+ "protocol_version": "wf-protocol-2"
+}

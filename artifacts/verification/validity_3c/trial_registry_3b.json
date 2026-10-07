@@ -1,0 +1,46 @@
+{
+ "caveats": [
+  "9 plumbing smoke runs (save=False) and the pytest runs (tmp results dir) re-evaluated trials identical to registered ones: identical ids, hence 0 additional unique trials",
+  "Batch #2 synthetic runs are excluded from the real-data counts",
+  "cost-stress and common-period runs are counted as distinct configurations/windows but not as new candidate procedures",
+  "only Walk-Forward runs are registered; plain backtests and cost-stress runs outside Walk-Forward are not trials of a selection"
+ ],
+ "counting_semantics": "Batch #3C - trial identity, trial registry and counting.\n\nA *trial* is one deterministic evaluation of one configuration on one window:\n\n  stage ``train_selection``  one candidate parameter set backtested on a fold's TRAIN window\n  stage ``oos_evaluation``   the parameter set chosen for that fold backtested on its OOS window\n\n``trial_id`` is a SHA-256 of everything that determines the numbers - dataset identity\n(``data_version``), strategy + version, parameters, window, stage, selection metric, the full\nbase configuration (costs multiplier, capital, seed, ...) and the settings file content hash.\nRe-running the identical computation yields the identical id and is therefore NOT a new\nstatistical trial; it only adds a ``run_id`` to the existing record. The protocol version is\na recorded attribute, not part of the identity (a different protocol that re-evaluates the same\nconfiguration on the same window and data is the same statistical trial).\n\nCounting semantics (see ``summarize``):\n  unique_trials            distinct trial ids over all stages\n  train_selection_trials   distinct train-window evaluations (the selection pool)\n  oos_evaluations          distinct OOS evaluations\n  distinct_configurations  distinct (dataset, strategy, parameters, cost config) ignoring window\n  candidate_procedures     distinct (dataset, strategy) at cost multiplier 1.0 (what is compared)\n  executions               sum of recorded runs over all trials (>= unique when re-run / re-used)\nCost-stress runs are different configurations (their cost config differs) but are re-evaluations\nof the same hypothesis, so they are reported separately and not counted as new candidates.\n",
+ "identity": "sha256 of dataset identity, strategy+version, params, window, stage, selection metric, full base config, settings hash; protocol version is recorded but not part of the identity",
+ "naive_vs_actual": {
+  "actual_train_selection_trials": 1106,
+  "actual_unique_trials": 1343,
+  "naive_candidates": 9
+ },
+ "reconstruction": {
+  "already_registered": 1363,
+  "runs_scanned": 34,
+  "trials_added": 0
+ },
+ "registry_fingerprint_sha256": "e48245a3c6fbc9f5b8cc098b4f26a86b988587ad72d6566a714a9f2f6607f7e5",
+ "summary": {
+  "by_cost_multiplier": {
+   "1.0": 561,
+   "2.0": 391,
+   "3.0": 391
+  },
+  "by_market": {
+   "CRYPTO": 544,
+   "KR": 255,
+   "US": 544
+  },
+  "by_strategy": {
+   "breakout": 395,
+   "ma_trend": 553,
+   "mean_reversion": 395
+  },
+  "candidate_procedures": 9,
+  "distinct_configurations": 126,
+  "executions": 1343,
+  "oos_evaluations": 237,
+  "reused_trials": 0,
+  "scope": "real data only",
+  "train_selection_trials": 1106,
+  "unique_trials": 1343
+ }
+}

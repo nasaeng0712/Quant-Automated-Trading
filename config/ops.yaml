@@ -1,0 +1,34 @@
+# QAT operations configuration (final completion). Separate from settings.yaml on purpose:
+# settings.yaml holds the cost/risk placeholders that research evidence is bound to.
+# null == "not configured": the rule is implemented but inert, and every view shows NOT_CONFIGURED (never a silent PASS).
+version: 1
+mode: paper                      # paper only. "live" is refused by the startup self-check (Live is BLOCKED).
+
+snapshot:                        # broker snapshot freshness policy (stale snapshot -> fail-closed)
+  policy: paper_replay           # paper_replay (no broker account, explicit contract) | broker_connected (fail-closed on STALE/UNKNOWN)
+  max_age_seconds: 30            # required and > 0 when policy == broker_connected
+  future_tolerance_seconds: 5    # a snapshot timestamp this far ahead of the clock is UNKNOWN, not FRESH
+
+market_rules:                    # R-07/R-08/R-09 and MI-05/MI-06 thresholds (null == NOT_CONFIGURED)
+  min_bar_volume: null           # R-07 liquidity shortage: reference-bar volume below this blocks risk-increasing orders
+  max_spread_bps: null           # R-08 abnormal spread: needs a quoted spread (UNKNOWN while the data has none)
+  volatility_shock_range_pct: null   # R-09 volatility shock: reference-bar (high-low)/close above this blocks risk-increasing orders
+  max_cancels_per_window: null   # MI-05 cancel/replace pattern: cancels per symbol inside the window
+  cancel_window_seconds: 300
+  max_participation_rate: null   # MI-06 liquidity participation: order quantity / reference-bar volume
+
+strategy_health:                 # operational health only (never performance)
+  max_consecutive_errors: 3
+  max_data_age_seconds: 172800   # a daily replay bar may be up to ~2 days old
+  max_heartbeat_age_seconds: 172800
+  rejection_window: 20
+  rejection_concentration: 0.8   # share of the last window blocked for ONE reason
+  min_rejections_for_concentration: 10
+
+paper_graduation:                # PROVISIONAL engineering criteria. The owner has not defined graduation criteria (design: UNKNOWN);
+  min_completed_sessions: 5      # these values only make the evaluator measurable. They say nothing about alpha or profitability.
+  min_applied_fills: 20
+  require_recovery_drill: true   # an emergency-flatten drill must be evidenced in the durable audit
+
+audit:
+  max_page_size: 500

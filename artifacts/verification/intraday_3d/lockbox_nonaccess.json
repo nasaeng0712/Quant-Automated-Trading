@@ -1,0 +1,7 @@
+{
+ "evaluate_lockbox_imported_by_this_module": false,
+ "existing_daily_lockbox": "untouched; no strategy was run on any data in this batch except the SYNTHETIC fixture for the trial-series demonstration",
+ "lockbox_registry_exists": false,
+ "open_design_issue": "Protocol v2 development through 2025-12-31 would read the same 2025 market path that the daily Lockbox reserves; window A (to 2024-12-31) avoids that",
+ "separate_boundaries": "the existing daily Lockbox (2025 tail) and the 2026 temporal holdout are different evidence boundaries"
+}

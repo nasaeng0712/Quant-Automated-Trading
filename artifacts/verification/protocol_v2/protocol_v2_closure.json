@@ -1,0 +1,79 @@
+{
+ "benchmark_eligibility_detail": {
+  "per_scenario": {
+   "S1_low": {
+    "aligned_passive_stitched_return": 3.0566920798317305,
+    "exceeds_aligned_passive": false,
+    "stitched_net_return": 0.731618022050665
+   },
+   "S2_mid": {
+    "aligned_passive_stitched_return": 3.0566920798317305,
+    "exceeds_aligned_passive": false,
+    "stitched_net_return": 0.6947326573865853
+   },
+   "S3_high": {
+    "aligned_passive_stitched_return": 3.0566920798317305,
+    "exceeds_aligned_passive": false,
+    "stitched_net_return": 0.49024484484435016
+   }
+  },
+  "status": "FAIL"
+ },
+ "candidate_sha256": "d038da459ad78a4a9895ea5cf1f6237c9802aa6a155d286ffb9f798d10fb9d9e",
+ "closed_utc": "2026-10-07T02:28:53+00:00",
+ "closure_sha256": "c03aa605358656e9d4362341f3ec6a4978277cb866822165fd7f5cfc91aeaf4a",
+ "distinctions": {
+  "benchmark_eligibility": "FAIL",
+  "development_candidate": "breakout",
+  "development_status": "PASS",
+  "protocol_v2_final_state": "CLOSED / NOT_HOLDOUT_ELIGIBLE",
+  "statistical_power": "UNKNOWN",
+  "temporal_holdout_eligibility": false
+ },
+ "existing_daily_lockbox": "untouched",
+ "final_label": "DEVELOPMENT_SELECTED_CANDIDATE — NOT_HOLDOUT_ELIGIBLE",
+ "final_state": "CLOSED / NOT_HOLDOUT_ELIGIBLE",
+ "future_use": "the one-shot evaluator is infrastructure a future protocol may reuse with its own candidate, freeze and eligibility; it cannot run on this candidate",
+ "holdout_approval_path": {
+  "deactivated_for_protocol_v2": true,
+  "mechanisms": [
+   "intraday.holdout_unlocked() is False while the closure marker exists (forged freeze/approval markers cannot unlock 2026 values)",
+   "the evaluator raises ProtocolClosed for this protocol's candidates and for any candidate that is not holdout-eligible",
+   "the former 'acknowledged_not_holdout_eligible' approval field no longer exists as a bypass"
+  ],
+  "superseded_text": "holdout_evaluation_addendum_v1 (immutable, preserved) described an acknowledgement path for ineligible candidates; this closure supersedes it",
+  "user_approval_cannot_bypass_frozen_eligibility": true
+ },
+ "holdout_values_accessed": "NO",
+ "id": "protocol_v2_closure",
+ "language": "development evidence only; no claim of alpha, robustness or profitability",
+ "preserved_historical_development_evidence": {
+  "candidate_selection_addendum_v1.json": "5ebbdf15ee1ff30efac2a5e799e149debc0cdd0c7cfcc9e090cc0dcffc6e37ef",
+  "cost_contract.json": "693f1cfabd3cca877cd005f5a2442aaf754eb79ff0106b1a32b7a2e899159ee2",
+  "dataset_scope.json": "fbd3fa65fd0d724a38507d04321e3b53e4f9ea4f92344eeca644d42c569a3754",
+  "design_registry.json": "48eafa4e427becea79448fece6c9007937fa3e64949c450c4a7f7743e62a5837",
+  "development_run_1/results.json": "f5eb734b70d3284add45ce68a69594a4300326f48b03dabcdf77e2422bef988d",
+  "development_run_1/trial_ids.json": "459b4d98e259b203c75ab22d8083b58dc0e664f8b8df26ee78e52ad2ae781fd4",
+  "development_run_1/verification_rerun.json": "d9bd87dccfe531d554d512794d0106193bfabdcee638a1afdd40f9492b730d5a",
+  "development_selected_candidate.json": "653133c5a7317ccdd8849e828e1b5afe110d790a5297d33c66cb0a43f66cdec1",
+  "holdout_boundary.json": "bfb83202887463a4ac603546a92b133d65c68036f3a2f1c1a66124e3ccbed646",
+  "holdout_evaluation_addendum_v1.json": "c6c6e068653de0d13a134c08c1b5161f461f2028c9b8ab09b73ca331759f7b0c",
+  "protocol_v2.json": "24ab188bb8ad3bc7c6ebd90c0e8146f4aff6182ad148a73423544589ca6f906a"
+ },
+ "preserved_series": {
+  "series_files": 216,
+  "series_hashes_sha256": "639b6ba64a331498a3ce9a6384256b2dacc4adde2b79896aec3b7899c1638a2a",
+  "trial_ids_sha256": "cd03497c197f7965b36ee38235f081494411589a9bd311c4cebb9b201903a71f"
+ },
+ "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+ "protocol_version": "wf-protocol-2",
+ "reason": "the frozen eligibility rule needs PASS and a stitched OOS net return above the aligned passive benchmark in every scenario; the benchmark criterion is FAIL",
+ "unchanged": [
+  "performance figures",
+  "thresholds (30 trades / 50% active folds / positive-fold majority)",
+  "parameter grids",
+  "benchmark definition (aligned passive, entry open(start+1))",
+  "cost scenarios",
+  "fold design"
+ ]
+}

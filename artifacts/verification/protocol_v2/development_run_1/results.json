@@ -1,0 +1,2693 @@
+{
+ "meta": {
+  "S0": "diagnostic only",
+  "addendum_sha256": "0f73787de09722bbf84a59ef7ba0bc3f15881749d40baf908a28aaa2af567797",
+  "created_utc": "2026-10-07T01:19:12+00:00",
+  "dataset_data_version": "CRYPTO-BTC-USDT-4h-9a4f6ba5a9a2-88747b",
+  "evidence_language": "development evidence",
+  "holdout_values_accessed": "NO",
+  "label": "Protocol v2 Official Development Run #1",
+  "parent_data_version": "CRYPTO-BTCUSDT-4h-binance-vision-f3ab848bf53c-4d2aff",
+  "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+  "run_id": "protocol-v2-dev-run-1",
+  "statistical_power": "UNKNOWN",
+  "view_data_version": "CRYPTO-BTCUSDT-4h-binance-vision-cont-9a4f6ba5a9a2-f3ab84",
+  "view_normalized_sha256": "9a4f6ba5a9a22171bfd907b71f3e25d016d5748aa4cef71fd4808e347f40786a"
+ },
+ "result": {
+  "outcome": {
+   "case": "B",
+   "historical_development_candidates": [],
+   "selected": "breakout",
+   "state": "DEVELOPMENT_SELECTED_CANDIDATE"
+  },
+  "ranking_among_pass": [
+   {
+    "status": "PASS",
+    "strategy": "breakout",
+    "worst_max_drawdown_abs": 0.25635246179098814,
+    "worst_oos_closed_trades": 38,
+    "worst_stitched_net_return": 0.49024484484435016
+   }
+  ],
+  "strategies": {
+   "breakout": {
+    "candidate": {
+     "criteria": {
+      "S1_low": {
+       "activity": true,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": true,
+       "profitable_after_costs": true
+      },
+      "S2_mid": {
+       "activity": true,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": true,
+       "profitable_after_costs": true
+      },
+      "S3_high": {
+       "activity": true,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": true,
+       "profitable_after_costs": true
+      }
+     },
+     "diagnostic_only": {
+      "S0_commission_only": {
+       "status_if_it_counted": "PASS",
+       "used_for_decision": false
+      }
+     },
+     "holdout_eligible": false,
+     "per_scenario": {
+      "S1_low": "PASS",
+      "S2_mid": "PASS",
+      "S3_high": "PASS"
+     },
+     "status": "PASS"
+    },
+    "folds": [
+     {
+      "fold": 0,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.3445938182212939,
+        "trades_closed": 14,
+        "trial_id": "44b2b4a5304f8232ec3eaf34c2cf3c77f32ff11ff307e18a2dd91adf599854ce"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.33758961602091697,
+        "trades_closed": 14,
+        "trial_id": "7093588c71fcd2974ef8c16457208a22ae10ee91f2f5b5c118b0a7af9e36e7f5"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.3271521410597792,
+        "trades_closed": 14,
+        "trial_id": "c1f5dd68e60f0aff26b53e23701664b5facfc5e64a7f9e30499e5953c56eef26"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.19396320821761695,
+        "trades_closed": 14,
+        "trial_id": "e62eb611f71e0c6c394c9eec2d437849e0ddf05cf18b8f42f3cd54382297a5e0"
+       }
+      },
+      "selection": {
+       "chosen_index": 2,
+       "chosen_params": {
+        "entry_lookback": 40,
+        "exit_lookback": 10
+       },
+       "worst_case_train_score": -0.012596807952544465
+      },
+      "status": "OK",
+      "test": [
+       4380,
+       5475
+      ],
+      "train": [
+       0,
+       4380
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": -0.15511339941396843,
+         "S2_mid": -0.18342045236479257,
+         "S3_high": -0.12336178792905063
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": -0.1200507738680195,
+         "S2_mid": -0.2233143625568428,
+         "S3_high": -0.13075315243224092
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.19979981960100998,
+         "S2_mid": 0.018997120588422938,
+         "S3_high": -0.012596807952544465
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 0.037100768695315534,
+         "S2_mid": -0.11770084509454853,
+         "S3_high": -0.10476049781557768
+        }
+       }
+      ]
+     },
+     {
+      "fold": 1,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.01208975504536312,
+        "trades_closed": 8,
+        "trial_id": "9304412f67997de8d984299ed1eebea37fcce2f6b31ddf236047d4cd9d53949f"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.008891577377651632,
+        "trades_closed": 8,
+        "trial_id": "26cd902c33bf0a276f32a8c3f8cbc67f37248e392d21ac648c6ffd8cd0e75916"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.004113301467592269,
+        "trades_closed": 8,
+        "trial_id": "9822d44b44f0becdfbb6aa31853f6bca399afb6e0f68150b378702ff5e6f34a1"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": -0.0037995244038973005,
+        "trades_closed": 8,
+        "trial_id": "85cdc0ecb3ade8a79ee54b9655ce450a92f6f7000d8f0fa1ec4a8cec0da170ab"
+       }
+      },
+      "selection": {
+       "chosen_index": 3,
+       "chosen_params": {
+        "entry_lookback": 40,
+        "exit_lookback": 20
+       },
+       "worst_case_train_score": 0.6208603757502942
+      },
+      "status": "OK",
+      "test": [
+       5475,
+       6570
+      ],
+      "train": [
+       1095,
+       5475
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.22555357717522792,
+         "S2_mid": 0.18117030397590939,
+         "S3_high": 0.262122264485199
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 0.6606942082352907,
+         "S2_mid": 0.46454812133877726,
+         "S3_high": 0.6367367556769086
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.5800410613127248,
+         "S2_mid": 0.3355656624226378,
+         "S3_high": 0.1859687204549806
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 1.133217383585503,
+         "S2_mid": 0.8117200871322143,
+         "S3_high": 0.6208603757502942
+        }
+       }
+      ]
+     },
+     {
+      "fold": 2,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.1306339717463808,
+        "trades_closed": 8,
+        "trial_id": "986b1d353b466058caefe95410e20cc0baf5b33656d02989ae0ec0c80851bb36"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.12726622839592508,
+        "trades_closed": 8,
+        "trial_id": "bc0400cde8dd46b5281ae2b7b6260d3c7e65aeb2780bcb36f22a245fd14c3793"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.12223357940675281,
+        "trades_closed": 8,
+        "trial_id": "8507c30f002955496bdc3e366894f6c65c6aaa8eaed01bfaca90181f5222c897"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.11389629985471368,
+        "trades_closed": 8,
+        "trial_id": "1d388e52d8f0747aaa59017d94110535f56c13588fc38fc645b49cbc1638b358"
+       }
+      },
+      "selection": {
+       "chosen_index": 3,
+       "chosen_params": {
+        "entry_lookback": 40,
+        "exit_lookback": 20
+       },
+       "worst_case_train_score": 0.8290304235825822
+      },
+      "status": "OK",
+      "test": [
+       6570,
+       7665
+      ],
+      "train": [
+       2190,
+       6570
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.19204086749231294,
+         "S2_mid": 0.13896645812558123,
+         "S3_high": 0.1995902407417232
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 0.7528539154531426,
+         "S2_mid": 0.5363515812481513,
+         "S3_high": 0.6994860119575899
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.6686267703601985,
+         "S2_mid": 0.4029762953129394,
+         "S3_high": 0.23485372621443365
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 1.4324484655808594,
+         "S2_mid": 1.057783285925461,
+         "S3_high": 0.8290304235825822
+        }
+       }
+      ]
+     },
+     {
+      "fold": 3,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.14170542922904492,
+        "trades_closed": 8,
+        "trial_id": "d65e0d89bb5b7ed5ee4ba353f483ad2b7a55adbec7214db5551665c6671e00e2"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.1383038793476118,
+        "trades_closed": 8,
+        "trial_id": "5aa9481bc91f90888cfd4b89731937a410a1b64783c98de8702e156886346c04"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.13322071996649468,
+        "trades_closed": 8,
+        "trial_id": "b4bf43de0554e807b020aacfac5e706313dc261732906277142134f904306e2f"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.1247996637263231,
+        "trades_closed": 8,
+        "trial_id": "5e04f0f05c13a8d7a241d13d1700d27008e758d25df3c90c51bff848b6421dd2"
+       }
+      },
+      "selection": {
+       "chosen_index": 3,
+       "chosen_params": {
+        "entry_lookback": 40,
+        "exit_lookback": 20
+       },
+       "worst_case_train_score": 0.7912603581909552
+      },
+      "status": "OK",
+      "test": [
+       7665,
+       8760
+      ],
+      "train": [
+       3285,
+       7665
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.2549125406210104,
+         "S2_mid": 0.1886954209695235,
+         "S3_high": 0.23401845457421244
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 20,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 0.7663102310232938,
+         "S2_mid": 0.5365076170884842,
+         "S3_high": 0.6784175890088804
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 10
+        },
+        "scores": {
+         "S1_low": 0.38824370040100514,
+         "S2_mid": 0.3537558453989977,
+         "S3_high": 0.1832393985009145
+        }
+       },
+       {
+        "params": {
+         "entry_lookback": 40,
+         "exit_lookback": 20
+        },
+        "scores": {
+         "S1_low": 1.0622372632017483,
+         "S2_mid": 1.025642060263979,
+         "S3_high": 0.7912603581909552
+        }
+       }
+      ]
+     }
+    ],
+    "scenario_summaries": {
+     "S0_commission_only": {
+      "active_folds": 4,
+      "best_fold_return": 0.3445938182212939,
+      "fold_rows": [
+       {
+        "avg_loss": -255821.55977694428,
+        "avg_win": 1501038.444995595,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 305680.519332063,
+        "error": null,
+        "explicit_costs": 305680.519332063,
+        "exposure_time": 0.4136986301369863,
+        "fold": 0,
+        "max_drawdown_pct": 0.14310510205804297,
+        "net_return": 0.3445938182212939,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 14,
+        "turnover": 26.00108950524339,
+        "win_rate": 0.2857142857142857
+       },
+       {
+        "avg_loss": -431166.7262289558,
+        "avg_win": 396473.89497093105,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 145716.32710835998,
+        "error": null,
+        "explicit_costs": 145716.32710835998,
+        "exposure_time": 0.34885844748858447,
+        "fold": 1,
+        "max_drawdown_pct": 0.1520912651931711,
+        "net_return": 0.01208975504536312,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 8,
+        "turnover": 15.724269365543071,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -330566.14003695594,
+        "avg_win": 986390.1392161954,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 166700.10064318898,
+        "error": null,
+        "explicit_costs": 166700.10064318898,
+        "exposure_time": 0.3515981735159817,
+        "fold": 2,
+        "max_drawdown_pct": 0.16652834725856122,
+        "net_return": 0.1306339717463808,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 8,
+        "turnover": 14.752876811889855,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -151645.64664994337,
+        "avg_win": 505909.21972255583,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 165322.842755544,
+        "error": null,
+        "explicit_costs": 165322.842755544,
+        "exposure_time": 0.4767123287671233,
+        "fold": 3,
+        "max_drawdown_pct": 0.09494052736627244,
+        "net_return": 0.14170542922904492,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 8,
+        "turnover": 14.884224618665245,
+        "win_rate": 0.5
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.39771689497716894,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 4,
+      "stitched_max_drawdown": -0.24520660960073926,
+      "stitched_net_return": 0.7566540271181517,
+      "total_commission": 783419.789839156,
+      "total_explicit_costs": 783419.789839156,
+      "total_oos_trades": 38,
+      "total_rejections": 0,
+      "total_slippage_estimate": 0,
+      "total_turnover": 71.36246030134156,
+      "worst_fold_return": 0.01208975504536312
+     },
+     "S1_low": {
+      "active_folds": 4,
+      "best_fold_return": 0.33758961602091697,
+      "fold_rows": [
+       {
+        "avg_loss": -259471.66267675185,
+        "avg_win": 1492653.196744172,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 304845.7063436625,
+        "error": null,
+        "explicit_costs": 304845.7063436625,
+        "exposure_time": 0.4136986301369863,
+        "fold": 0,
+        "max_drawdown_pct": 0.14437898125595938,
+        "net_return": 0.33758961602091697,
+        "rejections": 0,
+        "slippage_estimate": 60969.2909371708,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 14,
+        "turnover": 26.00094184709283,
+        "win_rate": 0.2857142857142857
+       },
+       {
+        "avg_loss": -434080.5031512037,
+        "avg_win": 392378.5213653674,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 145487.8889105287,
+        "error": null,
+        "explicit_costs": 145487.8889105287,
+        "exposure_time": 0.34885844748858447,
+        "fold": 1,
+        "max_drawdown_pct": 0.15366550534507176,
+        "net_return": 0.008891577377651632,
+        "rejections": 0,
+        "slippage_estimate": 29097.20948994919,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 8,
+        "turnover": 15.726034489995019,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -334281.34329170675,
+        "avg_win": 981356.333472596,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 166444.92646074307,
+        "error": null,
+        "explicit_costs": 166444.92646074307,
+        "exposure_time": 0.3515981735159817,
+        "fold": 2,
+        "max_drawdown_pct": 0.16807845426922552,
+        "net_return": 0.12726622839592508,
+        "rejections": 0,
+        "slippage_estimate": 33289.044187995714,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 8,
+        "turnover": 14.755253937181177,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -155526.94506209885,
+        "avg_win": 501286.64343112765,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 165071.33387742453,
+        "error": null,
+        "explicit_costs": 165071.33387742453,
+        "exposure_time": 0.4767123287671233,
+        "fold": 3,
+        "max_drawdown_pct": 0.09594981496449911,
+        "net_return": 0.1383038793476118,
+        "rejections": 0,
+        "slippage_estimate": 33014.330020461086,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 8,
+        "turnover": 14.885367787269715,
+        "win_rate": 0.5
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.39771689497716894,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 4,
+      "stitched_max_drawdown": -0.24744914553597153,
+      "stitched_net_return": 0.731618022050665,
+      "total_commission": 781849.8555923589,
+      "total_explicit_costs": 781849.8555923589,
+      "total_oos_trades": 38,
+      "total_rejections": 0,
+      "total_slippage_estimate": 156369.8746355768,
+      "total_turnover": 71.36759806153874,
+      "worst_fold_return": 0.008891577377651632
+     },
+     "S2_mid": {
+      "active_folds": 4,
+      "best_fold_return": 0.3271521410597792,
+      "fold_rows": [
+       {
+        "avg_loss": -264907.54490459885,
+        "avg_win": 1480149.214910945,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 303599.1843979616,
+        "error": null,
+        "explicit_costs": 303599.1843979616,
+        "exposure_time": 0.4136986301369863,
+        "fold": 0,
+        "max_drawdown_pct": 0.14628621233495184,
+        "net_return": 0.3271521410597792,
+        "rejections": 0,
+        "slippage_estimate": 151800.52392924592,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 14,
+        "turnover": 26.000728497341996,
+        "win_rate": 0.2857142857142857
+       },
+       {
+        "avg_loss": -438437.4579038605,
+        "avg_win": 386262.3604429241,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 145146.1561734696,
+        "error": null,
+        "explicit_costs": 145146.1561734696,
+        "exposure_time": 0.34885844748858447,
+        "fold": 1,
+        "max_drawdown_pct": 0.15602139687122724,
+        "net_return": 0.004113301467592269,
+        "rejections": 0,
+        "slippage_estimate": 72570.7863556073,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 8,
+        "turnover": 15.728680618886008,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -339828.7945992659,
+        "avg_win": 973826.5890212851,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 166063.15713983422,
+        "error": null,
+        "explicit_costs": 166063.15713983422,
+        "exposure_time": 0.3515981735159817,
+        "fold": 2,
+        "max_drawdown_pct": 0.17039811343109043,
+        "net_return": 0.12223357940675281,
+        "rejections": 0,
+        "slippage_estimate": 83031.94642763393,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 8,
+        "turnover": 14.758817799152904,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -161325.0911400689,
+        "avg_win": 494376.8910563046,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 164695.11571166298,
+        "error": null,
+        "explicit_costs": 164695.11571166298,
+        "exposure_time": 0.4767123287671233,
+        "fold": 3,
+        "max_drawdown_pct": 0.09746156515766727,
+        "net_return": 0.13322071996649468,
+        "rejections": 0,
+        "slippage_estimate": 82347.95266839117,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 8,
+        "turnover": 14.887084187063177,
+        "win_rate": 0.5
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.39771689497716894,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 4,
+      "stitched_max_drawdown": -0.2508004322083013,
+      "stitched_net_return": 0.6947326573865853,
+      "total_commission": 779503.6134229284,
+      "total_explicit_costs": 779503.6134229284,
+      "total_oos_trades": 38,
+      "total_rejections": 0,
+      "total_slippage_estimate": 389751.2093808783,
+      "total_turnover": 71.37531110244409,
+      "worst_fold_return": 0.004113301467592269
+     },
+     "S3_high": {
+      "active_folds": 4,
+      "best_fold_return": 0.19396320821761695,
+      "fold_rows": [
+       {
+        "avg_loss": -251482.6359592005,
+        "avg_win": 1113614.6104420444,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 277217.4976121365,
+        "error": null,
+        "explicit_costs": 277217.4976121365,
+        "exposure_time": 0.37625570776255707,
+        "fold": 0,
+        "max_drawdown_pct": 0.14945528067405545,
+        "net_return": 0.19396320821761695,
+        "rejections": 2,
+        "slippage_estimate": 277219.9916816919,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 14,
+        "turnover": 25.976737564278565,
+        "win_rate": 0.2857142857142857
+       },
+       {
+        "avg_loss": -445661.86371064157,
+        "avg_win": 376140.5964764962,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 144579.01704764282,
+        "error": null,
+        "explicit_costs": 144579.01704764282,
+        "exposure_time": 0.34885844748858447,
+        "fold": 1,
+        "max_drawdown_pct": 0.159933089379806,
+        "net_return": -0.0037995244038973005,
+        "rejections": 0,
+        "slippage_estimate": 144569.91699233302,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 8,
+        "turnover": 15.733077567222304,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -349007.13951334375,
+        "avg_win": 961332.8987046191,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 165429.41079178805,
+        "error": null,
+        "explicit_costs": 165429.41079178805,
+        "exposure_time": 0.3515981735159817,
+        "fold": 2,
+        "max_drawdown_pct": 0.17424962037201394,
+        "net_return": 0.11389629985471368,
+        "rejections": 0,
+        "slippage_estimate": 165430.8806150703,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 8,
+        "turnover": 14.764742331166023,
+        "win_rate": 0.375
+       },
+       {
+        "avg_loss": -170925.16813605477,
+        "avg_win": 482924.32745186257,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 164070.62341415873,
+        "error": null,
+        "explicit_costs": 164070.62341415873,
+        "exposure_time": 0.4767123287671233,
+        "fold": 3,
+        "max_drawdown_pct": 0.09997540919338735,
+        "net_return": 0.1247996637263231,
+        "rejections": 0,
+        "slippage_estimate": 164072.19955361012,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 8,
+        "turnover": 14.889927538578593,
+        "win_rate": 0.5
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.38835616438356163,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 3,
+      "stitched_max_drawdown": -0.25635246179098814,
+      "stitched_net_return": 0.49024484484435016,
+      "total_commission": 751296.548865726,
+      "total_explicit_costs": 751296.548865726,
+      "total_oos_trades": 38,
+      "total_rejections": 2,
+      "total_slippage_estimate": 751292.9888427053,
+      "total_turnover": 71.36448500124548,
+      "worst_fold_return": -0.0037995244038973005
+     }
+    },
+    "worst_case": {
+     "worst_max_drawdown_abs": 0.25635246179098814,
+     "worst_oos_closed_trades": 38,
+     "worst_stitched_net_return": 0.49024484484435016
+    }
+   },
+   "ma_trend": {
+    "candidate": {
+     "criteria": {
+      "S1_low": {
+       "activity": true,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": false,
+       "profitable_after_costs": true
+      },
+      "S2_mid": {
+       "activity": true,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": false,
+       "profitable_after_costs": true
+      },
+      "S3_high": {
+       "activity": true,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": false,
+       "profitable_after_costs": true
+      }
+     },
+     "diagnostic_only": {
+      "S0_commission_only": {
+       "status_if_it_counted": "UNSTABLE",
+       "used_for_decision": false
+      }
+     },
+     "holdout_eligible": false,
+     "per_scenario": {
+      "S1_low": "UNSTABLE",
+      "S2_mid": "UNSTABLE",
+      "S3_high": "UNSTABLE"
+     },
+     "status": "UNSTABLE"
+    },
+    "folds": [
+     {
+      "fold": 0,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "5dcd050050449c7fb7f89c14e0977a4efa225139abf68b6fe8ac628f72b5af57"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "2571660c30587559dcb9c27c1365934d463438a417f511200174d781dd47fefc"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "75373b53e713b967f65ca935fdbfbc180776ccb3d62794314baf0079b9a2bd4d"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "c593dc9f6403252e6924843944d5f50a5f23cb3212cb458869da24d8d492fcc4"
+       }
+      },
+      "selection": {
+       "chosen_index": 1,
+       "chosen_params": {
+        "fast": 5,
+        "slow": 50
+       },
+       "worst_case_train_score": 0.0
+      },
+      "status": "OK",
+      "test": [
+       4380,
+       5475
+      ],
+      "train": [
+       0,
+       4380
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "fast": 5,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": -0.06843032484226487,
+         "S2_mid": -0.06894795111335889,
+         "S3_high": -0.06980996119604557
+        }
+       },
+       {
+        "params": {
+         "fast": 5,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": -0.13391058899234087,
+         "S2_mid": -0.15351983225294127,
+         "S3_high": -0.15458400211369022
+        }
+       }
+      ]
+     },
+     {
+      "fold": 1,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.017817803635860236,
+        "trades_closed": 11,
+        "trial_id": "f607dd53b18e1c2ad396cc828d78fbc8585244130783cd157804dc4e333b0036"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.013468684963135235,
+        "trades_closed": 11,
+        "trial_id": "7ef9c707cb577567479c7ed8c48f85004d91fc3c0f477a41e9789e552967d1a4"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.0069801210554353895,
+        "trades_closed": 11,
+        "trial_id": "a5daa5ee3fda0fc4aa72196dbce35e1f58ff2fc2f90c063de65bbdc5042ea6c9"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": -0.0037411351158354433,
+        "trades_closed": 11,
+        "trial_id": "fb37fc7e56d0dd920387c4f0482756d573e9d1c857c5feba44e167c9c60f9087"
+       }
+      },
+      "selection": {
+       "chosen_index": 5,
+       "chosen_params": {
+        "fast": 20,
+        "slow": 50
+       },
+       "worst_case_train_score": 0.34191931619644333
+      },
+      "status": "OK",
+      "test": [
+       5475,
+       6570
+      ],
+      "train": [
+       1095,
+       5475
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "fast": 5,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 5,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.38404677818494515,
+         "S2_mid": 0.349290041411462,
+         "S3_high": 0.34191931619644333
+        }
+       }
+      ]
+     },
+     {
+      "fold": 2,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": -0.12879890066430122,
+        "trades_closed": 15,
+        "trial_id": "3523c85d3558f3c36b0ea0e583f0ca71898b3e00119533535ef31c8834092dfb"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": -0.13364971693371738,
+        "trades_closed": 15,
+        "trial_id": "db473c15cbcb2ef2b3e7f7d2902fa10be0980d5a7242e309f65a8a403b527854"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": -0.14087518821428754,
+        "trades_closed": 15,
+        "trial_id": "47a56e551d367e06b3ad638b9aeac2c9b3c3e5bff5192a59877541ba6ae1a350"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": -0.15278322972292957,
+        "trades_closed": 15,
+        "trial_id": "4b75ed8366153e593a51d94e3bad1b55539cce9c73b375709abacda6eb598a74"
+       }
+      },
+      "selection": {
+       "chosen_index": 5,
+       "chosen_params": {
+        "fast": 20,
+        "slow": 50
+       },
+       "worst_case_train_score": 0.8441284349319652
+      },
+      "status": "OK",
+      "test": [
+       6570,
+       7665
+      ],
+      "train": [
+       2190,
+       6570
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "fast": 5,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 5,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.9765359647641092,
+         "S2_mid": 0.9258024331907653,
+         "S3_high": 0.8441284349319652
+        }
+       }
+      ]
+     },
+     {
+      "fold": 3,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.29305494375454244,
+        "trades_closed": 12,
+        "trial_id": "958ba400a5cdfbd59a8527a9ae9cb2bd010be8edf0075c9ec9fe40b0bd3fc0a7"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.287278528299427,
+        "trades_closed": 12,
+        "trial_id": "b6c0ded82648b4163042869cc1e4bea19a531d7aa9fe8159c61ad791d85b7f17"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.27866271804372555,
+        "trades_closed": 12,
+        "trial_id": "6a5bbbf8a3547730ad03cccc81615906fb4647d73881822a8585466056ef5900"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.2644315622668361,
+        "trades_closed": 12,
+        "trial_id": "1c214b1b3ee6981d05c4eff4d44942cebb4474080d75cbfc0843438cde6f33af"
+       }
+      },
+      "selection": {
+       "chosen_index": 5,
+       "chosen_params": {
+        "fast": 20,
+        "slow": 50
+       },
+       "worst_case_train_score": 0.20999750676708595
+      },
+      "status": "OK",
+      "test": [
+       7665,
+       8760
+      ],
+      "train": [
+       3285,
+       7665
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "fast": 5,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 5,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 10,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.07755147011688594,
+         "S2_mid": -0.0959004428027099,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 30
+        },
+        "scores": {
+         "S1_low": 0.06065738421805613,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "fast": 20,
+         "slow": 50
+        },
+        "scores": {
+         "S1_low": 0.3055560603438757,
+         "S2_mid": 0.2688664752377754,
+         "S3_high": 0.20999750676708595
+        }
+       }
+      ]
+     }
+    ],
+    "scenario_summaries": {
+     "S0_commission_only": {
+      "active_folds": 3,
+      "best_fold_return": 0.29305494375454244,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 16,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -399969.24424427433,
+        "avg_win": 686605.3541384105,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 201450.227936398,
+        "error": null,
+        "explicit_costs": 201450.227936398,
+        "exposure_time": 0.4748858447488584,
+        "fold": 1,
+        "max_drawdown_pct": 0.15959545691674557,
+        "net_return": 0.017817803635860236,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 11,
+        "turnover": 21.222393827275734,
+        "win_rate": 0.2727272727272727
+       },
+       {
+        "avg_loss": -420325.45704082726,
+        "avg_win": 583053.1127530523,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 278000.142404011,
+        "error": null,
+        "explicit_costs": 278000.142404011,
+        "exposure_time": 0.5534246575342465,
+        "fold": 2,
+        "max_drawdown_pct": 0.2985918922346875,
+        "net_return": -0.12879890066430122,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 15,
+        "turnover": 27.471863670735587,
+        "win_rate": 0.3333333333333333
+       },
+       {
+        "avg_loss": -184485.2522389061,
+        "avg_win": 458561.30581263115,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 269895.68416757305,
+        "error": null,
+        "explicit_costs": 269895.68416757305,
+        "exposure_time": 0.5835616438356165,
+        "fold": 3,
+        "max_drawdown_pct": 0.08581119073880034,
+        "net_return": 0.29305494375454244,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 12,
+        "turnover": 22.53477234066301,
+        "win_rate": 0.6666666666666666
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.4029680365296804,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 2,
+      "stitched_max_drawdown": -0.29859189223468763,
+      "stitched_net_return": 0.14658283830537644,
+      "total_commission": 749346.054507982,
+      "total_explicit_costs": 749346.054507982,
+      "total_oos_trades": 38,
+      "total_rejections": 16,
+      "total_slippage_estimate": 0,
+      "total_turnover": 71.22902983867434,
+      "worst_fold_return": -0.12879890066430122
+     },
+     "S1_low": {
+      "active_folds": 3,
+      "best_fold_return": 0.287278528299427,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 16,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -402613.14365228143,
+        "avg_win": 681589.1918842506,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 201022.93909673367,
+        "error": null,
+        "explicit_costs": 201022.93909673367,
+        "exposure_time": 0.4748858447488584,
+        "fold": 1,
+        "max_drawdown_pct": 0.16178054561604474,
+        "net_return": 0.013468684963135235,
+        "rejections": 0,
+        "slippage_estimate": 40204.22169091469,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 11,
+        "turnover": 21.226394347583792,
+        "win_rate": 0.2727272727272727
+       },
+       {
+        "avg_loss": -422782.763286648,
+        "avg_win": 578266.0927058603,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 277240.8112329272,
+        "error": null,
+        "explicit_costs": 277240.8112329272,
+        "exposure_time": 0.5534246575342465,
+        "fold": 2,
+        "max_drawdown_pct": 0.3014560520939901,
+        "net_return": -0.13364971693371738,
+        "rejections": 0,
+        "slippage_estimate": 55448.12209424896,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 15,
+        "turnover": 27.46692935354105,
+        "win_rate": 0.3333333333333333
+       },
+       {
+        "avg_loss": -188581.15405489955,
+        "avg_win": 453388.7374017339,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 269266.91146708606,
+        "error": null,
+        "explicit_costs": 269266.91146708606,
+        "exposure_time": 0.5835616438356165,
+        "fold": 3,
+        "max_drawdown_pct": 0.08751183802868193,
+        "net_return": 0.287278528299427,
+        "rejections": 0,
+        "slippage_estimate": 53853.510129638584,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 12,
+        "turnover": 22.53515641622956,
+        "win_rate": 0.6666666666666666
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.4029680365296804,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 2,
+      "stitched_max_drawdown": -0.30145605209399007,
+      "stitched_net_return": 0.13025485436445194,
+      "total_commission": 747530.6617967469,
+      "total_explicit_costs": 747530.6617967469,
+      "total_oos_trades": 38,
+      "total_rejections": 16,
+      "total_slippage_estimate": 149505.85391480225,
+      "total_turnover": 71.2284801173544,
+      "worst_fold_return": -0.13364971693371738
+     },
+     "S2_mid": {
+      "active_folds": 3,
+      "best_fold_return": 0.27866271804372555,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 16,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -406556.95278389106,
+        "avg_win": 674099.0180736451,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 200384.3160198497,
+        "error": null,
+        "explicit_costs": 200384.3160198497,
+        "exposure_time": 0.4748858447488584,
+        "fold": 1,
+        "max_drawdown_pct": 0.16504734516725444,
+        "net_return": 0.0069801210554353895,
+        "rejections": 0,
+        "slippage_estimate": 100189.88361679905,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 11,
+        "turnover": 21.23238324896397,
+        "win_rate": 0.2727272727272727
+       },
+       {
+        "avg_loss": -426436.3109368094,
+        "avg_win": 571122.245445043,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 276107.0613358524,
+        "error": null,
+        "explicit_costs": 276107.0613358524,
+        "exposure_time": 0.5534246575342465,
+        "fold": 2,
+        "max_drawdown_pct": 0.30573024325910625,
+        "net_return": -0.14087518821428754,
+        "rejections": 0,
+        "slippage_estimate": 138053.28202002778,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 15,
+        "turnover": 27.4595215665426,
+        "win_rate": 0.3333333333333333
+       },
+       {
+        "avg_loss": -194680.86406963714,
+        "avg_win": 445668.82958947524,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 268327.4115386594,
+        "error": null,
+        "explicit_costs": 268327.4115386594,
+        "exposure_time": 0.5835616438356165,
+        "fold": 3,
+        "max_drawdown_pct": 0.09005682398954164,
+        "net_return": 0.27866271804372555,
+        "rejections": 0,
+        "slippage_estimate": 134164.50304908748,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 12,
+        "turnover": 22.53571496129243,
+        "win_rate": 0.6666666666666666
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.4029680365296804,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 2,
+      "stitched_max_drawdown": -0.30573024325910625,
+      "stitched_net_return": 0.1061987454113531,
+      "total_commission": 744818.7888943616,
+      "total_explicit_costs": 744818.7888943616,
+      "total_oos_trades": 38,
+      "total_rejections": 16,
+      "total_slippage_estimate": 372407.6686859143,
+      "total_turnover": 71.227619776799,
+      "worst_fold_return": -0.14087518821428754
+     },
+     "S3_high": {
+      "active_folds": 3,
+      "best_fold_return": 0.2644315622668361,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 16,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -413071.35396968195,
+        "avg_win": 661705.7614884459,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 199326.01129281864,
+        "error": null,
+        "explicit_costs": 199326.01129281864,
+        "exposure_time": 0.4748858447488584,
+        "fold": 1,
+        "max_drawdown_pct": 0.1704635075394881,
+        "net_return": -0.0037411351158354433,
+        "rejections": 0,
+        "slippage_estimate": 199317.005662533,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 11,
+        "turnover": 21.242328602971558,
+        "win_rate": 0.2727272727272727
+       },
+       {
+        "avg_loss": -393863.075641329,
+        "avg_win": 701165.3837063317,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 274231.3475424425,
+        "error": null,
+        "explicit_costs": 274231.3475424425,
+        "exposure_time": 0.5534246575342465,
+        "fold": 2,
+        "max_drawdown_pct": 0.312795547152455,
+        "net_return": -0.15278322972292957,
+        "rejections": 0,
+        "slippage_estimate": 274230.3681718463,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 15,
+        "turnover": 27.44714787367035,
+        "win_rate": 0.26666666666666666
+       },
+       {
+        "avg_loss": -204729.95353478362,
+        "avg_win": 432904.42960093677,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 266771.07228785584,
+        "error": null,
+        "explicit_costs": 266771.07228785584,
+        "exposure_time": 0.5835616438356165,
+        "fold": 3,
+        "max_drawdown_pct": 0.09430771746661136,
+        "net_return": 0.2644315622668361,
+        "rejections": 0,
+        "slippage_estimate": 266774.2501487874,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 12,
+        "turnover": 22.536591331862635,
+        "win_rate": 0.6666666666666666
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.4029680365296804,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 1,
+      "stitched_max_drawdown": -0.31279554715245506,
+      "stitched_net_return": 0.06723994231462616,
+      "total_commission": 740328.431123117,
+      "total_explicit_costs": 740328.431123117,
+      "total_oos_trades": 38,
+      "total_rejections": 16,
+      "total_slippage_estimate": 740321.6239831666,
+      "total_turnover": 71.22606780850454,
+      "worst_fold_return": -0.15278322972292957
+     }
+    },
+    "worst_case": {
+     "worst_max_drawdown_abs": 0.31279554715245506,
+     "worst_oos_closed_trades": 38,
+     "worst_stitched_net_return": 0.06723994231462616
+    }
+   },
+   "mean_reversion": {
+    "candidate": {
+     "criteria": {
+      "S1_low": {
+       "activity": false,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": false,
+       "profitable_after_costs": true
+      },
+      "S2_mid": {
+       "activity": false,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": false,
+       "profitable_after_costs": true
+      },
+      "S3_high": {
+       "activity": false,
+       "beats_aligned_passive": false,
+       "integrity": true,
+       "positive_fold_majority": false,
+       "profitable_after_costs": true
+      }
+     },
+     "diagnostic_only": {
+      "S0_commission_only": {
+       "status_if_it_counted": "INSUFFICIENT_ACTIVITY",
+       "used_for_decision": false
+      }
+     },
+     "holdout_eligible": false,
+     "per_scenario": {
+      "S1_low": "INSUFFICIENT_ACTIVITY",
+      "S2_mid": "INSUFFICIENT_ACTIVITY",
+      "S3_high": "INSUFFICIENT_ACTIVITY"
+     },
+     "status": "INSUFFICIENT_ACTIVITY"
+    },
+    "folds": [
+     {
+      "fold": 0,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "e6e5184a21707e0421c18dc08bddf8e4b51c9a8c1dc6f4c694ce1edd845bb205"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "ad3e9f39ec1cbdc8758b01f2beb056cc966d457b5a7ab4290884d7395265928a"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "775b1b1109ba088eda47c01854a7ea57fdadc42ffc0a6ac535272885fa4a6fa8"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "a0e27930c1f762f9808532a1d6e613e060be1bdfee4615fba2bd991325186742"
+       }
+      },
+      "selection": {
+       "chosen_index": 2,
+       "chosen_params": {
+        "entry_z": 2.0,
+        "window": 20
+       },
+       "worst_case_train_score": -0.08641736090724096
+      },
+      "status": "OK",
+      "test": [
+       4380,
+       5475
+      ],
+      "train": [
+       0,
+       4380
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": -0.6334243715557762,
+         "S2_mid": -0.6638519621370419,
+         "S3_high": -0.6995805285160351
+        }
+       },
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": -0.4179580317772662,
+         "S2_mid": -0.43681965797805505,
+         "S3_high": -0.46690554000833967
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": -0.07684723348960765,
+         "S2_mid": -0.08044787857648078,
+         "S3_high": -0.08641736090724096
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": -0.11626744311629869,
+         "S2_mid": -0.11774291209631525,
+         "S3_high": -0.12019629309821427
+        }
+       }
+      ]
+     },
+     {
+      "fold": 1,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "2e678d9b717d37a6898d4d3df2df601ca42e58579a66e7fc92af26fa2d5a8a3e"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "a3854c4cdb4346bfbd38e4c685f9edee8b4032523258d7f53ce500b328b33f19"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "dd4df29e88f427a395f2a7a2c24d4e19b8611caf54b971589e933c47a8cd9f2f"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "6e10c090c7c7485fae8a7fce6c6388ee957034d20721404461937d7be067d308"
+       }
+      },
+      "selection": {
+       "chosen_index": 2,
+       "chosen_params": {
+        "entry_z": 2.0,
+        "window": 20
+       },
+       "worst_case_train_score": 0.0
+      },
+      "status": "OK",
+      "test": [
+       5475,
+       6570
+      ],
+      "train": [
+       1095,
+       5475
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": -0.5159752493553516,
+         "S2_mid": -0.5559090934748961,
+         "S3_high": -0.5945088427065445
+        }
+       },
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": -0.3390622789655731,
+         "S2_mid": -0.3601267627556061,
+         "S3_high": -0.3937512138612501
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       }
+      ]
+     },
+     {
+      "fold": 2,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "b8fe19026bd85c6e9d4a2b63d4a56e02e33c9857fc83b6a1dcdb652e151e77e2"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "9d33b7aaf97006670345fab40de325cccd53d75b1df4f3370e050ddf8a74aafc"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "caada69d558cb05d20c9653d0ab3ffb822e801665928af1d6ec483b3e3b789a4"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.0,
+        "trades_closed": 0,
+        "trial_id": "a070ae5a89d1246764953e8ac688931c3b3740a7d059ae2e278f593e4ce6f603"
+       }
+      },
+      "selection": {
+       "chosen_index": 2,
+       "chosen_params": {
+        "entry_z": 2.0,
+        "window": 20
+       },
+       "worst_case_train_score": 0.0
+      },
+      "status": "OK",
+      "test": [
+       6570,
+       7665
+      ],
+      "train": [
+       2190,
+       6570
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": -0.15218676453046837,
+         "S2_mid": -0.23259317076127456,
+         "S3_high": -0.3208160327281342
+        }
+       },
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": -0.06111966138054803,
+         "S2_mid": -0.09055026962532625,
+         "S3_high": -0.1375631116526058
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       }
+      ]
+     },
+     {
+      "fold": 3,
+      "oos": {
+       "S0_commission_only": {
+        "error": null,
+        "net_return": 0.20072304507289174,
+        "trades_closed": 15,
+        "trial_id": "7bdbc50736d393973869d5440554333765bbc212f494f32503b88e2eba4f5350"
+       },
+       "S1_low": {
+        "error": null,
+        "net_return": 0.19380288319934327,
+        "trades_closed": 15,
+        "trial_id": "4842138e696bbf00eec8986fba070845174ff9ca2d9c293503bad72162cfc00f"
+       },
+       "S2_mid": {
+        "error": null,
+        "net_return": 0.18349786783074196,
+        "trades_closed": 15,
+        "trial_id": "2e75f4c6c9eb1718f546749f1e1988a76bf361ecb3eec6859fb2d12ccfbc075e"
+       },
+       "S3_high": {
+        "error": null,
+        "net_return": 0.1665212512188822,
+        "trades_closed": 15,
+        "trial_id": "6da694f546d40ae0649c5b475fb4e89f73394c9dd6aea6c73d512d17a64e985a"
+       }
+      },
+      "selection": {
+       "chosen_index": 1,
+       "chosen_params": {
+        "entry_z": 1.5,
+        "window": 40
+       },
+       "worst_case_train_score": 0.1655132666946061
+      },
+      "status": "OK",
+      "test": [
+       7665,
+       8760
+      ],
+      "train": [
+       3285,
+       7665
+      ],
+      "train_scores": [
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": -0.06481824406412989,
+         "S2_mid": -0.11983090976559427,
+         "S3_high": -0.2519714849667757
+        }
+       },
+       {
+        "params": {
+         "entry_z": 1.5,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": 0.2754989455058381,
+         "S2_mid": 0.23308632393212803,
+         "S3_high": 0.1655132666946061
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 20
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       },
+       {
+        "params": {
+         "entry_z": 2.0,
+         "window": 40
+        },
+        "scores": {
+         "S1_low": 0.0,
+         "S2_mid": 0.0,
+         "S3_high": 0.0
+        }
+       }
+      ]
+     }
+    ],
+    "scenario_summaries": {
+     "S0_commission_only": {
+      "active_folds": 1,
+      "best_fold_return": 0.20072304507289174,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 22,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 1,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 38,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 2,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 36,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -62509.36458381508,
+        "avg_win": 205135.225523113,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 332010.13408409496,
+        "error": null,
+        "explicit_costs": 332010.13408409496,
+        "exposure_time": 0.245662100456621,
+        "fold": 3,
+        "max_drawdown_pct": 0.05717446944563648,
+        "net_return": 0.20072304507289174,
+        "rejections": 0,
+        "slippage_estimate": 0.0,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 15,
+        "turnover": 28.915237451532118,
+        "win_rate": 0.8666666666666667
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.06141552511415525,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 1,
+      "stitched_max_drawdown": -0.05717446944563653,
+      "stitched_net_return": 0.20072304507289163,
+      "total_commission": 332010.13408409496,
+      "total_explicit_costs": 332010.13408409496,
+      "total_oos_trades": 15,
+      "total_rejections": 96,
+      "total_slippage_estimate": 0,
+      "total_turnover": 28.915237451532118,
+      "worst_fold_return": 0.0
+     },
+     "S1_low": {
+      "active_folds": 1,
+      "best_fold_return": 0.19380288319934327,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 22,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 1,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 38,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 2,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 36,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -66629.08644171798,
+        "avg_win": 200386.96881937326,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 331014.60565042734,
+        "error": null,
+        "explicit_costs": 331014.60565042734,
+        "exposure_time": 0.245662100456621,
+        "fold": 3,
+        "max_drawdown_pct": 0.057173673151946346,
+        "net_return": 0.19380288319934327,
+        "rejections": 0,
+        "slippage_estimate": 66202.57125514376,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 15,
+        "turnover": 28.9170341294994,
+        "win_rate": 0.8666666666666667
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.06141552511415525,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 1,
+      "stitched_max_drawdown": -0.057173673151946436,
+      "stitched_net_return": 0.19380288319934325,
+      "total_commission": 331014.60565042734,
+      "total_explicit_costs": 331014.60565042734,
+      "total_oos_trades": 15,
+      "total_rejections": 96,
+      "total_slippage_estimate": 66202.57125514376,
+      "total_turnover": 28.9170341294994,
+      "worst_fold_return": 0.0
+     },
+     "S2_mid": {
+      "active_folds": 1,
+      "best_fold_return": 0.18349786783074196,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 22,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 1,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 38,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 2,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 36,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -72760.64466472396,
+        "avg_win": 193313.7422221508,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 329528.7092752638,
+        "error": null,
+        "explicit_costs": 329528.7092752638,
+        "exposure_time": 0.245662100456621,
+        "fold": 3,
+        "max_drawdown_pct": 0.057172534217873675,
+        "net_return": 0.18349786783074196,
+        "rejections": 0,
+        "slippage_estimate": 164762.19040031405,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 15,
+        "turnover": 28.91970899350898,
+        "win_rate": 0.8666666666666667
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.06141552511415525,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 1,
+      "stitched_max_drawdown": -0.057172534217873716,
+      "stitched_net_return": 0.18349786783074196,
+      "total_commission": 329528.7092752638,
+      "total_explicit_costs": 329528.7092752638,
+      "total_oos_trades": 15,
+      "total_rejections": 96,
+      "total_slippage_estimate": 164762.19040031405,
+      "total_turnover": 28.91970899350898,
+      "worst_fold_return": 0.0
+     },
+     "S3_high": {
+      "active_folds": 1,
+      "best_fold_return": 0.1665212512188822,
+      "fold_rows": [
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 1.583017250520749,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 0,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 22,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         4380,
+         5475
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": -0.057644802408800655,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 1,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 38,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         5475,
+         6570
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": null,
+        "avg_win": null,
+        "benchmark_aligned_return": 0.2577644825428611,
+        "commission": 0,
+        "error": null,
+        "explicit_costs": 0,
+        "exposure_time": 0.0,
+        "fold": 2,
+        "max_drawdown_pct": 0.0,
+        "net_return": 0.0,
+        "rejections": 36,
+        "slippage_estimate": 0,
+        "status": "OK",
+        "test": [
+         6570,
+         7665
+        ],
+        "trades_closed": 0,
+        "turnover": 0.0,
+        "win_rate": null
+       },
+       {
+        "avg_loss": -82852.81676465599,
+        "avg_win": 181654.76947821688,
+        "benchmark_aligned_return": 0.32504546662838396,
+        "commission": 327071.6202435894,
+        "error": null,
+        "explicit_costs": 327071.6202435894,
+        "exposure_time": 0.245662100456621,
+        "fold": 3,
+        "max_drawdown_pct": 0.057170557600169786,
+        "net_return": 0.1665212512188822,
+        "rejections": 0,
+        "slippage_estimate": 327063.1113555905,
+        "status": "OK",
+        "test": [
+         7665,
+         8760
+        ],
+        "trades_closed": 15,
+        "turnover": 28.924099575467828,
+        "win_rate": 0.8666666666666667
+       }
+      ],
+      "folds": 4,
+      "folds_ok": 4,
+      "mean_exposure_time": 0.06141552511415525,
+      "passive_stitched_return": 3.0566920798317305,
+      "positive_folds": 1,
+      "stitched_max_drawdown": -0.05717055760016987,
+      "stitched_net_return": 0.16652125121888228,
+      "total_commission": 327071.6202435894,
+      "total_explicit_costs": 327071.6202435894,
+      "total_oos_trades": 15,
+      "total_rejections": 96,
+      "total_slippage_estimate": 327063.1113555905,
+      "total_turnover": 28.924099575467828,
+      "worst_fold_return": 0.0
+     }
+    },
+    "worst_case": {
+     "worst_max_drawdown_abs": 0.057173673151946436,
+     "worst_oos_closed_trades": 15,
+     "worst_stitched_net_return": 0.16652125121888228
+    }
+   }
+  },
+  "trial_accounting": {
+   "all_series_present": true,
+   "evaluations": 216,
+   "series_already_identical": 0,
+   "series_newly_stored": 216,
+   "trial_ids": 216,
+   "unique_trial_ids": 216
+  }
+ },
+ "trial_accounting": {
+  "all_series_present": true,
+  "evaluations": 216,
+  "registry_unique_v2_trials": 216,
+  "registry_v2_executions": 216,
+  "series_already_identical": 0,
+  "series_newly_stored": 216,
+  "trial_ids": 216,
+  "unique_trial_ids": 216,
+  "verification_rerun_counts_as_new_trials": false,
+  "verification_rerun_evaluations": 216,
+  "verification_rerun_newly_stored": 0,
+  "verification_rerun_series_identical": 216
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "aligned_return": 0.25,
+ "aligned_series": [
+  0.0,
+  0.0,
+  0.25
+ ],
+ "definition": "(corrects the Batch #3C finding): the engine can fill the earliest order at open(start+1) (signal at the\nclose of the first window bar, fill at the next open), so the passive benchmark is exposed from open(start+1), not\nopen(start). Its per-bar series is 0.0 for the first bar, close[start+1]/open[start+1]-1 for the second, then bar-to-bar\nclose returns. It is cost-free and fully invested; those asymmetries are stated, not hidden.",
+ "series_compounds_to_return": true,
+ "toy_bars_open_close": [
+  [
+   10,
+   10
+  ],
+  [
+   10,
+   11
+  ],
+  [
+   12,
+   12
+  ],
+  [
+   12,
+   15
+  ]
+ ],
+ "v1_return_for_comparison": 0.5
+}

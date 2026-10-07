@@ -1,0 +1,27 @@
+QAT Batch #2 independent audit - observed behaviour on the PRE-FIX code (2026-09-30)
+Environment: CPython 3.11.5, pytest 8.4.2, PyYAML 6.0.3. Scripts: probe1..5.py (run from repo root).
+
+probe1 (reconcile / API payloads / strategy params / risk hooks)
+  reconcile nan cash -> ok=True ; nan position -> ok=True ; inf position -> ok=False ; tol=nan -> ok=True
+  start_bar=Infinity -> OverflowError (unhandled, HTTP 500) ; advance bars=Infinity -> OverflowError ; walkforward train_bars=Infinity -> OverflowError
+  quantity=true -> proposal ACCEPTED (treated as 1)
+  ma_trend fast=0 / slow=0 -> ZeroDivisionError ; fast=NaN -> ValueError ; fast="abc" -> ValueError ; fast=-5 / 1.5 / horizon=0 -> accepted and run
+  UI session, max_drawdown=0.001: displayed drawdown 2.07%, second BUY -> accepted (limit inert)
+  RiskGate(max_drawdown=0.01) with no equity observation -> PASS
+probe2 (data / lockbox / request ids / Host)
+  1h bars at 00:00, 00:30, 01:00 -> validation PASS ; tz "+25:00" -> ValueError ; binary CSV -> UnicodeDecodeError
+  DatasetMeta(KR,"BTC/KRW") and (US,"AAPL/USD") accepted ; source=SYNTHETIC with synthetic=False accepted
+  lockbox 650-750 evaluated, then a walk-forward reserving 700-750 -> lockbox reported independent=True
+  after 500 UI requests: request 502 reason = compliance:BLOCK:duplicate_proposal (proposal id derived from cache size); evicted id replay not flagged
+  Host: evil.example -> 200 (GET and POST kill-switch with Origin evil) : no Host/Origin validation
+probe3
+  ma_trend instance reused after a shorter run -> different fills vs a fresh instance (state leak)
+  60 random multi-currency runs: 0 accounting-invariant violations
+probe4
+  12 concurrent identical proposals with distinct request ids -> 1 accepted
+  FX missing + exposure limit -> UNKNOWN (fx_unavailable) ; FX missing without limits -> accepted, total_base None
+  backtest US dataset, max_drawdown=1%, FX rates absent -> 27 fills, 0 rejections, observed drawdown 16.3% (limit silently ignored)
+  UI daily_loss_limit=5000 after a 221,730 KRW loss: next-day BUY -> BLOCK daily_loss_limit (baseline never reset)
+probe5
+  6 threads settling one fill x 300 trials -> 0 double applications (NOT REPRODUCED)
+mutate_leakage_and_defects.py: 17 mutations; pre-audit suite let 'calibration window +50 bars' survive (vacuous test: 0 trades in empirical mode).

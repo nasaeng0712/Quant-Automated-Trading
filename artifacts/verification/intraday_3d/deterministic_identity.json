@@ -1,0 +1,531 @@
+{
+ "detail": {
+  "csv_bytes": true,
+  "extra_bytes": true,
+  "identity": true,
+  "normalized_sha256": true,
+  "raw_set_sha256": true
+ },
+ "identity": {
+  "adjustment_semantics": "UNADJUSTED (spot trading pair: no corporate-action mechanism, structural)",
+  "calendar": "24x7 (no exchange calendar); continuity checked",
+  "data_version": "CRYPTO-BTCUSDT-4h-binance-vision-f3ab848bf53c-4d2aff",
+  "development_window": [
+   "2018-01-01",
+   "2025-12-31"
+  ],
+  "extra_sha256": "3abcea706faea1e40f9cc8a0e5a738e7a9ea6fd2d433116117d0545862a7da33",
+  "first_open": "2018-01-01T00:00:00+00:00",
+  "holdout_start": "2026-01-01",
+  "interval": "4h",
+  "last_open": "2025-12-31T20:00:00+00:00",
+  "market": "CRYPTO",
+  "normalized_sha256": "f3ab848bf53c9db834268a2531e166041cd43dd6ec263ce83724378824813648",
+  "performance_data_accessed": false,
+  "provider": "binance-vision",
+  "provider_symbol": "BTCUSDT",
+  "raw": [
+   {
+    "name": "BTCUSDT-4h-2018-01.zip",
+    "sha256": "0577a31d3bf500fa54638f87acda7fd7bafca4e5ec3983645403323512385f72",
+    "size_bytes": 11704
+   },
+   {
+    "name": "BTCUSDT-4h-2018-02.zip",
+    "sha256": "35158247eb814e49ad96bab8c0c7c073b57ddc12b462f0176d1beeda7cefefd2",
+    "size_bytes": 10161
+   },
+   {
+    "name": "BTCUSDT-4h-2018-03.zip",
+    "sha256": "bb75b19e318a2248dc1643ec110ce7791be053a87b9664e199bfb843995f8578",
+    "size_bytes": 11653
+   },
+   {
+    "name": "BTCUSDT-4h-2018-04.zip",
+    "sha256": "73ca718f8f67604f26b56a2ccc949a09827d103e571759f6a16586d13be82042",
+    "size_bytes": 11165
+   },
+   {
+    "name": "BTCUSDT-4h-2018-05.zip",
+    "sha256": "63f48ae7c567a3abc74839681eec20d1d73df466d38442c1e24da74f45ac4d13",
+    "size_bytes": 11584
+   },
+   {
+    "name": "BTCUSDT-4h-2018-06.zip",
+    "sha256": "38ce9dbc3a80c20777b7a02745b4d8458476627a13f7e0d188df06b7f5cbfd12",
+    "size_bytes": 11078
+   },
+   {
+    "name": "BTCUSDT-4h-2018-07.zip",
+    "sha256": "f2a12112d9b149e6ac6efe0ab2b94fba22aaacc173babc8b943f5b8d39e6a185",
+    "size_bytes": 11464
+   },
+   {
+    "name": "BTCUSDT-4h-2018-08.zip",
+    "sha256": "374438143ce0e30a85acfb44e1a097bcb1fc68ae7cd134d59bd1e4d353966b86",
+    "size_bytes": 11591
+   },
+   {
+    "name": "BTCUSDT-4h-2018-09.zip",
+    "sha256": "2040f3a6003313dcfaa3f31300dd632694110b72154cb1daf5ffabeb2c6add8a",
+    "size_bytes": 11065
+   },
+   {
+    "name": "BTCUSDT-4h-2018-10.zip",
+    "sha256": "ca4d90721ebe43d28e86908c04f4e7d7dc24457964af45325b044e33718357fe",
+    "size_bytes": 11311
+   },
+   {
+    "name": "BTCUSDT-4h-2018-11.zip",
+    "sha256": "82f7148a100e4480c75a4fbdbc72b812aa7837e57b1ae5f5f2f824c13ede97d0",
+    "size_bytes": 11128
+   },
+   {
+    "name": "BTCUSDT-4h-2018-12.zip",
+    "sha256": "4dbad83a82d41b731090e87c42b25b4561a6e98c10a83378a3b265d8868f6d5b",
+    "size_bytes": 11557
+   },
+   {
+    "name": "BTCUSDT-4h-2019-01.zip",
+    "sha256": "c0b02743e7a7a26da452f17cc0cad8bb0dc7cea87a379441a02c750c0503e349",
+    "size_bytes": 11384
+   },
+   {
+    "name": "BTCUSDT-4h-2019-02.zip",
+    "sha256": "453ccf6c9720d7c55b68973d5e8237820bffd9796a71f637d375d8d6b908194a",
+    "size_bytes": 10285
+   },
+   {
+    "name": "BTCUSDT-4h-2019-03.zip",
+    "sha256": "fed5735ec622a9a18ea5a131e7c334642a44e3a27a8fe2710d8009da8e21c6b9",
+    "size_bytes": 11244
+   },
+   {
+    "name": "BTCUSDT-4h-2019-04.zip",
+    "sha256": "bd38f9d152043bafc6ecce269cd3fa038a56c460eba6d7e596e086472947d9aa",
+    "size_bytes": 11162
+   },
+   {
+    "name": "BTCUSDT-4h-2019-05.zip",
+    "sha256": "36223d09ae92e83f42e4addfbfc868de1881546ed0c5eee81b258edd531faa90",
+    "size_bytes": 11667
+   },
+   {
+    "name": "BTCUSDT-4h-2019-06.zip",
+    "sha256": "356dd3ead36ee5d6db2ccae62acd0fdb1caf89b3c80954290f0e7fdb61fe18dd",
+    "size_bytes": 11533
+   },
+   {
+    "name": "BTCUSDT-4h-2019-07.zip",
+    "sha256": "acbf5995930243db205eefd06564da2156a47911d818ce26c5d8f346755ef7e3",
+    "size_bytes": 11942
+   },
+   {
+    "name": "BTCUSDT-4h-2019-08.zip",
+    "sha256": "fe124a8781e9fcde21b5e7ad6215e882ad10d8e2d6e4fcf53fb1c31c13e5f9bf",
+    "size_bytes": 11752
+   },
+   {
+    "name": "BTCUSDT-4h-2019-09.zip",
+    "sha256": "4670875db35ab1685ce9a3362b4bdf327e492de7d157895da61a9ff5aa6641ba",
+    "size_bytes": 11394
+   },
+   {
+    "name": "BTCUSDT-4h-2019-10.zip",
+    "sha256": "dd6894d8c70a63700cc26ea1bb9d6445b9e434184bb8b88209581f3045ec7183",
+    "size_bytes": 11740
+   },
+   {
+    "name": "BTCUSDT-4h-2019-11.zip",
+    "sha256": "12c0aac94c70e79c549f92e638cfc39ca6a5fa09cdb767252bc3e8466fe4e6c0",
+    "size_bytes": 11410
+   },
+   {
+    "name": "BTCUSDT-4h-2019-12.zip",
+    "sha256": "750f93fd5ecf792336d9b448bb66f291ed22b7de5d3c134e0cdff9a3f0b53597",
+    "size_bytes": 11643
+   },
+   {
+    "name": "BTCUSDT-4h-2020-01.zip",
+    "sha256": "a3ec869045afa403f9681b1eb114e3ac4a8474874edae0baa148578b6aaab5f6",
+    "size_bytes": 11795
+   },
+   {
+    "name": "BTCUSDT-4h-2020-02.zip",
+    "sha256": "efd2cb8a08b9238315213ba2ba2ff23ca3a295e07ff29ae75e1115c56f9555b9",
+    "size_bytes": 10996
+   },
+   {
+    "name": "BTCUSDT-4h-2020-03.zip",
+    "sha256": "ab0bdcc84e7241732b769f40e36e37ce05ab1ce4dbcca051b6536ecd7c15545a",
+    "size_bytes": 12001
+   },
+   {
+    "name": "BTCUSDT-4h-2020-04.zip",
+    "sha256": "78d5ccf8c51e77ef61e61b39490a6ac1196d577fca26d8e3cb4e9c35030b24ac",
+    "size_bytes": 11416
+   },
+   {
+    "name": "BTCUSDT-4h-2020-05.zip",
+    "sha256": "091dee096f028d8511231a741b4ccc76ae0d3251bad22ae1c38c96350de7769e",
+    "size_bytes": 11883
+   },
+   {
+    "name": "BTCUSDT-4h-2020-06.zip",
+    "sha256": "26e5e3760f40e93c90042270deb39ec90e416f56154483c882c99bec1244b00e",
+    "size_bytes": 11327
+   },
+   {
+    "name": "BTCUSDT-4h-2020-07.zip",
+    "sha256": "e54de04cfe904543e3ab1ac5cbd5f500ec8b32d82ad363574be9c6f448f8c3a2",
+    "size_bytes": 11673
+   },
+   {
+    "name": "BTCUSDT-4h-2020-08.zip",
+    "sha256": "0ff8a3c421b56b4d8a66c9d816bb39959f5eb3b7e4d39f14349d7e20b30c5780",
+    "size_bytes": 11733
+   },
+   {
+    "name": "BTCUSDT-4h-2020-09.zip",
+    "sha256": "117952153a49c0e53e88050ee892029648f0b351571a61ffb1bc059d9f8b4bab",
+    "size_bytes": 11461
+   },
+   {
+    "name": "BTCUSDT-4h-2020-10.zip",
+    "sha256": "4eb24f27c5345508ec8be9dac331ba8c9a41c27e327c306560837c94c145f9fd",
+    "size_bytes": 11771
+   },
+   {
+    "name": "BTCUSDT-4h-2020-11.zip",
+    "sha256": "454f59692ede24e8b6a0e6d42249016768ffe2b65a4c1dfe9e4f3539653221a8",
+    "size_bytes": 11693
+   },
+   {
+    "name": "BTCUSDT-4h-2020-12.zip",
+    "sha256": "5872b6b980795386e78a8faffe72a9882de25bf2b4c904bb22f917615f7f6c1f",
+    "size_bytes": 12114
+   },
+   {
+    "name": "BTCUSDT-4h-2021-01.zip",
+    "sha256": "d2fc6601de895b5d0259242211419ca8d9630a58bcde3699137aea2c0d652c9f",
+    "size_bytes": 12362
+   },
+   {
+    "name": "BTCUSDT-4h-2021-02.zip",
+    "sha256": "09151f0b4212d4c45efaaa361c3bf968d2b9113f31c5dcfc20b7480d68356d90",
+    "size_bytes": 11245
+   },
+   {
+    "name": "BTCUSDT-4h-2021-03.zip",
+    "sha256": "a2bbf7c741845eaa41e27d2e81c927c95451788a9a0976a9454fe81eff0ee55a",
+    "size_bytes": 12305
+   },
+   {
+    "name": "BTCUSDT-4h-2021-04.zip",
+    "sha256": "9716e898ced00e72480b430b2efbf5140a2b8b1cd69273f0da9cae619da10944",
+    "size_bytes": 11898
+   },
+   {
+    "name": "BTCUSDT-4h-2021-05.zip",
+    "sha256": "6fe459a0c90e57120c2758e2ea310379b65e4093f2cbb74ee50e266dc47ec015",
+    "size_bytes": 12423
+   },
+   {
+    "name": "BTCUSDT-4h-2021-06.zip",
+    "sha256": "f9302a0df29c40b0ccbf73744b5ead6649a4e19b1073bae6b36c84b9b4dd5554",
+    "size_bytes": 11926
+   },
+   {
+    "name": "BTCUSDT-4h-2021-07.zip",
+    "sha256": "ccdc581de302a72a353e3f11e35e25ef9f98d3d15b93756c7036648b28156d1b",
+    "size_bytes": 12184
+   },
+   {
+    "name": "BTCUSDT-4h-2021-08.zip",
+    "sha256": "f59731ac03359cfeb54e5684e551c28e7f0d7879a0991635fde9a80d49c49193",
+    "size_bytes": 12118
+   },
+   {
+    "name": "BTCUSDT-4h-2021-09.zip",
+    "sha256": "317024b76a4469ad0846a32f2ab502f4549b3409aec3eebf4f500c6bec0d63c9",
+    "size_bytes": 11505
+   },
+   {
+    "name": "BTCUSDT-4h-2021-10.zip",
+    "sha256": "2989faa9f119138f4ded4e4cf91769e0aaf2dd2d040cb961e30672c464bc9d8e",
+    "size_bytes": 11919
+   },
+   {
+    "name": "BTCUSDT-4h-2021-11.zip",
+    "sha256": "6bbd8c5facb5f15edf220bbab5f12b3de93b7b3fa44954738d851e862566781a",
+    "size_bytes": 11459
+   },
+   {
+    "name": "BTCUSDT-4h-2021-12.zip",
+    "sha256": "27376534f7e7e8ced9f95bac0bd8ca68ae1073bf81a0d74025cfa4b766ab5e71",
+    "size_bytes": 11757
+   },
+   {
+    "name": "BTCUSDT-4h-2022-01.zip",
+    "sha256": "40577902c0d758f48663d67845996f5760ba6d96b9b7b8e22feafc015d540aca",
+    "size_bytes": 11761
+   },
+   {
+    "name": "BTCUSDT-4h-2022-02.zip",
+    "sha256": "3e30d9656aadaac433a8ee24194d5ed942436de4cb55441a0e2def0edaf2c948",
+    "size_bytes": 10653
+   },
+   {
+    "name": "BTCUSDT-4h-2022-03.zip",
+    "sha256": "af098485616a18b68008f8c104c4f2418cfa6ebbe2b5f087c101395e07eaba6c",
+    "size_bytes": 11863
+   },
+   {
+    "name": "BTCUSDT-4h-2022-04.zip",
+    "sha256": "c902627fcebbf8a92ddb21bdc8fb01bb75e4877614737601f485e3eb3c93fca3",
+    "size_bytes": 11433
+   },
+   {
+    "name": "BTCUSDT-4h-2022-05.zip",
+    "sha256": "6cee81ff92052815109fa3f4d670948acd67c76322c7b8031d7f060a1768509b",
+    "size_bytes": 11886
+   },
+   {
+    "name": "BTCUSDT-4h-2022-06.zip",
+    "sha256": "eae4b3df5b95c8bd7dbdcf965cf66c80cd3d162777a7d35500b48cc7b231858e",
+    "size_bytes": 11512
+   },
+   {
+    "name": "BTCUSDT-4h-2022-07.zip",
+    "sha256": "a63b64228ec1a9fcc7c0b90b9e736735f51a572aaa073f4d8ce6e6d190f319d8",
+    "size_bytes": 12013
+   },
+   {
+    "name": "BTCUSDT-4h-2022-08.zip",
+    "sha256": "c6d5507737b9ac54a1983e7a7ab55ad6cfd3d33d64748146208f216ec0cd2af1",
+    "size_bytes": 12055
+   },
+   {
+    "name": "BTCUSDT-4h-2022-09.zip",
+    "sha256": "ddf136ff881c76a52f973d2325e593e1c192309c59798f4b553bb44bf5e2eea3",
+    "size_bytes": 11799
+   },
+   {
+    "name": "BTCUSDT-4h-2022-10.zip",
+    "sha256": "4877519eb232fc57b2b031ee5c433777b8462323088d8fad788e8839bd923c29",
+    "size_bytes": 12037
+   },
+   {
+    "name": "BTCUSDT-4h-2022-11.zip",
+    "sha256": "1aa9cef40ae942df423b47ef2b6bc61ad3418fd30f3664e95013a124abba54f0",
+    "size_bytes": 11788
+   },
+   {
+    "name": "BTCUSDT-4h-2022-12.zip",
+    "sha256": "e365e7bcb44d0d35790a8b7f1a80977ece878a64ab71e2a9deaaca5620207969",
+    "size_bytes": 11891
+   },
+   {
+    "name": "BTCUSDT-4h-2023-01.zip",
+    "sha256": "9f995d87e5de9f26c5a2a2073943479388c5e3e2bdbaf57dc3b6e925564ab43e",
+    "size_bytes": 12103
+   },
+   {
+    "name": "BTCUSDT-4h-2023-02.zip",
+    "sha256": "bef28416b5ecc05f7a0b8536ad1aa2b38f6a28fb6cf93de83bc079827c76a879",
+    "size_bytes": 11076
+   },
+   {
+    "name": "BTCUSDT-4h-2023-03.zip",
+    "sha256": "717838cee19bf2448f8114430770e527e4f49b8448dab85dab81f30469fbfe48",
+    "size_bytes": 12128
+   },
+   {
+    "name": "BTCUSDT-4h-2023-04.zip",
+    "sha256": "05af7d6318cfd578e7bbced1f3ac568f0fb281518f174365578b58fd27eb19d3",
+    "size_bytes": 11337
+   },
+   {
+    "name": "BTCUSDT-4h-2023-05.zip",
+    "sha256": "4ffaf612de992ac4d43e8c1170c52192fb94f1fd0db227445b1d71c3d8345f18",
+    "size_bytes": 11643
+   },
+   {
+    "name": "BTCUSDT-4h-2023-06.zip",
+    "sha256": "b12334aaac1aaa68fbc0ffd165cb04f56337644dc4e4ff5c44db61b5a6d30f49",
+    "size_bytes": 11263
+   },
+   {
+    "name": "BTCUSDT-4h-2023-07.zip",
+    "sha256": "d5299a068d3bd76164447e7dde9378caa03435db200145934fccc3c69e82a3a9",
+    "size_bytes": 11475
+   },
+   {
+    "name": "BTCUSDT-4h-2023-08.zip",
+    "sha256": "df3803780ba9cf57558e19b8f94eacf554ba0f45eb53ebe3edad8e0f7920b63e",
+    "size_bytes": 11420
+   },
+   {
+    "name": "BTCUSDT-4h-2023-09.zip",
+    "sha256": "c8365cc2810efed9b00a666edbb61976f8e428f789b6763748a04f74954dcb8d",
+    "size_bytes": 11101
+   },
+   {
+    "name": "BTCUSDT-4h-2023-10.zip",
+    "sha256": "db1623dbcdd6f1ae3920c9cfc0bcffbc2852e281bda744aa42c0960ef48c2db2",
+    "size_bytes": 11599
+   },
+   {
+    "name": "BTCUSDT-4h-2023-11.zip",
+    "sha256": "6d4c95621fab4b82d8e3edce2e110257646ff9facd3f1f527302aa821e232243",
+    "size_bytes": 11270
+   },
+   {
+    "name": "BTCUSDT-4h-2023-12.zip",
+    "sha256": "0bd4980aeef150995d746a768d99d590e92858fc0119ddb004c0b69329e6344c",
+    "size_bytes": 11700
+   },
+   {
+    "name": "BTCUSDT-4h-2024-01.zip",
+    "sha256": "87e793786cacd14285fe8a54c2a96bdb7f618861e30c63ba962b09e5500bc937",
+    "size_bytes": 11751
+   },
+   {
+    "name": "BTCUSDT-4h-2024-02.zip",
+    "sha256": "26a3131bf90b9697c8df77bca1ca4784cc33019cc9f01606951337c4f79d4651",
+    "size_bytes": 10973
+   },
+   {
+    "name": "BTCUSDT-4h-2024-03.zip",
+    "sha256": "d5a4624e4242675bb269b347102f74b8b60097d48b1b1c004195072cbfc4b676",
+    "size_bytes": 11890
+   },
+   {
+    "name": "BTCUSDT-4h-2024-04.zip",
+    "sha256": "63b2d48021d7f12fdaf8029237ac64346af23f7b95a49c471d881288a73ffee7",
+    "size_bytes": 11461
+   },
+   {
+    "name": "BTCUSDT-4h-2024-05.zip",
+    "sha256": "b6d8088ebd2716ecdb04124a4af791de6a0e1fdf5c0b31c2391a1df9b5c8eada",
+    "size_bytes": 11746
+   },
+   {
+    "name": "BTCUSDT-4h-2024-06.zip",
+    "sha256": "05996239fd3588ff8867b5386398b5576854d4dce6d3dc4ad0a9987951d38b2a",
+    "size_bytes": 11269
+   },
+   {
+    "name": "BTCUSDT-4h-2024-07.zip",
+    "sha256": "dcd22aa66b00f95902b3c1f5a029726976623efea0cd58197d9b37df7e5be05b",
+    "size_bytes": 11706
+   },
+   {
+    "name": "BTCUSDT-4h-2024-08.zip",
+    "sha256": "1d9601f4af9b0a8b3228e2fc993ac5f3b54343d7a8c12b5a9ad7896b3235f15c",
+    "size_bytes": 11770
+   },
+   {
+    "name": "BTCUSDT-4h-2024-09.zip",
+    "sha256": "1bde0d4857164c91a8e36a0b2797927daae0220f86ea399b842fa3b96ff5ac08",
+    "size_bytes": 11232
+   },
+   {
+    "name": "BTCUSDT-4h-2024-10.zip",
+    "sha256": "063ca82b5bd76f4aeb88b7b027a12dadcbb419f07e452da153fc329928c76e76",
+    "size_bytes": 11697
+   },
+   {
+    "name": "BTCUSDT-4h-2024-11.zip",
+    "sha256": "1d4d448b72743a188008cd6d960e049268d0deeae13b2ea57c42b4ed7a9cadea",
+    "size_bytes": 11527
+   },
+   {
+    "name": "BTCUSDT-4h-2024-12.zip",
+    "sha256": "d5c3eab8b58c5791f10836645e7992d6627119ec224fd7b2345fdec39527d3fd",
+    "size_bytes": 11931
+   },
+   {
+    "name": "BTCUSDT-4h-2025-01.zip",
+    "sha256": "a410122c029a07931b639bcd96a304ea81904ab4dfcf2d88c016158190102520",
+    "size_bytes": 12021
+   },
+   {
+    "name": "BTCUSDT-4h-2025-02.zip",
+    "sha256": "e6454bd1819f944bb05571ec8cc7bc92e8b6ff996c83f5642f3c8e044784f6a5",
+    "size_bytes": 10819
+   },
+   {
+    "name": "BTCUSDT-4h-2025-03.zip",
+    "sha256": "3d6d47445370c9d502745795e71e6afffcfba828b7f86cf29124f35c53386b4d",
+    "size_bytes": 12019
+   },
+   {
+    "name": "BTCUSDT-4h-2025-04.zip",
+    "sha256": "9f6e855ddc56c08ccac71d78013d0266bccac0fa90344390b14d0f39eb213c4d",
+    "size_bytes": 11610
+   },
+   {
+    "name": "BTCUSDT-4h-2025-05.zip",
+    "sha256": "06fac0288f73445a2a4712d0e894faf9e8b4432c1cd78784cd0029d42ad9db1d",
+    "size_bytes": 12019
+   },
+   {
+    "name": "BTCUSDT-4h-2025-06.zip",
+    "sha256": "5cab49faa1bac414ebecdd05b205f0a83e166232bef1f188f705922b5cce215b",
+    "size_bytes": 11528
+   },
+   {
+    "name": "BTCUSDT-4h-2025-07.zip",
+    "sha256": "33a477526f329218c72970ddf962b2b003e9412f04d9d2721e750491672cf36e",
+    "size_bytes": 11871
+   },
+   {
+    "name": "BTCUSDT-4h-2025-08.zip",
+    "sha256": "4b0ba1c3f774ae5ba147275f69df1ee6f81f8389072172a0b94e9a02d37f766f",
+    "size_bytes": 11880
+   },
+   {
+    "name": "BTCUSDT-4h-2025-09.zip",
+    "sha256": "4f54ff411513e4592b96b96969df40a087a827f526dddb2df3a58fd30dd7d7a4",
+    "size_bytes": 11464
+   },
+   {
+    "name": "BTCUSDT-4h-2025-10.zip",
+    "sha256": "52fa43b08d5a311b58b08392e6eae3f47307735d47f674c4adffa668d7435be6",
+    "size_bytes": 12110
+   },
+   {
+    "name": "BTCUSDT-4h-2025-11.zip",
+    "sha256": "8849aa7650fd23404eca0e4c94c4b35f9ec0cfc021d57343894fa3278a3dd924",
+    "size_bytes": 11699
+   },
+   {
+    "name": "BTCUSDT-4h-2025-12.zip",
+    "sha256": "82cee38a000ec6ef86f5f3bfda696ba5699f9872113dc2d38f387a266ab3b8fd",
+    "size_bytes": 11929
+   }
+  ],
+  "raw_set_sha256": "4d2aff340214e9efa161deb9f590405037056e716712cc896a736e916c5a5572",
+  "rows": 17516,
+  "schema": 1,
+  "symbol": "BTC/USDT",
+  "synthetic": false,
+  "timestamp_semantics": "open time UTC; ms/us detected per row",
+  "timezone": "UTC",
+  "transformation_manifest_sha256": "4cb95e65b5ea7d2241f356969e7843e5670c495bb797f24c0387c831380d12ae",
+  "validation_failed_checks": [
+   "I09",
+   "I11"
+  ],
+  "validation_status": "FAIL",
+  "validation_warnings": []
+ },
+ "on_disk": {
+  "csv": true,
+  "extra": true,
+  "identity": true
+ },
+ "persisted_files_match_fresh_build": true,
+ "two_independent_builds_identical": true
+}

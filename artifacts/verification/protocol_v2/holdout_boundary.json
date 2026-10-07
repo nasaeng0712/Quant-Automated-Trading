@@ -1,0 +1,81 @@
+{
+ "allowed": [
+  "filename",
+  "month availability",
+  "archive size",
+  "checksum filename existence",
+  "coverage metadata"
+ ],
+ "development_end": "2025-12-31",
+ "evaluation": "one-shot, in a separate user-approved Batch after the full 2026 year exists; the whole selection procedure is evaluated once",
+ "existing_daily_lockbox": "historical artifact, untouched, NOT used as the v2 holdout (its 2025 year is part of v2 development evidence)",
+ "forbidden_before_evaluation": [
+  "OHLC",
+  "volume",
+  "returns",
+  "indicators",
+  "strategy execution",
+  "performance",
+  "descriptive statistics derived from values"
+ ],
+ "freeze_marker_meaning": "technical permission only; it is not approval to evaluate",
+ "guard": "HoldoutAccessError unless the freeze marker AND a holdout-evaluation approval marker exist",
+ "metadata_known_at_freeze": {
+  "archive_files": [
+   {
+    "last_modified": "2026-02-02",
+    "name": "BTCUSDT-4h-2026-01.zip",
+    "size_bytes": 11897
+   },
+   {
+    "last_modified": "2026-03-02",
+    "name": "BTCUSDT-4h-2026-02.zip",
+    "size_bytes": 10881
+   },
+   {
+    "last_modified": "2026-04-06",
+    "name": "BTCUSDT-4h-2026-03.zip",
+    "size_bytes": 12014
+   },
+   {
+    "last_modified": "2026-05-04",
+    "name": "BTCUSDT-4h-2026-04.zip",
+    "size_bytes": 11495
+   },
+   {
+    "last_modified": "2026-06-01",
+    "name": "BTCUSDT-4h-2026-05.zip",
+    "size_bytes": 11810
+   },
+   {
+    "last_modified": "2026-07-06",
+    "name": "BTCUSDT-4h-2026-06.zip",
+    "size_bytes": 11462
+   },
+   {
+    "last_modified": "2026-08-03",
+    "name": "BTCUSDT-4h-2026-07.zip",
+    "size_bytes": 11743
+   },
+   {
+    "last_modified": "2026-09-07",
+    "name": "BTCUSDT-4h-2026-08.zip",
+    "size_bytes": 11659
+   },
+   {
+    "last_modified": "2026-10-05",
+    "name": "BTCUSDT-4h-2026-09.zip",
+    "size_bytes": 11358
+   }
+  ],
+  "months_listed": 9,
+  "note": "file names, sizes and modification dates only"
+ },
+ "temporal_holdout": {
+  "complete_year_available": false,
+  "end": "2026-12-31",
+  "start": "2026-01-01",
+  "status": "UNTOUCHED, NOT YET COMPLETE"
+ },
+ "values_accessed": "NO"
+}

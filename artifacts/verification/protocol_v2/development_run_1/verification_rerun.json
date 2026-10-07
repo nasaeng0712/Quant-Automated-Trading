@@ -1,0 +1,33 @@
+{
+ "deterministic": true,
+ "fingerprint_first": {
+  "all": "463b7d00daba23bbf4f575616c481dbf8b4b9da6fe90b589878a691b8f05fdb0",
+  "parts": {
+   "metrics": "d860e7346b4b89b6c6702e577da28073556b3a7635e668b6a314cd8d130d8c65",
+   "outcome": "46b0183a931c152fad459c98b811e0af74eaf5373e36c290269d9737b02374d3",
+   "selected_parameters": "d56fcee2fd5c05d70c88e9924e11620c40f86f54956c5d3e997b028eadd24dbd",
+   "series_hashes": "639b6ba64a331498a3ce9a6384256b2dacc4adde2b79896aec3b7899c1638a2a",
+   "statuses": "74de834148f3d7956ee0123298be13f0d659e31d1be57ca1a1cac9d8bb0caa95",
+   "trial_ids": "cd03497c197f7965b36ee38235f081494411589a9bd311c4cebb9b201903a71f"
+  }
+ },
+ "fingerprint_rerun": {
+  "all": "463b7d00daba23bbf4f575616c481dbf8b4b9da6fe90b589878a691b8f05fdb0",
+  "parts": {
+   "metrics": "d860e7346b4b89b6c6702e577da28073556b3a7635e668b6a314cd8d130d8c65",
+   "outcome": "46b0183a931c152fad459c98b811e0af74eaf5373e36c290269d9737b02374d3",
+   "selected_parameters": "d56fcee2fd5c05d70c88e9924e11620c40f86f54956c5d3e997b028eadd24dbd",
+   "series_hashes": "639b6ba64a331498a3ce9a6384256b2dacc4adde2b79896aec3b7899c1638a2a",
+   "statuses": "74de834148f3d7956ee0123298be13f0d659e31d1be57ca1a1cac9d8bb0caa95",
+   "trial_ids": "cd03497c197f7965b36ee38235f081494411589a9bd311c4cebb9b201903a71f"
+  }
+ },
+ "rerun_accounting": {
+  "all_series_present": true,
+  "evaluations": 216,
+  "series_already_identical": 216,
+  "series_newly_stored": 0,
+  "trial_ids": 216,
+  "unique_trial_ids": 216
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "decision": "PROTOCOL_V2_FROZEN",
+ "gates": {
+  "admission_deterministic": {
+   "met": true
+  },
+  "benchmark_aligned": {
+   "met": true
+  },
+  "cost_contract_frozen": {
+   "met": true
+  },
+  "holdout_guard_active": {
+   "approval_marker_exists": false,
+   "freeze_marker_exists": true,
+   "met": true,
+   "raw_files_with_2026_in_name": [],
+   "values_accessed": "NO"
+  },
+  "lockbox_untouched": {
+   "met": true
+  },
+  "parent_unchanged_and_still_failed": {
+   "met": true,
+   "parent_data_version": "CRYPTO-BTCUSDT-4h-binance-vision-f3ab848bf53c-4d2aff",
+   "rows_modified": 0,
+   "rows_synthesized": 0
+  },
+  "protocol_hash_frozen": {
+   "checks": {
+    "body_hash_matches_recorded": true,
+    "code_matches_frozen_spec": true,
+    "component_files_match": true,
+    "hash_file_matches": true,
+    "marker_matches": true
+   },
+   "met": true,
+   "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc"
+  },
+  "sufficient_folds": {
+   "folds": 4,
+   "met": true,
+   "min_required": 3,
+   "oos_years": 2.0
+  },
+  "trial_series_ready": {
+   "demonstrated_on": "SYNTHETIC fixture SYN_KR1 (plumbing only)",
+   "met": true
+  },
+  "valid_continuous_development_subperiod": {
+   "end": "2025-12-31T20:00:00",
+   "met": true,
+   "rows": 9328,
+   "start": "2021-09-29T08:00:00"
+  }
+ },
+ "holdout_values_accessed": "NO",
+ "performance_run": "NONE - no strategy was executed on real 4h data",
+ "unused_tail_note": "the rolling folds leave the final bars of the view after the last OOS window unused (fewer than one full OOS window); the windows were not adjusted"
+}

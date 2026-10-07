@@ -1,0 +1,72 @@
+project:
+  name: QAT
+  mode: paper
+
+markets:
+  KR: true
+  US: true
+  CRYPTO: true
+
+execution:
+  live_enabled: false
+  deterministic_paper_mode: true
+
+# Base currency for portfolio / risk valuation (FIX-01). Not hard-coded in code.
+base_currency: KRW
+
+# PLACEHOLDER FX rates. Not authoritative. Replace with a live feed before any
+# non-paper use. Missing/invalid rate -> Risk fails closed (UNKNOWN).
+fx:
+  rates:
+    - { from: USD, to: KRW, rate: 1350.0 }
+    - { from: USDT, to: KRW, rate: 1350.0 }
+
+# ---------------------------------------------------------------------------
+# PLACEHOLDER NUMBERS ONLY. Not authoritative. Must be calibrated per broker /
+# market with real data before any live use (design doc P4, sections 12/18/57).
+# ---------------------------------------------------------------------------
+costs:
+  KR:
+    commission_rate: 0.00015
+    tax_rate_sell: 0.0018
+    half_spread_bps: 5
+    slippage_bps: 2
+    fx_cost_bps: 0
+  US:
+    commission_rate: 0.0005
+    tax_rate_sell: 0.0
+    half_spread_bps: 3
+    slippage_bps: 2
+    fx_cost_bps: 25
+  CRYPTO:
+    commission_rate: 0.0005
+    tax_rate_sell: 0.0
+    half_spread_bps: 8
+    slippage_bps: 5
+    fx_cost_bps: 0
+
+# Risk limits: null == "not configured". Numbers are deliberately not fixed yet
+# (design doc sections 21, 57).
+risk:
+  max_order_notional: null
+  max_symbol_exposure: null
+  max_market_exposure: null
+  max_total_exposure: null
+  daily_loss_limit: null
+  max_drawdown: null
+
+net_alpha:
+  min_net_alpha_bps: 0
+
+# ---------------------------------------------------------------------------
+# OD-02 (Control Tower): manual / Paper trading allowlist. Consumed by qat.ui only.
+# Missing or empty => every manual/Paper proposal is UNKNOWN (fail-closed, never a
+# silent allow). Research runs do NOT use this list: each run is scoped to its
+# validated dataset's declared symbol and that never widens this allowlist.
+# The three SYN* entries are offline verification fixtures, NOT an investment
+# universe decision.
+# ---------------------------------------------------------------------------
+paper_universe:
+  - SYNKR1
+  - SYNUS1
+  - SYNBTC/KRW

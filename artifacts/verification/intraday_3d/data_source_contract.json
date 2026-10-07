@@ -1,0 +1,17 @@
+{
+ "adjustment": "UNADJUSTED (spot pair)",
+ "admission": "the 4h dataset is stored under data/processed/real_4h/, has no real_data identity pointer and is therefore NOT admitted for research (fail-closed) until Protocol v2 is frozen",
+ "calendar": "none (24/7); continuity of every expected 4h open is checked",
+ "canonical_columns": "timestamp,open,high,low,close,volume",
+ "development_window": [
+  "2018-01-01",
+  "2025-12-31"
+ ],
+ "extra_columns": "open_time_utc,close_time_utc,open_time_raw,close_time_raw,timestamp_unit,quote_volume,trades,taker_buy_base,taker_buy_quote,source_file",
+ "holdout_start": "2026-01-01",
+ "interval": "4h = 14,400,000 ms; close_time = open + 4h - 1 ms (+-1 ms conversion tolerance)",
+ "policy": "missing bars are never filled; a missing bar or a wrong-length bar is a FAIL (policy P0, written before the first 4h acquisition)",
+ "raw": "data/raw/_intraday_4h/ (immutable, sidecar with SHA-256, official checksum match required at fetch and re-checked independently)",
+ "source": "Binance public data archive (data.binance.vision), spot/monthly/klines/BTCUSDT/4h, plus the official .CHECKSUM beside each archive",
+ "timestamp_units": "epoch ms (13 digits) before 2025-01-01, epoch us (16 digits) from 2025-01-01; detected per row and converted explicitly; recorded per row"
+}

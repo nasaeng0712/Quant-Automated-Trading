@@ -1,0 +1,72 @@
+{
+ "dataset_coverage_known_at_design": {
+  "continuous_view": [
+   "2021-09-29T08:00:00",
+   "2025-12-31T20:00:00"
+  ],
+  "holdout_2026": "file metadata only",
+  "parent_4h": [
+   "2018-01-01",
+   "2025-12-31"
+  ]
+ },
+ "decisions": [
+  {
+   "decision": "development = maximal trailing continuous segment of the 4h parent, end 2025-12-31",
+   "id": "P1",
+   "performance_accessed": "NO"
+  },
+  {
+   "decision": "temporal holdout 2026-01-01..2026-12-31, evaluated once after the year completes",
+   "id": "P2",
+   "performance_accessed": "NO"
+  },
+  {
+   "decision": "windows 4380/1095/1095 bars (2y/0.5y calendar equivalent), rolling",
+   "id": "P3",
+   "performance_accessed": "NO"
+  },
+  {
+   "decision": "existing strategies and grids unchanged; grids are BAR counts (NEW INTRADAY HORIZON)",
+   "id": "P4",
+   "performance_accessed": "NO"
+  },
+  {
+   "decision": "robust cost selection: worst case across S1/S2/S3; S0 diagnostic only",
+   "id": "P5",
+   "performance_accessed": "NO"
+  },
+  {
+   "decision": "30-trade and 50%-active-fold thresholds unchanged (INTERNAL_PRE_REGISTERED_HEURISTIC)",
+   "id": "P6",
+   "performance_accessed": "NO (not lowered after Batch #3B)"
+  },
+  {
+   "decision": "aligned benchmark (entry open(start+1)); per-trial series for every evaluated configuration",
+   "id": "P7",
+   "performance_accessed": "NO"
+  }
+ ],
+ "design_timestamp_utc": "2026-10-07T00:45:42+00:00",
+ "gap_handling_decision": {
+  "classification": "POST-DATA-INTEGRITY OBSERVATION / PRE-PERFORMANCE",
+  "meaning": "decided after the 4h gaps were observed, before any strategy result existed",
+  "not_done": [
+   "relaxing 'missing bar = FAIL'",
+   "interpolation",
+   "forward fill",
+   "merging",
+   "synthetic bars",
+   "choosing continuous_start by returns, trade counts or performance"
+  ],
+  "policy": "gaps are NOT permitted and the strict parent FAIL is kept; the irregular region is EXCLUDED by a deterministic continuous-subperiod rule (timestamps and integrity only)"
+ },
+ "performance_data_accessed": {
+  "btcusdt_2026_values": "NO",
+  "btcusdt_4h_prices_read_for": "integrity validation and timestamp-only view derivation",
+  "btcusdt_4h_strategy_results": "NO",
+  "daily_batch_3B_results": "YES (observed development evidence)"
+ },
+ "protocol_candidate_id": "wf-protocol-2-candidate-1",
+ "trial_registry": "extends results/trial_registry.json; identical re-runs do not add trials"
+}

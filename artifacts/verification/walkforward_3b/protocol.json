@@ -1,0 +1,156 @@
+{
+ "base_config": {
+  "cost_multiplier": 1.0,
+  "end_policy": "mark_to_market",
+  "initial_cash": 10000000.0,
+  "position_fraction": 0.95,
+  "reservation_buffer_pct": 0.02,
+  "risk_overrides": {},
+  "seed": 0,
+  "trade_end": null,
+  "trade_start": 0,
+  "zero_cost_fixture": false
+ },
+ "benchmark": "passive buy-and-hold: open(first OOS bar) -> close(last OOS bar), no costs (favours the benchmark)",
+ "cost_model": {
+  "per_market": {
+   "CRYPTO": {
+    "commission_rate": 0.0005,
+    "fx_cost_bps": 0.0,
+    "half_spread_bps": 8.0,
+    "slippage_bps": 5.0,
+    "tax_rate_sell": 0.0
+   },
+   "KR": {
+    "commission_rate": 0.00015,
+    "fx_cost_bps": 0.0,
+    "half_spread_bps": 5.0,
+    "slippage_bps": 2.0,
+    "tax_rate_sell": 0.0018
+   },
+   "US": {
+    "commission_rate": 0.0005,
+    "fx_cost_bps": 25.0,
+    "half_spread_bps": 3.0,
+    "slippage_bps": 2.0,
+    "tax_rate_sell": 0.0
+   }
+  },
+  "settings_sha256": "ce5526fa3f5d6b2463cce3a846550839d8256d8c636a3efe2e90dfd7c1530f00",
+  "status": "PLACEHOLDER numbers (config/settings.yaml): not calibrated to any broker; NOT tuned here"
+ },
+ "cost_stress_multipliers": [
+  2.0,
+  3.0
+ ],
+ "data_identity": "each run manifest carries provider, symbol, data_version, raw/normalized hashes, verified coverage, research window",
+ "determinism": "every primary run is repeated (save=False) and must reproduce fold params, metrics and equity exactly",
+ "fold_design": {
+  "boundary": "train=[s,s+train) test=[s+train,s+train+test); history before a window is warm-up only",
+  "lockbox": "final lockbox_bars excluded from folds and engine calls; never evaluated in this batch",
+  "min_bars": "train+test+lockbox must fit, else ValueError (no fold is invented)",
+  "oos": "evaluation only; parameters of a fold are never changed after its OOS is seen",
+  "step": "= test_bars (non-overlapping OOS)",
+  "train_selection": "max train net_return over the existing grid; ties -> grid order (existing contract)",
+  "warmup": "strategies see bars before trade_start for indicators; signals start at trade_start",
+  "window": "rolling, fixed-length train"
+ },
+ "kr_coverage": "KR requests outside 2020-01-02..2025-12-30 are rejected (DataRejected); no Yahoo/Naver fallback",
+ "market_scopes": {
+  "common_period": "SECONDARY: intersection of verified coverages; reported separately, never mixed",
+  "market_specific": "PRIMARY: each market's own verified coverage (start_bar=0)"
+ },
+ "markets": {
+  "CRYPTO": {
+   "dataset": "data/processed/real/BTCUSDT_binance-vision_1d.csv",
+   "lockbox_bars": 365,
+   "test_bars": 183,
+   "train_bars": 730
+  },
+  "KR": {
+   "dataset": "data/processed/real/005930_data.go.kr_1d.csv",
+   "lockbox_bars": 252,
+   "test_bars": 126,
+   "train_bars": 504
+  },
+  "US": {
+   "dataset": "data/processed/real/AAPL_yahoo-chart_1d.csv",
+   "lockbox_bars": 252,
+   "test_bars": 126,
+   "train_bars": 504
+  }
+ },
+ "metrics": [
+  "net_return",
+  "max_drawdown_pct",
+  "trades_closed",
+  "win_rate",
+  "avg_win",
+  "avg_loss",
+  "turnover",
+  "explicit_costs",
+  "slippage_estimate",
+  "exposure_time",
+  "rejections",
+  "per-fold performance"
+ ],
+ "multiple_testing": "UNKNOWN: no correction; 3 strategies x 3 markets are tested once each",
+ "protocol_sha256": "40a7b682bf1b77355f598d52a0e63de1bf4f429c318964a25ad06a6431e2d94d",
+ "purpose": "Walk-Forward development/OOS research on verified real data; Lockbox NOT opened",
+ "search_space": {
+  "breakout": {
+   "entry_lookback": [
+    20,
+    40
+   ],
+   "exit_lookback": [
+    10,
+    20
+   ]
+  },
+  "ma_trend": {
+   "fast": [
+    5,
+    10,
+    20
+   ],
+   "slow": [
+    30,
+    50
+   ]
+  },
+  "mean_reversion": {
+   "entry_z": [
+    1.5,
+    2.0
+   ],
+   "window": [
+    20,
+    40
+   ]
+  }
+ },
+ "statuses": [
+  "PASS",
+  "FAIL",
+  "INSUFFICIENT_ACTIVITY",
+  "UNSTABLE",
+  "UNKNOWN"
+ ],
+ "strategy_state": "strategy.reset() before every engine run (existing contract)",
+ "strategy_versions": {
+  "breakout": "0.1.0",
+  "ma_trend": "0.1.0",
+  "mean_reversion": "0.1.0"
+ },
+ "thresholds": {
+  "lockbox_requires": "PASS and stitched OOS net return > passive buy-and-hold return over the same OOS windows",
+  "min_active_fold_fraction": 0.5,
+  "min_folds": 3,
+  "min_total_oos_trades": 30,
+  "pass_requires_cost_stress_multiplier": 2.0,
+  "positive_fold_fraction_must_exceed": 0.5
+ },
+ "tie_handling": "grid order (first wins)",
+ "version": "wf-protocol-1"
+}

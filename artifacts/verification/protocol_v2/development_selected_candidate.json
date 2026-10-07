@@ -1,0 +1,110 @@
+{
+ "addendum_sha256": "0f73787de09722bbf84a59ef7ba0bc3f15881749d40baf908a28aaa2af567797",
+ "candidate_sha256": "d038da459ad78a4a9895ea5cf1f6237c9802aa6a155d286ffb9f798d10fb9d9e",
+ "development_metrics_hashes": {
+  "S0_commission_only": "d15897b208d7e2b4ea5c988de1acb24e30f2d1f580746be1d2eb2b91f8c756a6",
+  "S1_low": "906983e9ef30f398392a341fa815f83ee16552b4a663aeba5333841cf0fe4250",
+  "S2_mid": "e3ad7c5700dd38e6e057673936293176dc2a9db9d1465cbc02e13dd9716efd00",
+  "S3_high": "9d45d547587afb1b082f2a53ff4a622e5aa874327906b5cfebfd1fb2153f8831"
+ },
+ "development_status": {
+  "candidate": "PASS",
+  "per_scenario": {
+   "S1_low": "PASS",
+   "S2_mid": "PASS",
+   "S3_high": "PASS"
+  },
+  "worst_case": {
+   "worst_max_drawdown_abs": 0.25635246179098814,
+   "worst_oos_closed_trades": 38,
+   "worst_stitched_net_return": 0.49024484484435016
+  }
+ },
+ "development_vs_aligned_passive": {
+  "S1_low": {
+   "aligned_passive_stitched_return": 3.0566920798317305,
+   "mean_exposure_time": 0.39771689497716894,
+   "stitched_net_return": 0.731618022050665
+  },
+  "S2_mid": {
+   "aligned_passive_stitched_return": 3.0566920798317305,
+   "mean_exposure_time": 0.39771689497716894,
+   "stitched_net_return": 0.6947326573865853
+  },
+  "S3_high": {
+   "aligned_passive_stitched_return": 3.0566920798317305,
+   "mean_exposure_time": 0.38835616438356163,
+   "stitched_net_return": 0.49024484484435016
+  }
+ },
+ "evidence_language": "development evidence",
+ "historical_development_candidates": [],
+ "holdout": {
+  "approval_marker_exists": false,
+  "needs": "full 2026 verified coverage + holdout evaluation addendum + user approval marker",
+  "status": "NOT_EVALUATED",
+  "values_accessed": "NO"
+ },
+ "holdout_eligible_by_frozen_rule": false,
+ "id": "protocol-v2-development-selected-candidate-1",
+ "official_run": {
+  "results_json_sha256": "f5eb734b70d3284add45ce68a69594a4300326f48b03dabcdf77e2422bef988d",
+  "run_id": "protocol-v2-dev-run-1",
+  "series_files": 216,
+  "series_hashes_sha256": "639b6ba64a331498a3ce9a6384256b2dacc4adde2b79896aec3b7899c1638a2a",
+  "trial_count": 216,
+  "trial_ids_sha256": "cd03497c197f7965b36ee38235f081494411589a9bd311c4cebb9b201903a71f",
+  "verification_rerun_json_sha256": "d9bd87dccfe531d554d512794d0106193bfabdcee638a1afdd40f9492b730d5a"
+ },
+ "other_strategies": {
+  "ma_trend": "UNSTABLE",
+  "mean_reversion": "INSUFFICIENT_ACTIVITY"
+ },
+ "parent_data_version": "CRYPTO-BTCUSDT-4h-binance-vision-f3ab848bf53c-4d2aff",
+ "procedure": "the frozen Protocol v2 selection procedure for breakout: existing grid in bar counts (NEW INTRADAY HORIZON), train ranking by the worst train score across S1/S2/S3, OOS under S1/S2/S3, status = least favourable scenario",
+ "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+ "ranking_among_pass": [
+  {
+   "status": "PASS",
+   "strategy": "breakout",
+   "worst_max_drawdown_abs": 0.25635246179098814,
+   "worst_oos_closed_trades": 38,
+   "worst_stitched_net_return": 0.49024484484435016
+  }
+ ],
+ "selected_parameters_by_fold": [
+  {
+   "fold": 0,
+   "params": {
+    "entry_lookback": 40,
+    "exit_lookback": 10
+   }
+  },
+  {
+   "fold": 1,
+   "params": {
+    "entry_lookback": 40,
+    "exit_lookback": 20
+   }
+  },
+  {
+   "fold": 2,
+   "params": {
+    "entry_lookback": 40,
+    "exit_lookback": 20
+   }
+  },
+  {
+   "fold": 3,
+   "params": {
+    "entry_lookback": 40,
+    "exit_lookback": 20
+   }
+  }
+ ],
+ "state": "DEVELOPMENT_SELECTED_CANDIDATE",
+ "statistical_power": "UNKNOWN",
+ "strategy": "breakout",
+ "view_data_version": "CRYPTO-BTCUSDT-4h-binance-vision-cont-9a4f6ba5a9a2-f3ab84",
+ "view_normalized_sha256": "9a4f6ba5a9a22171bfd907b71f3e25d016d5748aa4cef71fd4808e347f40786a"
+}

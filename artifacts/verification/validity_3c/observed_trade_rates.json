@@ -1,0 +1,56 @@
+{
+ "CRYPTO/breakout": {
+  "oos_trades": 14,
+  "oos_years": 4.51,
+  "oos_years_for_30_trades_at_this_rate": 9.7,
+  "trades_per_oos_year": 3.1
+ },
+ "CRYPTO/ma_trend": {
+  "oos_trades": 22,
+  "oos_years": 4.51,
+  "oos_years_for_30_trades_at_this_rate": 6.2,
+  "trades_per_oos_year": 4.88
+ },
+ "CRYPTO/mean_reversion": {
+  "oos_trades": 7,
+  "oos_years": 4.51,
+  "oos_years_for_30_trades_at_this_rate": 19.3,
+  "trades_per_oos_year": 1.55
+ },
+ "KR/breakout": {
+  "oos_trades": 4,
+  "oos_years": 2.5,
+  "oos_years_for_30_trades_at_this_rate": 18.8,
+  "trades_per_oos_year": 1.6
+ },
+ "KR/ma_trend": {
+  "oos_trades": 7,
+  "oos_years": 2.5,
+  "oos_years_for_30_trades_at_this_rate": 10.7,
+  "trades_per_oos_year": 2.8
+ },
+ "KR/mean_reversion": {
+  "oos_trades": 0,
+  "oos_years": 2.5,
+  "oos_years_for_30_trades_at_this_rate": null,
+  "trades_per_oos_year": 0.0
+ },
+ "US/breakout": {
+  "oos_trades": 12,
+  "oos_years": 4.5,
+  "oos_years_for_30_trades_at_this_rate": 11.2,
+  "trades_per_oos_year": 2.67
+ },
+ "US/ma_trend": {
+  "oos_trades": 11,
+  "oos_years": 4.5,
+  "oos_years_for_30_trades_at_this_rate": 12.3,
+  "trades_per_oos_year": 2.44
+ },
+ "US/mean_reversion": {
+  "oos_trades": 6,
+  "oos_years": 4.5,
+  "oos_years_for_30_trades_at_this_rate": 22.5,
+  "trades_per_oos_year": 1.33
+ }
+}

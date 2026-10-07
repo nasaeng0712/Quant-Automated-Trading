@@ -1,0 +1,134 @@
+{
+ "addendum_sha256": "0f73787de09722bbf84a59ef7ba0bc3f15881749d40baf908a28aaa2af567797",
+ "branching": {
+  "A": "no PASS -> RESEARCH_PATH_STOPPED_NO_CANDIDATE; 2026 not opened; no threshold/grid/strategy change",
+  "B": "one PASS -> DEVELOPMENT_SELECTED_CANDIDATE frozen; one-shot holdout evaluator built and tested on synthetic data only",
+  "C": "several PASS -> the ranking rule above selects one; the rest are historical development candidates"
+ },
+ "created_utc": "2026-10-07T01:17:16+00:00",
+ "determinism": "a verification rerun must reproduce selected parameters, trial ids, series hashes, metrics, statuses and the selected candidate; it is deduplicated, not a new trial",
+ "execution_contract": {
+  "cost_settings": {
+   "S0_commission_only": {
+    "sha256": "dcdbe9ba7e6d06d8b17bf351f7730ba353561827909d365bad959707e74a0c60"
+   },
+   "S1_low": {
+    "sha256": "09dad6fed7fd865c129438fa4a0c076d5448f87ef704131b844ee1b25216e6a7"
+   },
+   "S2_mid": {
+    "sha256": "0109c5657a78146cc4c9c91846080b61302c6a5664cfa73ee660fb20275d0254"
+   },
+   "S3_high": {
+    "sha256": "584140372b1a054470cbb4a9b5314b5c830c5058d23a2dc0709dff86c9069963"
+   }
+  },
+  "cost_settings_rule": "config/settings.yaml with only costs.CRYPTO replaced (taker 0.001, tax 0, fx 0, scenario spread/slippage); every other setting identical",
+  "dataset": "continuous research view (ADMITTED_CONTINUOUS_SUBPERIOD)",
+  "engine_config": {
+   "cost_multiplier": 1.0,
+   "end_policy": "mark_to_market",
+   "initial_cash": 10000000.0,
+   "position_fraction": 0.95,
+   "reservation_buffer_pct": 0.02,
+   "risk_overrides": {},
+   "seed": 0,
+   "zero_cost_fixture": false
+  },
+  "evaluation_matrix": "train: every grid configuration x S1,S2,S3; OOS: selected parameters x S1,S2,S3 + S0 (diagnostic only)",
+  "failure_handling": "a failed evaluation is a registered trial with status FAILED; a configuration with a missing score in S1/S2/S3 is not rankable; a fold without any rankable configuration fails and the candidate becomes UNKNOWN",
+  "folds": "frozen fold plan (train 4380 / OOS 1095 / step 1095)",
+  "grids": {
+   "breakout": {
+    "entry_lookback": [
+     20,
+     40
+    ],
+    "exit_lookback": [
+     10,
+     20
+    ]
+   },
+   "ma_trend": {
+    "fast": [
+     5,
+     10,
+     20
+    ],
+    "slow": [
+     30,
+     50
+    ]
+   },
+   "mean_reversion": {
+    "entry_z": [
+     1.5,
+     2.0
+    ],
+    "window": [
+     20,
+     40
+    ]
+   }
+  },
+  "official_run": "exactly once; results are written immutably; re-running is refused",
+  "strategies": [
+   "ma_trend",
+   "breakout",
+   "mean_reversion"
+  ],
+  "trial_storage": "every evaluation is registered and its series stored; run completeness is verified"
+ },
+ "holdout": "2026 values are never read in this work; no approval marker is created; the daily Lockbox is untouched",
+ "id": "candidate_selection_addendum_v1",
+ "metric_definitions": {
+  "active_fold": "OOS fold with at least one closed trade",
+  "benchmark": "aligned passive buy-and-hold, entry open(start+1), cost-free, fully invested, compounded per fold",
+  "max_drawdown": "maximum peak-to-trough decline of the stitched OOS equity chain (folds chained by their return ratios)",
+  "oos_closed_trades": "sum of closed round-trip trades over all OOS folds",
+  "stitched_net_return": "product over folds of (1 + fold OOS net return) - 1, each fold starting from the same initial capital",
+  "train_score": "train-window net return of one configuration under one scenario (existing selection metric)"
+ },
+ "multiple_testing": "White RC / DSR / PBO are not applied after seeing results",
+ "nature": "PRE-PERFORMANCE immutable addendum to the frozen Protocol v2; the frozen protocol hash is NOT modified; written before Official Development Run #1",
+ "pre_performance_evidence": {
+  "development_run_dir_exists": false,
+  "frozen_protocol_verified": {
+   "checks": {
+    "body_hash_matches_recorded": true,
+    "code_matches_frozen_spec": true,
+    "component_files_match": true,
+    "hash_file_matches": true,
+    "marker_matches": true
+   },
+   "ok": true,
+   "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc"
+  },
+  "holdout_approval_marker_exists": false,
+  "holdout_unlocked": false,
+  "registered_trials_with_protocol_wf-protocol-2": 0,
+  "trial_series_files_for_wf-protocol-2": 0
+ },
+ "protocol_sha256": "c1dad1503b43e58af6abb5cd711d99f8f3a51baa179d95067903c6239023c8bc",
+ "protocol_version": "wf-protocol-2",
+ "ranking_rule_among_PASS_candidates": {
+  "S0": "never used",
+  "new_metrics_after_results": "forbidden",
+  "order": [
+   "1) higher worst-case stitched OOS net return (minimum over S1/S2/S3)",
+   "2) smaller worst-case max drawdown, absolute value (maximum over S1/S2/S3)",
+   "3) more worst-case OOS closed trades (minimum over S1/S2/S3)",
+   "4) existing strategy declaration order: ma_trend, breakout, mean_reversion"
+  ],
+  "scope": "only candidates whose least-favourable S1/S2/S3 status is PASS are compared"
+ },
+ "result_language": {
+  "forbidden_phrases": [
+   "proven alpha",
+   "robustly profitable",
+   "production-ready",
+   "statistically proven"
+  ],
+  "statistical_power": "UNKNOWN (4 folds, about 2 OOS years)",
+  "use": "development evidence"
+ }
+}

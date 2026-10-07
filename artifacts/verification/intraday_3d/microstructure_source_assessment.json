@@ -1,0 +1,154 @@
+{
+ "aggTrades_vs_klines_same_day": {
+  "bars_compared": 6,
+  "max_base_volume_rel_diff": 1.1146639167236572e-13,
+  "max_quote_volume_rel_diff": 2.5979218776228663e-14
+ },
+ "conclusions": {
+  "bid_ask_spread_historical": "NOT observed: no quote data; trade prints are executions, is_buyer_maker is not a bid/ask",
+  "prospective": "bookTicker/depth are reachable; field names recorded; values discarded; no snapshot stored; no collector started (separate batch)",
+  "slippage_market_impact": "NOT observed: order sizes and impact are unknown",
+  "what_the_samples_support": "trade counts, trade-size distribution, intrabar turnover, consecutive-trade price variation (descriptive only)"
+ },
+ "endpoint_schema": {
+  "collector_started": false,
+  "endpoints": {
+   "api.binance.com/api/v3/depth": {
+    "error": null,
+    "http_status": 200,
+    "response_fields": {
+     "asks": "list[list] of str",
+     "bids": "list[list] of str",
+     "lastUpdateId": "int"
+    }
+   },
+   "api.binance.com/api/v3/ticker/bookTicker": {
+    "error": null,
+    "http_status": 200,
+    "response_fields": {
+     "askPrice": "str",
+     "askQty": "str",
+     "bidPrice": "str",
+     "bidQty": "str",
+     "symbol": "str"
+    }
+   },
+   "data-api.binance.vision/api/v3/depth": {
+    "error": null,
+    "http_status": 200,
+    "response_fields": {
+     "asks": "list[list] of str",
+     "bids": "list[list] of str",
+     "lastUpdateId": "int"
+    }
+   },
+   "data-api.binance.vision/api/v3/ticker/bookTicker": {
+    "error": null,
+    "http_status": 200,
+    "response_fields": {
+     "askPrice": "str",
+     "askQty": "str",
+     "bidPrice": "str",
+     "bidQty": "str",
+     "symbol": "str"
+    }
+   }
+  },
+  "snapshot_format": {
+   "fields": [
+    "captured_utc (client clock, ISO-8601)",
+    "source_url (no credentials)",
+    "http_status",
+    "response_sha256",
+    "bookTicker{bidPrice,bidQty,askPrice,askQty}",
+    "depth{lastUpdateId,bids[[price,qty]],asks[[price,qty]]}"
+   ],
+   "file": "one JSON object per snapshot",
+   "reproducibility": "append-only, content-hashed, one file per capture; the capture schedule is part of a future protocol, not started here"
+  },
+  "values_stored": false
+ },
+ "files": {
+  "aggTrades": {
+   "buyer_is_maker_share": 0.527006402502739,
+   "consecutive_price_change_bps": {
+    "median": 0.003861752355671655,
+    "p90": 0.06518614863337824,
+    "p99": 0.20509907252774795,
+    "share_unchanged": 0.4262642350627823
+   },
+   "first_time_utc": "2023-06-11T00:00:00+00:00",
+   "interpretation_limits": [
+    "descriptive statistics of executed trades only",
+    "NOT a bid-ask spread: no quote is observed",
+    "is_buyer_maker is a trade attribute, not a bid/ask",
+    "no market-impact or slippage estimate is derived"
+   ],
+   "kind": "aggTrades",
+   "last_time_utc": "2023-06-11T23:59:59.999000+00:00",
+   "notional_usdt": {
+    "max": 772890.0,
+    "median": 52.18978,
+    "p90": 2368.94125,
+    "p99": 21444.344455500002
+   },
+   "quantity_btc": {
+    "max": 30.0,
+    "median": 0.00201,
+    "p90": 0.09162,
+    "p99": 0.82919
+   },
+   "rows": 631628,
+   "sha256": "86fcaa4bf53d3ccdb1b3d479af8fac054ec1e6f07dc720dd66709307d6018506",
+   "trades_per_4h_bar": {
+    "2023-06-11T00:00": 93218,
+    "2023-06-11T04:00": 90276,
+    "2023-06-11T08:00": 87992,
+    "2023-06-11T12:00": 91807,
+    "2023-06-11T16:00": 153876,
+    "2023-06-11T20:00": 114459
+   }
+  },
+  "trades": {
+   "buyer_is_maker_share": 0.5149238159879698,
+   "consecutive_price_change_bps": {
+    "median": 0.0,
+    "p90": 0.05008072627932236,
+    "p99": 0.1643422431030217,
+    "share_unchanged": 0.5654316279750234
+   },
+   "first_time_utc": "2023-06-11T00:00:00+00:00",
+   "interpretation_limits": [
+    "descriptive statistics of executed trades only",
+    "NOT a bid-ask spread: no quote is observed",
+    "is_buyer_maker is a trade attribute, not a bid/ask",
+    "no market-impact or slippage estimate is derived"
+   ],
+   "kind": "trades",
+   "last_time_utc": "2023-06-11T23:59:59.999000+00:00",
+   "notional_usdt": {
+    "max": 772890.0,
+    "median": 63.3406827,
+    "p90": 2127.571152,
+    "p99": 14997.173587200003
+   },
+   "quantity_btc": {
+    "max": 30.0,
+    "median": 0.00245,
+    "p90": 0.0822,
+    "p99": 0.58052
+   },
+   "rows": 833902,
+   "sha256": "17cf98659b4ba69f581ab98773a209d922028c3857258bab4354988f927399f9",
+   "trades_per_4h_bar": {
+    "2023-06-11T00:00": 126336,
+    "2023-06-11T04:00": 120730,
+    "2023-06-11T08:00": 112073,
+    "2023-06-11T12:00": 119067,
+    "2023-06-11T16:00": 204538,
+    "2023-06-11T20:00": 151158
+   }
+  }
+ },
+ "sample_day": "2023-06-11"
+}

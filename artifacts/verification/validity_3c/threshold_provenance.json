@@ -1,0 +1,19 @@
+{
+ "min_active_fold_fraction": {
+  "classification": "internal pre-registered heuristic",
+  "literature_basis_in_repository": "none",
+  "value": 0.5
+ },
+ "min_total_oos_trades": {
+  "classification": "internal pre-registered heuristic",
+  "literature_basis_in_repository": "none found (no citation, derivation or power calculation anywhere in src/, docs/ or README)",
+  "note": "Not asserted to be right or wrong; its evidence level is only 'internal convention fixed before the results were seen'.",
+  "repository_basis": "qat.research.metrics.MIN_TRADES_FOR_STATS = 30: the Batch #2 'short sample' warning (design doc: 청산 거래 < 30이면 표본 경고)",
+  "value": 30
+ },
+ "positive_fold_fraction_must_exceed": {
+  "classification": "internal pre-registered heuristic",
+  "literature_basis_in_repository": "none",
+  "value": 0.5
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "archive_metadata_only": {
+  "files": [
+   {
+    "last_modified": "2026-02-02",
+    "name": "BTCUSDT-4h-2026-01.zip",
+    "size_bytes": 11897
+   },
+   {
+    "last_modified": "2026-03-02",
+    "name": "BTCUSDT-4h-2026-02.zip",
+    "size_bytes": 10881
+   },
+   {
+    "last_modified": "2026-04-06",
+    "name": "BTCUSDT-4h-2026-03.zip",
+    "size_bytes": 12014
+   },
+   {
+    "last_modified": "2026-05-04",
+    "name": "BTCUSDT-4h-2026-04.zip",
+    "size_bytes": 11495
+   },
+   {
+    "last_modified": "2026-06-01",
+    "name": "BTCUSDT-4h-2026-05.zip",
+    "size_bytes": 11810
+   },
+   {
+    "last_modified": "2026-07-06",
+    "name": "BTCUSDT-4h-2026-06.zip",
+    "size_bytes": 11462
+   },
+   {
+    "last_modified": "2026-08-03",
+    "name": "BTCUSDT-4h-2026-07.zip",
+    "size_bytes": 11743
+   },
+   {
+    "last_modified": "2026-09-07",
+    "name": "BTCUSDT-4h-2026-08.zip",
+    "size_bytes": 11659
+   },
+   {
+    "last_modified": "2026-10-05",
+    "name": "BTCUSDT-4h-2026-09.zip",
+    "size_bytes": 11358
+   }
+  ],
+  "first": "BTCUSDT-4h-2026-01.zip",
+  "last": "BTCUSDT-4h-2026-09.zip",
+  "note": "names, sizes and modification dates only"
+ },
+ "dataset_last_open_utc": "2025-12-31T20:00:00+00:00",
+ "development_end": "2025-12-31",
+ "disclosure": "Integrity validation read 4h bar values up to 2025-12-31 (including 2025, the existing daily Lockbox year) for integrity checks only; no returns or strategy results were computed.",
+ "freeze_marker_exists": false,
+ "guard": "fetch_month/fetch_day raise HoldoutAccessError for 2026+ unless artifacts/verification/protocol_v2/freeze.json exists",
+ "holdout_start": "2026-01-01",
+ "holdout_unlocked": false,
+ "raw_artifacts_acquired": 96,
+ "raw_files_with_2026_in_name": [],
+ "returns_or_strategy_results_for_2026": "NO",
+ "rows_on_or_after_holdout_start": 0,
+ "statement": "No 2026 archive content was fetched, parsed or read. Only file names/sizes/dates were listed. The microstructure endpoint probe kept field names only and discarded values.",
+ "values_accessed": "NO"
+}

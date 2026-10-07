@@ -1,0 +1,17 @@
+{
+ "deflated_sharpe_ratio": {
+  "implemented": false,
+  "status": "NOT_IMPLEMENTED - not applicable to Batch #3B structure (see validity_3c)"
+ },
+ "probability_of_backtest_overfitting": {
+  "implemented": false,
+  "status": "NOT_IMPLEMENTED - needs all-configuration full-period series (not stored in v1)"
+ },
+ "this_batch": "builds the storage so that any of the three can be computed later; none was implemented or run",
+ "white_reality_check": {
+  "fact": "White (2000) proposes the Reality Check: a test, under specification search / data snooping, of whether the best model has predictive superiority over a benchmark",
+  "implemented": false,
+  "status": "CANDIDATE_METHOD - APPLICABILITY UNVERIFIED",
+  "unverified": "the assumptions needed to apply it to QAT were not sufficiently verified against the primary text"
+ }
+}

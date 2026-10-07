@@ -1,0 +1,32 @@
+{
+ "decision": "RESEARCH_STOP_RECOMMENDED",
+ "gates": {
+  "benchmark_aligned": {
+   "evidence": "aligned_benchmark_* (entry open(start+1)); v1 results untouched",
+   "met": true
+  },
+  "cost_semantics_explicit": {
+   "evidence": "VERIFIED_CURRENT commission; historical fee/spread/slippage HISTORICAL_UNKNOWN; spread/slippage only as labelled SCENARIOs",
+   "met": true
+  },
+  "holdout_access_guarded": {
+   "met": true
+  },
+  "power_structurally_viable": {
+   "conditional_on": "Protocol v2 keeping the existing grids in bar units and the 6x scaling assumption holding (UNKNOWN until the freeze/run)",
+   "met": true
+  },
+  "trial_series_storage_ready": {
+   "met": true
+  },
+  "verified_4h_data_foundation": {
+   "completeness": "16 missing bars in 8 episodes, 18 shorter bars -> strict status FAIL",
+   "deterministic_identity": true,
+   "integrity": "PASS",
+   "met": false
+  }
+ },
+ "not_done": "no Protocol v2 run, no 4h strategy backtest, no parameter selection, no 2026 access, no Lockbox access",
+ "reason": "the strict 4h completeness gate (policy P0, fixed before the data was acquired) is not met; every other gate is met",
+ "reversibility": "RESEARCH_STOP is triggered only by the missing/short-bar gate. If the user explicitly accepts a gap policy (missing bars = non-tradable periods, never filled; recorded in the freeze document), the remaining gates already hold and the decision would become PROTOCOL_V2_FREEZE_READY without further data work."
+}

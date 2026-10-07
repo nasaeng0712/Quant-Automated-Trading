@@ -1,0 +1,18 @@
+{
+ "archive_names_by_year": {
+  "2018": 12,
+  "2019": 12,
+  "2020": 12,
+  "2021": 12,
+  "2022": 12,
+  "2023": 12,
+  "2024": 12,
+  "2025": 12
+ },
+ "archives": 96,
+ "checksum_files_preserved": true,
+ "first_archive": "BTCUSDT-4h-2018-01.zip",
+ "last_archive": "BTCUSDT-4h-2025-12.zip",
+ "mismatches": [],
+ "verification": "fetch required sha256(zip) == published checksum; this report re-checks every preserved zip against its preserved CHECKSUM file"
+}

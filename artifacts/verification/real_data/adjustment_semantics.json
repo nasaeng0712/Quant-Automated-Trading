@@ -1,0 +1,249 @@
+{
+ "crypto-binance": {
+  "all_overnight_discontinuities": [
+   {
+    "close": 4800.0,
+    "date": "2020-03-12",
+    "prev_close": 7934.52,
+    "prev_date": "2020-03-11",
+    "ratio": 0.6049515282587983
+   }
+  ],
+  "assurance": "UNADJUSTED_OBSERVED",
+  "declared": {
+   "basis": "no official provider statement retrieved",
+   "document": null,
+   "state": "UNKNOWN"
+  },
+  "dividend": {
+   "detail": "no dividend-adjusted counterpart observed",
+   "status": "UNKNOWN"
+  },
+  "final": "UNADJUSTED",
+  "final_reason": "spot trading pair: no corporate-action mechanism exists (structural)",
+  "observed": {
+   "base_price_consistency": null,
+   "events": [],
+   "state": "UNKNOWN"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [
+   {
+    "close": 4800.0,
+    "date": "2020-03-12",
+    "prev_close": 7934.52,
+    "prev_date": "2020-03-11",
+    "ratio": 0.6049515282587983
+   }
+  ],
+  "usable_for_research": true
+ },
+ "crypto-coinbase": {
+  "all_overnight_discontinuities": [],
+  "assurance": "UNADJUSTED_OBSERVED",
+  "declared": {
+   "basis": "no official provider statement retrieved",
+   "document": null,
+   "state": "UNKNOWN"
+  },
+  "dividend": {
+   "detail": "no dividend-adjusted counterpart observed",
+   "status": "UNKNOWN"
+  },
+  "final": "UNADJUSTED",
+  "final_reason": "spot trading pair: no corporate-action mechanism exists (structural)",
+  "observed": {
+   "base_price_consistency": null,
+   "events": [],
+   "state": "UNKNOWN"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ },
+ "kr-naver": {
+  "all_overnight_discontinuities": [],
+  "assurance": "SPLIT_ADJUSTED_OBSERVED",
+  "declared": {
+   "basis": "no official provider statement retrieved",
+   "document": null,
+   "state": "UNKNOWN"
+  },
+  "dividend": {
+   "detail": "no dividend-adjusted counterpart observed",
+   "status": "UNKNOWN"
+  },
+  "final": "SPLIT_ADJUSTED",
+  "final_reason": "tested against the issuer's reference corporate action(s): 2018-05-04 (no provider documentation retrieved)",
+  "observed": {
+   "base_price_consistency": null,
+   "events": [
+    {
+     "close_after": 51900.0,
+     "close_before": 53000.0,
+     "close_jump_ratio": 0.9792452830188679,
+     "date_after": "2018-05-04",
+     "date_before": "2018-05-03",
+     "ex_date": "2018-05-04",
+     "ratio_declared": 50.0,
+     "unadjusted_expected_ratio": 0.02,
+     "verdict": "ADJUSTED_AT_EVENT"
+    }
+   ],
+   "state": "SPLIT_ADJUSTED"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ },
+ "kr-official": {
+  "all_overnight_discontinuities": [],
+  "assurance": "UNADJUSTED_EVIDENCE_SUPPORTED",
+  "declared": {
+   "basis": "guide field definitions: clpr = last price formed until the end of the regular session, mkp = first price formed after the regular session opens, trqu = cumulative traded quantity (as-traded values). The guide contains no adjustment / split / rights statement.",
+   "document": {
+    "retrieved_as": "raw artifact 005930-docs/guide.docx",
+    "sha256": "0ac42d46b5292ccf802770fe8c849bf1f8d43ca45ff1bfb1ba16fd34ba1246e4",
+    "title": "금융위원회_주식시세정보_활용자가이드.docx",
+    "url": "https://www.data.go.kr/data/15094808/openapi.do"
+   },
+   "explicit_adjustment_statement": false,
+   "kind": "official_field_definitions",
+   "state": "UNADJUSTED"
+  },
+  "dividend": {
+   "detail": "no dividend-adjusted counterpart observed",
+   "status": "UNKNOWN"
+  },
+  "final": "UNADJUSTED",
+  "final_reason": "official field definitions describe as-traded values (the guide contains NO explicit adjustment statement); official base-price (vs) consistency: 1472 rows checked, 0 mismatches",
+  "observed": {
+   "base_price_consistency": {
+    "mismatch_count": 0,
+    "mismatches": [],
+    "rows_checked": 1472
+   },
+   "events": [
+    {
+     "detail": "series does not contain rows on both sides of the ex-date",
+     "ex_date": "2018-05-04",
+     "ratio_declared": 50.0,
+     "verdict": "NOT_IN_RANGE"
+    }
+   ],
+   "state": "UNKNOWN"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ },
+ "kr-yahoo": {
+  "all_overnight_discontinuities": [],
+  "assurance": "SPLIT_ADJUSTED_OBSERVED",
+  "declared": {
+   "basis": "no official provider statement retrieved",
+   "document": null,
+   "state": "UNKNOWN"
+  },
+  "dividend": {
+   "note": "adjusted close is a separate provider field; OHLC columns are what is normalized",
+   "rows_where_adjclose_differs_from_close": 1960,
+   "rows_with_adjclose": 1960,
+   "status": "CLOSE_NOT_DIVIDEND_ADJUSTED"
+  },
+  "final": "SPLIT_ADJUSTED",
+  "final_reason": "tested against the issuer's reference corporate action(s): 2018-05-04 (no provider documentation retrieved)",
+  "observed": {
+   "base_price_consistency": null,
+   "events": [
+    {
+     "close_after": 51900.0,
+     "close_before": 53000.0,
+     "close_jump_ratio": 0.9792452830188679,
+     "date_after": "2018-05-04",
+     "date_before": "2018-05-03",
+     "ex_date": "2018-05-04",
+     "ratio_declared": 50.0,
+     "unadjusted_expected_ratio": 0.02,
+     "verdict": "ADJUSTED_AT_EVENT"
+    }
+   ],
+   "state": "SPLIT_ADJUSTED"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ },
+ "us-nasdaq": {
+  "all_overnight_discontinuities": [],
+  "assurance": "SPLIT_ADJUSTED_OBSERVED",
+  "declared": {
+   "basis": "no official provider statement retrieved",
+   "document": null,
+   "state": "UNKNOWN"
+  },
+  "dividend": {
+   "detail": "no dividend-adjusted counterpart observed",
+   "status": "UNKNOWN"
+  },
+  "final": "SPLIT_ADJUSTED",
+  "final_reason": "tested against the issuer's reference corporate action(s): 2020-08-31 (no provider documentation retrieved)",
+  "observed": {
+   "base_price_consistency": null,
+   "events": [
+    {
+     "close_after": 129.04,
+     "close_before": 124.8075,
+     "close_jump_ratio": 1.0339122248262322,
+     "date_after": "2020-08-31",
+     "date_before": "2020-08-28",
+     "ex_date": "2020-08-31",
+     "ratio_declared": 4.0,
+     "unadjusted_expected_ratio": 0.25,
+     "verdict": "ADJUSTED_AT_EVENT"
+    }
+   ],
+   "state": "SPLIT_ADJUSTED"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ },
+ "us-yahoo": {
+  "all_overnight_discontinuities": [],
+  "assurance": "SPLIT_ADJUSTED_OBSERVED",
+  "declared": {
+   "basis": "no official provider statement retrieved",
+   "document": null,
+   "state": "UNKNOWN"
+  },
+  "dividend": {
+   "note": "adjusted close is a separate provider field; OHLC columns are what is normalized",
+   "rows_where_adjclose_differs_from_close": 2011,
+   "rows_with_adjclose": 2011,
+   "status": "CLOSE_NOT_DIVIDEND_ADJUSTED"
+  },
+  "final": "SPLIT_ADJUSTED",
+  "final_reason": "tested against the issuer's reference corporate action(s): 2020-08-31 (no provider documentation retrieved)",
+  "observed": {
+   "base_price_consistency": null,
+   "events": [
+    {
+     "close_after": 129.0399932861328,
+     "close_before": 124.80750274658203,
+     "close_jump_ratio": 1.033912148279617,
+     "date_after": "2020-08-31",
+     "date_before": "2020-08-28",
+     "ex_date": "2020-08-31",
+     "ratio_declared": 4.0,
+     "unadjusted_expected_ratio": 0.25,
+     "verdict": "ADJUSTED_AT_EVENT"
+    }
+   ],
+   "state": "SPLIT_ADJUSTED"
+  },
+  "provider_explicit_statement": "UNAVAILABLE",
+  "unadjusted_discontinuities": [],
+  "usable_for_research": true
+ }
+}
